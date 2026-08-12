@@ -211,18 +211,21 @@ function removeFromCart(index) {
 }
 
 function checkout() {
-  if (cart.length === 0) {
-    alert("Your cart is empty.");
-    return;
-  }
+    if (cart.length === 0) {
+        alert("Your cart is empty.");
+        return;
+    }
 
-  let total = cart.reduce((sum, item) => sum + item.price, 0);
+    let total = cart.reduce((sum, item) => sum + item.price, 0);
 
-  alert(
-    "Order Summary\n\n" +
-    cart.map(item => item.name + " - ₹" + item.price.toLocaleString("en-IN")).join("\n") +
-    "\n\nTotal: ₹" + total.toLocaleString("en-IN")
-  );
+    let orderDetails =
+        "Order Summary\n\n" +
+        cart.map(item =>
+            item.name + " - ₹" + item.price.toLocaleString("en-IN")
+        ).join("\n") +
+        "\n\nTotal: ₹" + total.toLocaleString("en-IN");
+
+    alert(orderDetails);
 }
 </script>
 
