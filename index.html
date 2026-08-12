@@ -389,17 +389,32 @@ function checkout() {
     }
 
     let total = cart.reduce((sum, item) => sum + item.price, 0);
+let groupedOrder = {};
 
+cart.forEach((item) => {
+  if (!groupedOrder[item.name]) {
+    groupedOrder[item.name] = {
+      price: item.price,
+      quantity: 0
+    };
+  }
+
+  groupedOrder[item.name].quantity++;
+});
+
+let orderItems = Object.entries(groupedOrder)
+  .map(([name, item]) =>
+    `${name} × ${item.quantity} — ₹${(item.price * item.quantity).toLocaleString("en-IN")}`
+  )
+  .join("\n");
     let orderDetails =
-      "EVERSTMART ORDER\n\n" +
-      "Customer: " + name + "\n" +
-      "Phone: " + phone + "\n" +
-      "Address: " + address + "\n\n" +
-      "Products:\n" +
-      cart.map(item =>
-        item.name + " - ₹" + item.price.toLocaleString("en-IN")
-      ).join("\n") +
-      "\n\nTotal: ₹" + total.toLocaleString("en-IN");
+  "EVERSTMART ORDER\n\n" +
+  "Customer: " + name + "\n" +
+  "Phone: " + phone + "\n" +
+  "Address: " + address + "\n\n" +
+  "Products:\n" +
+  orderItems +
+  "\n\nTotal: ₹" + total.toLocaleString("en-IN");
 
     let whatsappURL =
       "https://wa.me/918580804579?text=" +
