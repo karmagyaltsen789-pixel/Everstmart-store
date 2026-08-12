@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Everstmart - Tibetan Collection</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    header p {
+      margin: 6px 0 0;
+      color: #ccc;
+    }
+
+    .hero {
+      background: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 32px;
+      margin: 0 0 10px;
+    }
+
+    .hero p {
+      color: #666;
+      font-size: 17px;
+    }
+
+    .products {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .product img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .product-content {
+      padding: 18px;
+    }
+
+    .product h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .category {
+      color: #777;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: 0;
+      border-radius: 8px;
+      background: #111;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.85;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      margin-top: 40px;
+      background: #111;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Everstmart</h1>
+    <p>Tibetan Collection & Traditional Products</p>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to Everstmart</h2>
+    <p>Discover authentic Tibetan-inspired products and traditional collections.</p>
+  </section>
+
+  <main class="products">
+
+    <div class="product">
+      <img src="/carpet.jpeg" alt="Tibetan Traditional Carpet">
+
+      <div class="product-content">
+        <h3>Tibetan Traditional Carpet</h3>
+        <div class="category">Tibetan Collection</div>
+        <div class="price">₹15,000</div>
+
+        <button onclick="alert('Tibetan Traditional Carpet added to cart')">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="/Incense.jpg" alt="Potala Incense">
+
+      <div class="product-content">
+        <h3>Potala Incense</h3>
+        <div class="category">Incense</div>
+        <div class="price">₹100</div>
+
+        <button onclick="alert('Potala Incense added to cart')">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Everstmart. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
