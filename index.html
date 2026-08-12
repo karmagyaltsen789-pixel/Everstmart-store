@@ -166,19 +166,62 @@
   </footer>
 
 
-<script>
+  <script>
 let cart = [];
 
 function addToCart(name, price) {
-    cart.push({ name: name, price: price });
+  cart.push({ name, price });
+  updateCart();
+}
 
-    let total = cart.reduce((sum, item) => sum + item.price, 0);
+function updateCart() {
+  let total = cart.reduce((sum, item) => sum + item.price, 0);
 
-    alert(
-        name + " added to cart!\n\n" +
-        "Items in cart: " + cart.length +
-        "\nTotal: ₹" + total.toLocaleString("en-IN")
-    );
+  let cartBox = document.getElementById("cartBox");
+
+  if (!cartBox) {
+    cartBox = document.createElement("div");
+    cartBox.id = "cartBox";
+    cartBox.style.cssText =
+      "position:fixed;bottom:20px;right:20px;background:white;padding:20px;border-radius:15px;box-shadow:0 5px 25px #999;z-index:9999;max-width:320px;font-family:Arial;";
+    document.body.appendChild(cartBox);
+  }
+
+  let items = cart.map((item, index) =>
+    `<div style="padding:8px 0;border-bottom:1px solid #ddd;">
+      ${item.name} - ₹${item.price.toLocaleString("en-IN")}
+      <button onclick="removeFromCart(${index})" style="float:right;">Remove</button>
+    </div>`
+  ).join("");
+
+  cartBox.innerHTML = `
+    <h2>🛒 Your Cart</h2>
+    ${items || "<p>Your cart is empty.</p>"}
+    <h3>Total: ₹${total.toLocaleString("en-IN")}</h3>
+    <button onclick="checkout()" style="width:100%;padding:12px;background:#111;color:white;border:0;border-radius:8px;font-size:16px;">
+      Place Order
+    </button>
+  `;
+}
+
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  updateCart();
+}
+
+function checkout() {
+  if (cart.length === 0) {
+    alert("Your cart is empty.");
+    return;
+  }
+
+  let total = cart.reduce((sum, item) => sum + item.price, 0);
+
+  alert(
+    "Order Summary\n\n" +
+    cart.map(item => item.name + " - ₹" + item.price.toLocaleString("en-IN")).join("\n") +
+    "\n\nTotal: ₹" + total.toLocaleString("en-IN")
+  );
 }
 </script>
 
