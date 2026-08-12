@@ -211,47 +211,155 @@ function removeFromCart(index) {
 }
 
 function checkout() {
-    if (cart.length === 0) {
-        alert("Your cart is empty.");
-        return;
-    }
+  if (cart.length === 0) {
+    alert("Your cart is empty.");
+    return;
+  }
 
-    let name = prompt("Enter your full name:");
+  let checkoutBox = document.createElement("div");
+
+  checkoutBox.style.cssText = `
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.65);
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+  `;
+
+  checkoutBox.innerHTML = `
+    <div style="
+      background:white;
+      width:100%;
+      max-width:500px;
+      max-height:90vh;
+      overflow-y:auto;
+      border-radius:20px;
+      padding:25px;
+      box-sizing:border-box;
+    ">
+
+      <h2 style="margin-top:0;">🛒 Everstmart Checkout</h2>
+
+      <p style="color:#666;">Please enter your delivery details.</p>
+
+      <label><b>Full Name</b></label>
+      <input id="customerName" type="text"
+        placeholder="Enter your full name"
+        style="width:100%;padding:14px;margin:8px 0 18px;
+        box-sizing:border-box;border:1px solid #ccc;border-radius:10px;">
+
+      <label><b>Phone Number</b></label>
+      <input id="customerPhone" type="tel"
+        placeholder="Enter your phone number"
+        style="width:100%;padding:14px;margin:8px 0 18px;
+        box-sizing:border-box;border:1px solid #ccc;border-radius:10px;">
+
+      <label><b>Delivery Address</b></label>
+      <textarea id="customerAddress"
+        placeholder="Enter your complete delivery address"
+        rows="4"
+        style="width:100%;padding:14px;margin:8px 0 18px;
+        box-sizing:border-box;border:1px solid #ccc;border-radius:10px;"></textarea>
+
+      <h3>Order Summary</h3>
+
+      <div style="
+        background:#f5f5f5;
+        padding:15px;
+        border-radius:10px;
+        margin-bottom:20px;
+      ">
+        ${cart.map(item => `
+          <div style="padding:6px 0;">
+            ${item.name} — ₹${item.price.toLocaleString("en-IN")}
+          </div>
+        `).join("")}
+
+        <hr>
+
+        <b style="font-size:18px;">
+          Total: ₹${cart.reduce((sum, item) => sum + item.price, 0).toLocaleString("en-IN")}
+        </b>
+      </div>
+
+      <button id="whatsappOrderBtn" style="
+        width:100%;
+        padding:15px;
+        background:#25D366;
+        color:white;
+        border:none;
+        border-radius:10px;
+        font-size:17px;
+        font-weight:bold;
+        margin-bottom:10px;
+      ">
+        📲 Place Order on WhatsApp
+      </button>
+
+      <button id="closeCheckoutBtn" style="
+        width:100%;
+        padding:13px;
+        background:#eee;
+        color:#333;
+        border:none;
+        border-radius:10px;
+        font-size:16px;
+      ">
+        Cancel
+      </button>
+
+    </div>
+  `;
+
+  document.body.appendChild(checkoutBox);
+
+  document.getElementById("closeCheckoutBtn").onclick = function() {
+    checkoutBox.remove();
+  };
+
+  document.getElementById("whatsappOrderBtn").onclick = function() {
+
+    let name = document.getElementById("customerName").value.trim();
+    let phone = document.getElementById("customerPhone").value.trim();
+    let address = document.getElementById("customerAddress").value.trim();
+
     if (!name) {
-        alert("Name is required.");
-        return;
+      alert("Please enter your full name.");
+      return;
     }
 
-    let phone = prompt("Enter your phone number:");
     if (!phone) {
-        alert("Phone number is required.");
-        return;
+      alert("Please enter your phone number.");
+      return;
     }
 
-    let address = prompt("Enter your complete delivery address:");
     if (!address) {
-        alert("Delivery address is required.");
-        return;
+      alert("Please enter your delivery address.");
+      return;
     }
 
     let total = cart.reduce((sum, item) => sum + item.price, 0);
 
     let orderDetails =
-        "EVERSTMART ORDER\n\n" +
-        "Customer: " + name + "\n" +
-        "Phone: " + phone + "\n" +
-        "Address: " + address + "\n\n" +
-        "Products:\n" +
-        cart.map(item =>
-            item.name + " - ₹" + item.price.toLocaleString("en-IN")
-        ).join("\n") +
-        "\n\nTotal: ₹" + total.toLocaleString("en-IN");
+      "EVERSTMART ORDER\n\n" +
+      "Customer: " + name + "\n" +
+      "Phone: " + phone + "\n" +
+      "Address: " + address + "\n\n" +
+      "Products:\n" +
+      cart.map(item =>
+        item.name + " - ₹" + item.price.toLocaleString("en-IN")
+      ).join("\n") +
+      "\n\nTotal: ₹" + total.toLocaleString("en-IN");
 
     let whatsappURL =
-        "https://wa.me/918580804579?text=" +
-        encodeURIComponent(orderDetails);
+      "https://wa.me/918580804579?text=" +
+      encodeURIComponent(orderDetails);
 
     window.location.href = whatsappURL;
+  };
 }
 </script>
 
