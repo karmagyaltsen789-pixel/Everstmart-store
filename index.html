@@ -211,19 +211,47 @@ function removeFromCart(index) {
 }
 
 function checkout() {
+
     if (cart.length === 0) {
         alert("Your cart is empty.");
+        return;
+    }
+
+    let name = prompt("Enter your full name:");
+
+    if (!name) {
+        alert("Name is required.");
+        return;
+    }
+
+    let phone = prompt("Enter your phone number:");
+
+    if (!phone) {
+        alert("Phone number is required.");
+        return;
+    }
+
+    let address = prompt("Enter your complete delivery address:");
+
+    if (!address) {
+        alert("Delivery address is required.");
         return;
     }
 
     let total = cart.reduce((sum, item) => sum + item.price, 0);
 
     let orderDetails =
-        "Order Summary\n\n" +
+        "EVERSTMART ORDER\n\n" +
+        "Customer: " + name + "\n" +
+        "Phone: " + phone + "\n" +
+        "Address: " + address + "\n\n" +
+        "Products:\n" +
         cart.map(item =>
-            item.name + " - ₹" + item.price.toLocaleString("en-IN")
+            item.name + " - ₹" +
+            item.price.toLocaleString("en-IN")
         ).join("\n") +
-        "\n\nTotal: ₹" + total.toLocaleString("en-IN");
+        "\n\nTotal: ₹" +
+        total.toLocaleString("en-IN");
 
     alert(orderDetails);
 }
