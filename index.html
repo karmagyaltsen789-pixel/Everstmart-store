@@ -139,7 +139,7 @@
         <div class="category">Tibetan Collection</div>
         <div class="price">₹15,000</div>
 
-        <button onclick="alert('Tibetan Traditional Carpet added to cart')">
+        <button onclick="addToCart('Tibetan Traditional Carpet', 15000)">
           Add to Cart
         </button>
       </div>
@@ -153,7 +153,7 @@
         <div class="category">Incense</div>
         <div class="price">₹100</div>
 
-        <button onclick="alert('Potala Incense added to cart')">
+        <button onclick="addToCart('Potala Incense', 100)">
           Add to Cart
         </button>
       </div>
@@ -164,6 +164,23 @@
   <footer>
     <p>© 2026 Everstmart. All rights reserved.</p>
   </footer>
+
+
+<script>
+let cart = [];
+
+function addToCart(name, price) {
+    cart.push({ name: name, price: price });
+
+    let total = cart.reduce((sum, item) => sum + item.price, 0);
+
+    alert(
+        name + " added to cart!\n\n" +
+        "Items in cart: " + cart.length +
+        "\nTotal: ₹" + total.toLocaleString("en-IN")
+    );
+}
+</script>
 
 </body>
 </html>
