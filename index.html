@@ -463,7 +463,10 @@ box-sizing:border-box;border:1px solid #ddd;border-radius:12px;font-size:16px;ou
       alert("Please enter your phone number.");
       return;
     }
-
+if (!/^[6-9]\d{9}$/.test(phone)) {
+  alert("Please enter a valid 10-digit Indian mobile number.");
+  return;
+}
     if (!address) {
       alert("Please enter your delivery address.");
       return;
