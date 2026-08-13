@@ -133,7 +133,7 @@ button:hover {
     <h1>Everstmart</h1>
     <p>Tibetan Collection & Traditional Products</p>
     <button onclick="updateCart()" style="width:auto;padding:10px 20px;margin-top:12px;">
-  🛒 Cart
+  🛒 Cart (<span id="cartCount">0</span>)
 </button>
   </header>
 
@@ -188,9 +188,18 @@ button:hover {
   <script>
 let cart = [];
 
-function addToCart(name, price) {
+
+  function addToCart(name, price) {
   cart.push({ name, price });
   updateCart();
+  updateCartCount();
+}
+
+    function updateCartCount() {
+  const cartCount = document.getElementById("cartCount");
+  if (cartCount) {
+    cartCount.textContent = cart.length;
+  }
 }
 
     function buyNow(name, price) {
