@@ -391,6 +391,17 @@ function checkout() {
         style="width:100%;padding:14px 16px;margin:8px 0 18px;
 box-sizing:border-box;border:1px solid #ddd;border-radius:12px;font-size:16px;outline:none;resize:vertical;">
 </textarea>
+<label><b>PIN Code</b></label>
+
+<input id="customerPin" type="tel"
+  placeholder="Enter 6-digit PIN code"
+  required
+  pattern="[0-9]{6}"
+  maxlength="6"
+  inputmode="numeric"
+  style="width:100%;padding:14px 16px;margin:8px 0 18px;
+  box-sizing:border-box;border:1px solid #ddd;border-radius:12px;
+  font-size:16px;outline:none;">
       <h3 style="margin:20px 0 10px;font-size:20px;">Order Summary</h3>
 
       <div style="
