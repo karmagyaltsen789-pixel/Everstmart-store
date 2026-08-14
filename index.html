@@ -400,11 +400,23 @@ box-sizing:border-box;border:1px solid #ddd;border-radius:12px;font-size:16px;ou
   border-radius:14px;
   margin-bottom:20px;
 ">
-        ${cart.map(item => `
-          <div style="padding:6px 0;">
-            ${item.name} — ₹${item.price.toLocaleString("en-IN")}
-          </div>
-        `).join("")}
+        ${Object.entries(
+  cart.reduce((grouped, item) => {
+    if (!grouped[item.name]) {
+      grouped[item.name] = {
+        price: item.price,
+        quantity: 0
+      };
+    }
+
+    grouped[item.name].quantity++;
+    return grouped;
+  }, {})
+).map(([name, item]) => `
+  <div style="padding:6px 0;">
+    ${name} × ${item.quantity} — ₹${(item.price * item.quantity).toLocaleString("en-IN")}
+  </div>
+`).join("")}
 
         <hr>
 
