@@ -148,18 +148,33 @@ button:hover {
 
 <body>
 
-  <header>
-    <h1>Everstmart</h1>
-    <p>Tibetan Collection & Traditional Products</p>
-    <button onclick="updateCart()" style="width:auto;padding:10px 20px;margin-top:12px;">
-  🛒 Cart (<span id="cartCount">0</span>)
-</button>
-  </header>
+  <header class="site-header">
+    <div class="header-inner">
+
+        <div class="logo">
+            <h1>Everstmart</h1>
+            <span>Tibetan Collection</span>
+        </div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#products">Shop</a>
+            <a href="#about">About</a>
+
+            <button onclick="updateCart()" class="cart-btn">
+                🛒 Cart
+                (<span id="cartCount">0</span>)
+            </button>
+        </nav>
+
+    </div>
+</header>
 
   <section class="hero">
-    <h2>Welcome to Everstmart</h2>
-    <p>Discover authentic Tibetan-inspired products and traditional collections.</p>
-  </section>
+    <h2>Discover the Spirit of Tibet</h2>
+    <p>Authentic Tibetan-inspired products, traditional designs and timeless collections.</p>
+    <a href="#products" class="hero-btn">Shop Now</a>
+</section>
 
     <div class="search-box">
     <input
