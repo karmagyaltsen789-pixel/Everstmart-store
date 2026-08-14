@@ -476,6 +476,7 @@ box-sizing:border-box;border:1px solid #ddd;border-radius:12px;font-size:16px;ou
     let name = document.getElementById("customerName").value.trim();
     let phone = document.getElementById("customerPhone").value.trim();
     let address = document.getElementById("customerAddress").value.trim();
+    let pin = document.getElementById("customerPin").value.trim();
 
     if (!name) {
       alert("Please enter your full name.");
@@ -519,6 +520,7 @@ let orderItems = Object.entries(groupedOrder)
   "Customer: " + name + "\n" +
   "Phone: " + phone + "\n" +
   "Address: " + address + "\n\n" +
+      "PIN Code: " + pin + "\n\n" +
   "Products:\n" +
   orderItems +
   "\n\nTotal: ₹" + total.toLocaleString("en-IN");
