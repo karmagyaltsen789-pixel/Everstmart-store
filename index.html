@@ -690,7 +690,10 @@ if (!/^[6-9]\d{9}$/.test(phone)) {
       alert("Please enter your delivery address.");
       return;
     }
-
+    if (!/^[1-9][0-9]{5}$/.test(pin)) {
+  alert("Please enter a valid 6-digit Indian PIN code.");
+  return;
+}
     let total = cart.reduce((sum, item) => sum + item.price, 0);
 let groupedOrder = {};
 
