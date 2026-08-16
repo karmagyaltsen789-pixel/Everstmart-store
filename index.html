@@ -618,7 +618,19 @@ box-sizing:border-box;border:1px solid #ddd;border-radius:12px;font-size:16px;ou
           Total: ₹${cart.reduce((sum, item) => sum + item.price, 0).toLocaleString("en-IN")}
         </b>
       </div>
-
+       <button onclick="payWithUPI()" style="
+  width:100%;
+  padding:15px;
+  background:#111;
+  color:white;
+  border:none;
+  border-radius:10px;
+  font-size:17px;
+  font-weight:bold;
+  margin-bottom:10px;
+">
+  💳 Pay with UPI
+</button>
       <button id="whatsappOrderBtn" style="
         width:100%;
         padding:15px;
@@ -714,6 +726,28 @@ let orderItems = Object.entries(groupedOrder)
 
     window.location.href = whatsappURL;
   };
+}
+    function payWithUPI() {
+  if (cart.length === 0) {
+    alert("Your cart is empty.");
+    return;
+  }
+
+  let total = cart.reduce((sum, item) => sum + item.price, 0);
+
+  let upiId = "Karmagyaltsen789@oksbi";
+  let name = "Everstmart";
+
+  let upiURL =
+    "upi://pay?pa=" +
+    encodeURIComponent(upiId) +
+    "&pn=" +
+    encodeURIComponent(name) +
+    "&am=" +
+    total.toFixed(2) +
+    "&cu=INR";
+
+  window.location.href = upiURL;
 }
 </script>
 
