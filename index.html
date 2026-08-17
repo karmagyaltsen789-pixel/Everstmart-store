@@ -437,7 +437,7 @@ button:hover {
 
 
   <script>
-let cart = [];
+let cart = JSON.parse(localStorage.getItem("everstmartCart")) || [];
     function searchProducts() {
   const searchText = document.getElementById("productSearch").value.toLowerCase();
   const products = document.querySelectorAll(".product");
