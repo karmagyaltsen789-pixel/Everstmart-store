@@ -455,9 +455,12 @@ let cart = [];
 
 
   function addToCart(name, price) {
-  cart.push({ name, price });
-  updateCart();
-  updateCartCount();
+    cart.push({ name, price });
+
+    localStorage.setItem("everstmartCart", JSON.stringify(cart));
+
+    updateCart();
+    updateCartCount();
 }
 
     function updateCartCount() {
