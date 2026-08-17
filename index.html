@@ -469,6 +469,7 @@ let cart = JSON.parse(localStorage.getItem("everstmartCart")) || [];
     cartCount.textContent = cart.length;
   }
 }
+    updateCartCount();
 
     function buyNow(name, price) {
   cart = [{ name, price }];
