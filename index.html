@@ -545,8 +545,10 @@ function removeFromCart(index) {
     });
   }
 
+  localStorage.setItem("everstmartCart", JSON.stringify(cart));
+
   updateCart();
-updateCartCount();
+  updateCartCount();
 }
 
 function decreaseQuantity(name) {
