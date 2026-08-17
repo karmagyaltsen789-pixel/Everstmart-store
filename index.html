@@ -557,6 +557,7 @@ function decreaseQuantity(name) {
   if (index !== -1) {
     cart.splice(index, 1);
   }
+  localStorage.setItem("everstmartCart", JSON.stringify(cart));
 
   updateCart();
  updateCartCount();
