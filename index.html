@@ -465,8 +465,10 @@ let cart = JSON.parse(localStorage.getItem("everstmartCart")) || [];
 
     function updateCartCount() {
   const cartCount = document.getElementById("cartCount");
+
   if (cartCount) {
-    cartCount.textContent = cart.length;
+    const savedCart = JSON.parse(localStorage.getItem("everstmartCart")) || [];
+    cartCount.textContent = savedCart.length;
   }
 }
     updateCartCount();
