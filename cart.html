@@ -520,9 +520,12 @@ function checkout() {
       return;
     }
 
-    let orderDetails =
-      "EVERSTMART ORDER\n\n" +
-      "Customer: " + name + "\n" +
+      let orderId = "EM-" + Date.now();
+
+let orderDetails =
+    "EVERSTMART ORDER\n\n" +
+    "Order ID: " + orderId + "\n" +
+    "Customer: " + name + "\n" +
       "Phone: " + phone + "\n" +
       "Address: " + address + "\n" +
       "PIN Code: " + pin + "\n\n" +
