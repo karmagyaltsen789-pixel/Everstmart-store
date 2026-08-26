@@ -298,9 +298,10 @@ function checkout() {
   cart.forEach(item => {
     if (!grouped[item.name]) {
       grouped[item.name] = {
-        price: item.price,
-        quantity: 0
-      };
+    name: item.name,
+    price: item.price,
+    quantity: 0
+};
     }
 
     grouped[item.name].quantity++;
