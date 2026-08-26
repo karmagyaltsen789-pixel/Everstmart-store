@@ -522,9 +522,17 @@ function checkout() {
 
       let orderId = "EM-" + Date.now();
 
+let orderDate = new Date().toLocaleDateString("en-IN");
+let orderTime = new Date().toLocaleTimeString("en-IN", {
+    hour: "2-digit",
+    minute: "2-digit"
+});
+
 let orderDetails =
     "EVERSTMART ORDER\n\n" +
     "Order ID: " + orderId + "\n" +
+    "Date: " + orderDate + "\n" +
+    "Time: " + orderTime + "\n" +
     "Customer: " + name + "\n" +
       "Phone: " + phone + "\n" +
       "Address: " + address + "\n" +
