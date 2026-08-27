@@ -75,6 +75,11 @@ header p {
     font-size: 15px;
     margin-bottom: 15px;
 }
+    .stock {
+    font-size: 17px;
+    font-weight: bold;
+    margin: 15px 0;
+}
 
 .price {
     font-size: 28px;
@@ -86,6 +91,37 @@ header p {
     color: #555;
     font-size: 17px;
     line-height: 1.7;
+}
+    .product-details {
+    margin-top: 25px;
+    padding: 20px;
+    background: #f7f7f7;
+    border-radius: 12px;
+}
+
+.product-details h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.product-details h3:first-child {
+    margin-top: 0;
+}
+
+.product-details p {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.product-details ul {
+    margin: 10px 0 20px;
+    padding-left: 20px;
+}
+
+.product-details li {
+    margin-bottom: 8px;
+    line-height: 1.5;
 }
 
 .info-box {
@@ -263,7 +299,8 @@ header p {
             </button>
 
 
-            id="buyNowButton"
+            <button
+                id="buyNowButton"
                 class="action-button buy-button"
                 onclick="buyProductNow()"
             >
