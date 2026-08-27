@@ -223,6 +223,7 @@ header p {
             <div id="productCategory" class="category"></div>
 
             <div id="productPrice" class="price"></div>
+            <div id="productStock" class="stock"></div>
 
             <p id="productDescription" class="description"></p>
 
@@ -388,6 +389,15 @@ if (!product) {
 
     document.getElementById("productPrice").textContent =
         "₹" + product.price.toLocaleString("en-IN");
+    const stockBox = document.getElementById("productStock");
+
+if (product.stock > 0) {
+    stockBox.textContent =
+        "🟢 In Stock — " + product.stock + " available";
+} else {
+    stockBox.textContent =
+        "🔴 Out of Stock";
+}
 
     document.getElementById("productDescription").textContent =
         product.description;
