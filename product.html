@@ -394,6 +394,35 @@ if (!product) {
     document.getElementById("productImage").alt =
         product.name;
 
+const detailsBox = document.getElementById("productDetails");
+
+detailsBox.innerHTML = `
+    <h3>Product Details</h3>
+
+    ${product.details.productDetails.map(detail => `
+        <p>
+            <strong>${detail[0]}:</strong>
+            ${detail[1]}
+        </p>
+    `).join("")}
+
+    <h3>Care Instructions</h3>
+
+    <ul>
+        ${product.details.careInstructions.map(instruction => `
+            <li>${instruction}</li>
+        `).join("")}
+    </ul>
+
+    <h3>Delivery & Shipping</h3>
+
+    <ul>
+        ${product.details.shipping.map(info => `
+            <li>${info}</li>
+        `).join("")}
+    </ul>
+`;
+
 }
 
 
