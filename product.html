@@ -255,6 +255,7 @@ header p {
 
 
             <button
+    id="addToCartButton"
                 class="action-button"
                 onclick="addProductToCart()"
             >
@@ -262,7 +263,7 @@ header p {
             </button>
 
 
-            <button
+            id="buyNowButton"
                 class="action-button buy-button"
                 onclick="buyProductNow()"
             >
@@ -445,10 +446,14 @@ let quantity = 1;
 
 function increaseQuantity() {
 
-    quantity++;
+    if (quantity < product.stock) {
 
-    document.getElementById("quantity").textContent =
-        quantity;
+        quantity++;
+
+        document.getElementById("quantity").textContent =
+            quantity;
+
+    }
 
 }
 
