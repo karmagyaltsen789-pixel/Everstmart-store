@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Product - Everstmart</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    color: #222;
+}
+
+/* Header */
+
+header {
+    background: #111;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+header p {
+    margin: 5px 0 0;
+    color: #ccc;
+    font-size: 14px;
+}
+
+/* Product */
+
+.product-page {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.product-box {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+}
+
+.product-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+.product-info h2 {
+    font-size: 32px;
+    margin: 0 0 10px;
+}
+
+.category {
+    color: #777;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 15px 0 25px;
+}
+
+.description {
+    color: #555;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.info-box {
+    background: #f7f7f7;
+    padding: 15px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.info-box p {
+    margin: 8px 0;
+}
+
+/* Quantity */
+
+.quantity-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.quantity-box button {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 10px;
+    background: #111;
+    color: white;
+    font-size: 22px;
+}
+
+.quantity-box span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Buttons */
+
+.action-button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background: #111;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.action-button:hover {
+    opacity: 0.85;
+}
+
+.buy-button {
+    background: #333;
+}
+
+/* Back */
+
+.back {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .product-page {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .product-box {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 25px;
+    }
+
+    .product-info h2 {
+        font-size: 27px;
+    }
+
+    .price {
+        font-size: 25px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>Everstmart</h1>
+    <p>Tibetan Collection</p>
+
+</header>
+
+
+<div class="product-page">
+
+    <a href="index.html" class="back">
+        ← Back to Shop
+    </a>
+
+
+    <div class="product-box">
+
+        <div>
+
+            <img
+                id="productImage"
+                class="product-image"
+                src=""
+                alt=""
+            >
+
+        </div>
+
+
+        <div class="product-info">
+
+            <h2 id="productName"></h2>
+
+            <div id="productCategory" class="category"></div>
+
+            <div id="productPrice" class="price"></div>
+
+            <p id="productDescription" class="description"></p>
+
+
+            <div class="info-box">
+
+                <p>🚚 <b>Free Shipping</b> across India</p>
+
+                <p>📦 Processing time: 2–3 business days</p>
+
+                <p>🚚 Estimated delivery: 5–10 business days</p>
+
+            </div>
+
+
+            <h3>Quantity</h3>
+
+            <div class="quantity-box">
+
+                <button onclick="decreaseQuantity()">
+                    −
+                </button>
+
+                <span id="quantity">
+                    1
+                </span>
+
+                <button onclick="increaseQuantity()">
+                    +
+                </button>
+
+            </div>
+
+
+            <button
+                class="action-button"
+                onclick="addProductToCart()"
+            >
+                🛒 Add to Cart
+            </button>
+
+
+            <button
+                class="action-button buy-button"
+                onclick="buyProductNow()"
+            >
+                ⚡ Buy Now
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+const products = {
+
+    carpet: {
+        name: "Tibetan Traditional Carpet",
+        price: 15000,
+        category: "Tibetan Collection",
+        image: "Carpet.PNG",
+        description:
+            "A traditional Tibetan-inspired carpet featuring distinctive cultural patterns and timeless Himalayan character. A beautiful choice for adding warmth, character and Tibetan-inspired design to your home."
+    },
+
+    incense: {
+        name: "Potala Incense",
+        price: 100,
+        category: "Incense",
+        image: "Potala big.PNG",
+        description:
+            "Traditional Potala incense inspired by the rich spiritual and cultural heritage of Tibet. Ideal for creating a calm and pleasant atmosphere at home, meditation spaces and everyday use."
+    }
+
+};
+
+
+const params = new URLSearchParams(window.location.search);
+
+const productId = params.get("id") || "carpet";
+
+const product = products[productId];
+
+
+if (!product) {
+
+    document.body.innerHTML = `
+        <div style="
+            text-align:center;
+            padding:80px 20px;
+            font-family:Arial;
+        ">
+            <h2>Product not found</h2>
+            <a href="index.html">
+                ← Back to Shop
+            </a>
+        </div>
+    `;
+
+} else {
+
+    document.getElementById("productName").textContent =
+        product.name;
+
+    document.getElementById("productCategory").textContent =
+        product.category;
+
+    document.getElementById("productPrice").textContent =
+        "₹" + product.price.toLocaleString("en-IN");
+
+    document.getElementById("productDescription").textContent =
+        product.description;
+
+    document.getElementById("productImage").src =
+        product.image;
+
+    document.getElementById("productImage").alt =
+        product.name;
+
+}
+
+
+let quantity = 1;
+
+
+function increaseQuantity() {
+
+    quantity++;
+
+    document.getElementById("quantity").textContent =
+        quantity;
+
+}
+
+
+function decreaseQuantity() {
+
+    if (quantity > 1) {
+
+        quantity--;
+
+        document.getElementById("quantity").textContent =
+            quantity;
+
+    }
+
+}
+
+
+function addProductToCart() {
+
+    let cart =
+        JSON.parse(
+            localStorage.getItem("everstmartCart")
+        ) || [];
+
+
+    for (let i = 0; i < quantity; i++) {
+
+        cart.push({
+            name: product.name,
+            price: product.price
+        });
+
+    }
+
+
+    localStorage.setItem(
+        "everstmartCart",
+        JSON.stringify(cart)
+    );
+
+
+    alert(
+        quantity +
+        " × " +
+        product.name +
+        " added to cart."
+    );
+
+}
+
+
+function buyProductNow() {
+
+    let cart = [];
+
+
+    for (let i = 0; i < quantity; i++) {
+
+        cart.push({
+            name: product.name,
+            price: product.price
+        });
+
+    }
+
+
+    localStorage.setItem(
+        "everstmartCart",
+        JSON.stringify(cart)
+    );
+
+
+    window.location.href = "cart.html";
+
+}
+
+</script>
+
+</body>
+</html>
