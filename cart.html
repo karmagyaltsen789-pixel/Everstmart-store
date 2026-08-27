@@ -529,26 +529,32 @@ let orderTime = new Date().toLocaleTimeString("en-IN", {
 });
 
 let orderDetails =
-    "EVERSTMART ORDER\n\n" +
-    "Order ID: " + orderId + "\n" +
-    "Date: " + orderDate + "\n" +
-    "Time: " + orderTime + "\n" +
-    "Customer: " + name + "\n" +
-      "Phone: " + phone + "\n" +
-      "Address: " + address + "\n" +
-      "PIN Code: " + pin + "\n\n" +
-      "Products:\n" +
-      Object.values(grouped)
+    "🛍️ EVERSTMART ORDER\n\n" +
+    "🆔 Order ID: " + orderId + "\n" +
+    "📅 Date: " + orderDate + "\n" +
+    "🕐 Time: " + orderTime + "\n\n" +
+
+    "👤 CUSTOMER DETAILS\n" +
+    "Name: " + name + "\n" +
+    "Phone: " + phone + "\n" +
+    "Address: " + address + "\n" +
+    "PIN Code: " + pin + "\n\n" +
+
+    "📦 PRODUCTS\n" +
+    Object.values(grouped)
         .map(item =>
-          item.name +
-          " × " +
-          item.quantity +
-          " — ₹" +
-          (item.price * item.quantity).toLocaleString("en-IN")
+            item.name +
+            " × " +
+            item.quantity +
+            " — ₹" +
+            (item.price * item.quantity).toLocaleString("en-IN")
         )
         .join("\n") +
-      "\n\nTotal: ₹" +
-      total.toLocaleString("en-IN");
+
+    "\n\n💰 TOTAL: ₹" +
+    total.toLocaleString("en-IN") +
+    "\n\n" +
+    "Thank you for shopping with Everstmart! 🙏";
 
     let whatsappURL =
       "https://wa.me/918580804579?text=" +
