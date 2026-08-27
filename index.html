@@ -769,21 +769,41 @@ let orderItems = Object.entries(groupedOrder)
     `${name} × ${item.quantity} — ₹${(item.price * item.quantity).toLocaleString("en-IN")}`
   )
   .join("\n");
-    let orderDetails =
-  "EVERSTMART ORDER\n\n" +
-  "Customer: " + name + "\n" +
+    let orderId = "EM-" + Date.now();
+
+let orderDate = new Date().toLocaleDateString("en-IN");
+
+let orderTime = new Date().toLocaleTimeString("en-IN", {
+  hour: "2-digit",
+  minute: "2-digit"
+});
+
+let orderDetails =
+  "🛍️ EVERSTMART ORDER\n\n" +
+  "🆔 Order ID: " + orderId + "\n" +
+  "📅 Date: " + orderDate + "\n" +
+  "🕐 Time: " + orderTime + "\n\n" +
+
+  "👤 CUSTOMER DETAILS\n" +
+  "Name: " + name + "\n" +
   "Phone: " + phone + "\n" +
-  "Address: " + address + "\n\n" +
-      "PIN Code: " + pin + "\n\n" +
-  "Products:\n" +
+  "Address: " + address + "\n" +
+  "PIN Code: " + pin + "\n\n" +
+
+  "📦 PRODUCTS\n" +
   orderItems +
-  "\n\nTotal: ₹" + total.toLocaleString("en-IN");
 
-    let whatsappURL =
-      "https://wa.me/918580804579?text=" +
-      encodeURIComponent(orderDetails);
+  "\n\n💰 TOTAL: ₹" +
+  total.toLocaleString("en-IN") +
 
-    window.location.href = whatsappURL;
+  "\n\n" +
+  "Thank you for shopping with Everstmart! 🙏";
+
+let whatsappURL =
+  "https://wa.me/918580804579?text=" +
+  encodeURIComponent(orderDetails);
+
+window.location.href = whatsappURL;
   };
 }
     function payWithUPI() {
