@@ -493,15 +493,23 @@ let quantity = 1;
 
 function increaseQuantity() {
 
-    if (quantity < product.stock) {
+    if (quantity >= product.stock) {
 
-        quantity++;
+        alert(
+            "Only " +
+            product.stock +
+            " available for " +
+            product.name +
+            "."
+        );
 
-        document.getElementById("quantity").textContent =
-            quantity;
-
+        return;
     }
 
+    quantity++;
+
+    document.getElementById("quantity").textContent =
+        quantity;
 }
 
 
