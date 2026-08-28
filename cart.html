@@ -593,20 +593,62 @@ let orderDetails =
 
   document.getElementById("payUPIBtn").onclick = function() {
 
+    let name = document.getElementById("customerName").value.trim();
+    let phone = document.getElementById("customerPhone").value.trim();
+    let address = document.getElementById("customerAddress").value.trim();
+    let pin = document.getElementById("customerPin").value.trim();
+
+    if (!name) {
+        alert("Please enter your full name.");
+        return;
+    }
+
+    if (!/^[6-9]\d{9}$/.test(phone)) {
+        alert("Please enter a valid 10-digit Indian mobile number.");
+        return;
+    }
+
+    if (!address) {
+        alert("Please enter your delivery address.");
+        return;
+    }
+
+    if (!/^[1-9][0-9]{5}$/.test(pin)) {
+        alert("Please enter a valid 6-digit Indian PIN code.");
+        return;
+    }
+
+    let orderId = "EM-" + Date.now();
+
+    let pendingOrder = {
+        orderId: orderId,
+        name: name,
+        phone: phone,
+        address: address,
+        pin: pin,
+        total: total,
+        paymentStatus: "UPI payment initiated"
+    };
+
+    localStorage.setItem(
+        "everstmartPendingOrder",
+        JSON.stringify(pendingOrder)
+    );
+
     let upiId = "Karmagyaltsen789@oksbi";
     let merchantName = "Everstmart";
 
     let upiURL =
-      "upi://pay?pa=" +
-      encodeURIComponent(upiId) +
-      "&pn=" +
-      encodeURIComponent(merchantName) +
-      "&am=" +
-      total.toFixed(2) +
-      "&cu=INR";
+        "upi://pay?pa=" +
+        encodeURIComponent(upiId) +
+        "&pn=" +
+        encodeURIComponent(merchantName) +
+        "&am=" +
+        total.toFixed(2) +
+        "&cu=INR";
 
     window.location.href = upiURL;
-  };
+};
 
 }
 
