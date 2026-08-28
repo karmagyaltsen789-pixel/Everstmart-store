@@ -576,16 +576,42 @@ function removeFromCart(index) {
   updateCart();
 }
     function increaseQuantity(name) {
+
   const item = cart.find(item => item.name === name);
 
-  if (item) {
-    cart.push({
-      name: item.name,
-      price: item.price
-    });
+  if (!item) {
+    return;
   }
 
-  localStorage.setItem("everstmartCart", JSON.stringify(cart));
+  const availableStock = stockLimits[name];
+
+  const currentQuantity = cart.filter(
+    cartItem => cartItem.name === name
+  ).length;
+
+  if (
+    availableStock !== undefined &&
+    currentQuantity >= availableStock
+  ) {
+    alert(
+      "Only " +
+      availableStock +
+      " available for " +
+      name +
+      "."
+    );
+    return;
+  }
+
+  cart.push({
+    name: item.name,
+    price: item.price
+  });
+
+  localStorage.setItem(
+    "everstmartCart",
+    JSON.stringify(cart)
+  );
 
   updateCart();
   updateCartCount();
