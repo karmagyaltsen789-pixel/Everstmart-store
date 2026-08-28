@@ -527,6 +527,12 @@ let cart = JSON.parse(localStorage.getItem("everstmartCart")) || [];
 
     function buyNow(name, price) {
   cart = [{ name, price }];
+
+  localStorage.setItem(
+    "everstmartCart",
+    JSON.stringify(cart)
+  );
+
   checkout();
 }
 
@@ -650,6 +656,7 @@ function checkout() {
   }
 
   let checkoutBox = document.createElement("div");
+  checkoutBox.id = "everstmartCheckoutBox";
 
   checkoutBox.style.cssText = `
     position:fixed;
@@ -974,10 +981,8 @@ window.location.href = whatsappURL;
 
 
   // Find checkout box
-  let checkoutBox =
-    document.querySelector(
-      'div[style*="position:fixed"]'
-    );
+let checkoutBox =
+  document.getElementById("everstmartCheckoutBox");
 
 
   // Replace the checkout content with payment confirmation screen
