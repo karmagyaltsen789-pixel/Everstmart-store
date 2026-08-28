@@ -620,8 +620,19 @@ let orderDetails =
 
     let orderId = "EM-" + Date.now();
 
+    let now = new Date();
+
+    let orderDate = now.toLocaleDateString("en-IN");
+
+    let orderTime = now.toLocaleTimeString("en-IN", {
+        hour: "2-digit",
+        minute: "2-digit"
+    });
+
     let pendingOrder = {
         orderId: orderId,
+        date: orderDate,
+        time: orderTime,
         name: name,
         phone: phone,
         address: address,
@@ -635,19 +646,135 @@ let orderDetails =
         JSON.stringify(pendingOrder)
     );
 
-    let upiId = "Karmagyaltsen789@oksbi";
-    let merchantName = "Everstmart";
+    /* Show Order Created screen */
 
-    let upiURL =
-        "upi://pay?pa=" +
-        encodeURIComponent(upiId) +
-        "&pn=" +
-        encodeURIComponent(merchantName) +
-        "&am=" +
-        total.toFixed(2) +
-        "&cu=INR";
+    checkoutBox.innerHTML = `
+        <div style="
+            background:white;
+            width:100%;
+            max-width:500px;
+            border-radius:24px;
+            padding:30px 24px;
+            box-sizing:border-box;
+            text-align:center;
+        ">
 
-    window.location.href = upiURL;
+            <div style="
+                font-size:60px;
+                margin-bottom:10px;
+            ">
+                ✅
+            </div>
+
+            <h2 style="
+                margin:0 0 10px;
+                font-size:28px;
+            ">
+                Order Created
+            </h2>
+
+            <p style="
+                color:#666;
+                font-size:17px;
+                margin-bottom:25px;
+            ">
+                Your order has been prepared successfully.
+            </p>
+
+            <div style="
+                background:#f8f8f8;
+                border-radius:16px;
+                padding:20px;
+                text-align:left;
+                margin-bottom:20px;
+            ">
+
+                <p style="margin:0 0 12px;">
+                    <b>Order ID:</b> ${orderId}
+                </p>
+
+                <p style="margin:0 0 12px;">
+                    <b>Date:</b> ${orderDate}
+                </p>
+
+                <p style="margin:0 0 12px;">
+                    <b>Time:</b> ${orderTime}
+                </p>
+
+                <p style="margin:0 0 12px;">
+                    <b>Customer:</b> ${name}
+                </p>
+
+                <p style="
+                    margin:0;
+                    font-size:20px;
+                    font-weight:bold;
+                ">
+                    Total: ₹${total.toLocaleString("en-IN")}
+                </p>
+
+            </div>
+
+            <p style="
+                color:#555;
+                font-size:16px;
+                margin-bottom:18px;
+            ">
+                Please complete your payment using UPI.
+            </p>
+
+            <button id="finalPayUPIBtn" style="
+                width:100%;
+                padding:16px;
+                background:#111;
+                color:white;
+                border:none;
+                border-radius:12px;
+                font-size:18px;
+                font-weight:bold;
+                margin-bottom:10px;
+            ">
+                💳 Pay ₹${total.toLocaleString("en-IN")} with UPI
+            </button>
+
+            <button id="cancelOrderBtn" style="
+                width:100%;
+                padding:14px;
+                background:#eee;
+                color:#333;
+                border:none;
+                border-radius:12px;
+                font-size:17px;
+            ">
+                Cancel
+            </button>
+
+        </div>
+    `;
+
+    /* Final UPI payment button */
+
+    document.getElementById("finalPayUPIBtn").onclick = function() {
+
+        let upiId = "Karmagyaltsen789@oksbi";
+        let merchantName = "Everstmart";
+
+        let upiURL =
+            "upi://pay?pa=" +
+            encodeURIComponent(upiId) +
+            "&pn=" +
+            encodeURIComponent(merchantName) +
+            "&am=" +
+            total.toFixed(2) +
+            "&cu=INR";
+
+        window.location.href = upiURL;
+    };
+
+    document.getElementById("cancelOrderBtn").onclick = function() {
+        checkoutBox.remove();
+    };
+
 };
 
 }
