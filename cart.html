@@ -253,12 +253,37 @@ function increase(name) {
 
     const item = cart.find(item => item.name === name);
 
-    if (item) {
-        cart.push({
-            name: item.name,
-            price: item.price
-        });
+    if (!item) {
+        return;
     }
+
+    const currentQuantity = cart.filter(
+        cartItem => cartItem.name === name
+    ).length;
+
+    const stockLimits = {
+        "Tibetan Traditional Carpet": 10,
+        "Potala Incense": 50
+    };
+
+    const availableStock = stockLimits[name];
+
+    if (availableStock !== undefined && currentQuantity >= availableStock) {
+        alert(
+            "Only " +
+            availableStock +
+            " available for " +
+            name +
+            "."
+        );
+        return;
+    }
+
+    cart.push({
+        id: item.id,
+        name: item.name,
+        price: item.price
+    });
 
     saveCart();
     displayCart();
