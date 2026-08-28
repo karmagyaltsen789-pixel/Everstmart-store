@@ -160,6 +160,10 @@ header p {
 <script>
 
 let cart = JSON.parse(localStorage.getItem("everstmartCart")) || [];
+    const stockLimits = {
+    "Tibetan Traditional Carpet": 10,
+    "Potala Incense": 50
+};
 
 function saveCart() {
     localStorage.setItem("everstmartCart", JSON.stringify(cart));
@@ -261,14 +265,12 @@ function increase(name) {
         cartItem => cartItem.name === name
     ).length;
 
-    const stockLimits = {
-        "Tibetan Traditional Carpet": 10,
-        "Potala Incense": 50
-    };
-
     const availableStock = stockLimits[name];
 
-    if (availableStock !== undefined && currentQuantity >= availableStock) {
+    if (
+        availableStock !== undefined &&
+        currentQuantity >= availableStock
+    ) {
         alert(
             "Only " +
             availableStock +
