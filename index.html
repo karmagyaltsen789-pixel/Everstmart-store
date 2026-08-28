@@ -446,6 +446,10 @@ button:hover {
 
   <script>
 let cart = JSON.parse(localStorage.getItem("everstmartCart")) || [];
+    const stockLimits = {
+  "Tibetan Traditional Carpet": 10,
+  "Potala Incense": 50
+};
     function searchProducts() {
   const searchText = document.getElementById("productSearch").value.toLowerCase();
   const products = document.querySelectorAll(".product");
@@ -463,12 +467,39 @@ let cart = JSON.parse(localStorage.getItem("everstmartCart")) || [];
 
 
   function addToCart(name, price) {
-    cart.push({ name, price });
 
-    localStorage.setItem("everstmartCart", JSON.stringify(cart));
+  const currentQuantity = cart.filter(
+    item => item.name === name
+  ).length;
 
-    updateCart();
-    updateCartCount();
+  const availableStock = stockLimits[name];
+
+  if (
+    availableStock !== undefined &&
+    currentQuantity >= availableStock
+  ) {
+    alert(
+      "Only " +
+      availableStock +
+      " available for " +
+      name +
+      "."
+    );
+    return;
+  }
+
+  cart.push({
+    name: name,
+    price: price
+  });
+
+  localStorage.setItem(
+    "everstmartCart",
+    JSON.stringify(cart)
+  );
+
+  updateCart();
+  updateCartCount();
 }
 
     function updateCartCount() {
