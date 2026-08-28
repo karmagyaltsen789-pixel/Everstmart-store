@@ -516,22 +516,45 @@ function addProductToCart() {
             localStorage.getItem("everstmartCart")
         ) || [];
 
+    let existingQuantity = cart.filter(
+        item => item.name === product.name
+    ).length;
+
+    if (existingQuantity + quantity > product.stock) {
+
+        let remaining = product.stock - existingQuantity;
+
+        if (remaining <= 0) {
+            alert(
+                "Sorry, this product is already at the maximum available stock in your cart."
+            );
+        } else {
+            alert(
+                "Only " +
+                remaining +
+                " more available for " +
+                product.name +
+                "."
+            );
+        }
+
+        return;
+    }
 
     for (let i = 0; i < quantity; i++) {
 
         cart.push({
+            id: product.id,
             name: product.name,
             price: product.price
         });
 
     }
 
-
     localStorage.setItem(
         "everstmartCart",
         JSON.stringify(cart)
     );
-
 
     alert(
         quantity +
