@@ -884,6 +884,7 @@ window.location.href = whatsappURL;
     return;
   }
 
+  // Get customer details
   let customerName =
     document.getElementById("customerName").value.trim();
 
@@ -897,23 +898,21 @@ window.location.href = whatsappURL;
     document.getElementById("customerPin").value.trim();
 
 
+  // Validate customer details
   if (!customerName) {
     alert("Please enter your full name.");
     return;
   }
-
 
   if (!/^[6-9]\d{9}$/.test(customerPhone)) {
     alert("Please enter a valid 10-digit Indian mobile number.");
     return;
   }
 
-
   if (!customerAddress) {
     alert("Please enter your delivery address.");
     return;
   }
-
 
   if (!/^[1-9][0-9]{5}$/.test(customerPin)) {
     alert("Please enter a valid 6-digit Indian PIN code.");
@@ -921,17 +920,35 @@ window.location.href = whatsappURL;
   }
 
 
+  // Calculate total
   let total =
     cart.reduce((sum, item) => sum + item.price, 0);
 
 
+  // Create Order ID
   let orderId =
     "EM-" + Date.now();
 
 
+  // Create date and time
+  let orderDate =
+    new Date().toLocaleDateString("en-IN");
+
+  let orderTime =
+    new Date().toLocaleTimeString("en-IN", {
+      hour: "2-digit",
+      minute: "2-digit"
+    });
+
+
+  // Save order information
   let pendingOrder = {
 
     orderId: orderId,
+
+    date: orderDate,
+
+    time: orderTime,
 
     name: customerName,
 
@@ -956,22 +973,164 @@ window.location.href = whatsappURL;
   );
 
 
-  let upiId = "Karmagyaltsen789@oksbi";
-
-  let merchantName = "Everstmart";
-
-
-  let upiURL =
-    "upi://pay?pa=" +
-    encodeURIComponent(upiId) +
-    "&pn=" +
-    encodeURIComponent(merchantName) +
-    "&am=" +
-    total.toFixed(2) +
-    "&cu=INR";
+  // Find checkout box
+  let checkoutBox =
+    document.querySelector(
+      'div[style*="position:fixed"]'
+    );
 
 
-  window.location.href = upiURL;
+  // Replace the checkout content with payment confirmation screen
+  if (checkoutBox) {
+
+    checkoutBox.innerHTML = `
+      <div style="
+        background:white;
+        width:100%;
+        max-width:500px;
+        border-radius:24px;
+        padding:30px 24px;
+        box-sizing:border-box;
+        text-align:center;
+      ">
+
+        <div style="
+          font-size:48px;
+          margin-bottom:10px;
+        ">
+          ✅
+        </div>
+
+        <h2 style="
+          margin:0 0 10px;
+          font-size:26px;
+        ">
+          Order Created
+        </h2>
+
+        <p style="
+          color:#666;
+          margin-bottom:25px;
+        ">
+          Your order has been prepared successfully.
+        </p>
+
+
+        <div style="
+          background:#f7f7f7;
+          border-radius:15px;
+          padding:18px;
+          text-align:left;
+          margin-bottom:20px;
+        ">
+
+          <p style="margin:8px 0;">
+            <strong>Order ID:</strong>
+            ${orderId}
+          </p>
+
+          <p style="margin:8px 0;">
+            <strong>Date:</strong>
+            ${orderDate}
+          </p>
+
+          <p style="margin:8px 0;">
+            <strong>Time:</strong>
+            ${orderTime}
+          </p>
+
+          <p style="margin:8px 0;">
+            <strong>Customer:</strong>
+            ${customerName}
+          </p>
+
+          <p style="
+            margin:12px 0 0;
+            font-size:20px;
+            font-weight:bold;
+          ">
+            Total: ₹${total.toLocaleString("en-IN")}
+          </p>
+
+        </div>
+
+
+        <p style="
+          color:#555;
+          line-height:1.6;
+          font-size:15px;
+        ">
+          Please complete your payment using UPI.
+        </p>
+
+
+        <button id="continueUPIPayment" style="
+          width:100%;
+          padding:16px;
+          background:#111;
+          color:white;
+          border:none;
+          border-radius:12px;
+          font-size:17px;
+          font-weight:bold;
+          margin-top:10px;
+        ">
+          💳 Pay ₹${total.toLocaleString("en-IN")} with UPI
+        </button>
+
+
+        <button id="cancelPayment" style="
+          width:100%;
+          padding:13px;
+          background:#eee;
+          color:#333;
+          border:none;
+          border-radius:12px;
+          font-size:16px;
+          margin-top:10px;
+        ">
+          Cancel
+        </button>
+
+      </div>
+    `;
+
+
+    document.getElementById(
+      "continueUPIPayment"
+    ).onclick = function() {
+
+      let upiId =
+        "Karmagyaltsen789@oksbi";
+
+      let merchantName =
+        "Everstmart";
+
+
+      let upiURL =
+        "upi://pay?pa=" +
+        encodeURIComponent(upiId) +
+        "&pn=" +
+        encodeURIComponent(merchantName) +
+        "&am=" +
+        total.toFixed(2) +
+        "&cu=INR";
+
+
+      window.location.href = upiURL;
+
+    };
+
+
+    document.getElementById(
+      "cancelPayment"
+    ).onclick = function() {
+
+      checkoutBox.remove();
+
+    };
+
+  }
 
 }
     
