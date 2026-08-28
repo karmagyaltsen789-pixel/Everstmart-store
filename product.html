@@ -436,6 +436,16 @@ if (product.stock > 0) {
     stockBox.textContent =
         "🔴 Out of Stock";
 }
+        const addToCartButton = document.getElementById("addToCartButton");
+    const buyNowButton = document.getElementById("buyNowButton");
+
+    if (product.stock <= 0) {
+        addToCartButton.disabled = true;
+        buyNowButton.disabled = true;
+
+        addToCartButton.textContent = "❌ Out of Stock";
+        buyNowButton.textContent = "❌ Out of Stock";
+    }
 
     document.getElementById("productDescription").textContent =
         product.description;
