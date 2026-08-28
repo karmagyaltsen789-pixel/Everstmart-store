@@ -878,26 +878,101 @@ window.location.href = whatsappURL;
   };
 }
     function payWithUPI() {
+
   if (cart.length === 0) {
     alert("Your cart is empty.");
     return;
   }
 
-  let total = cart.reduce((sum, item) => sum + item.price, 0);
+  let customerName =
+    document.getElementById("customerName").value.trim();
+
+  let customerPhone =
+    document.getElementById("customerPhone").value.trim();
+
+  let customerAddress =
+    document.getElementById("customerAddress").value.trim();
+
+  let customerPin =
+    document.getElementById("customerPin").value.trim();
+
+
+  if (!customerName) {
+    alert("Please enter your full name.");
+    return;
+  }
+
+
+  if (!/^[6-9]\d{9}$/.test(customerPhone)) {
+    alert("Please enter a valid 10-digit Indian mobile number.");
+    return;
+  }
+
+
+  if (!customerAddress) {
+    alert("Please enter your delivery address.");
+    return;
+  }
+
+
+  if (!/^[1-9][0-9]{5}$/.test(customerPin)) {
+    alert("Please enter a valid 6-digit Indian PIN code.");
+    return;
+  }
+
+
+  let total =
+    cart.reduce((sum, item) => sum + item.price, 0);
+
+
+  let orderId =
+    "EM-" + Date.now();
+
+
+  let pendingOrder = {
+
+    orderId: orderId,
+
+    name: customerName,
+
+    phone: customerPhone,
+
+    address: customerAddress,
+
+    pin: customerPin,
+
+    total: total,
+
+    paymentStatus: "UPI payment initiated",
+
+    items: cart
+
+  };
+
+
+  localStorage.setItem(
+    "everstmartPendingOrder",
+    JSON.stringify(pendingOrder)
+  );
+
 
   let upiId = "Karmagyaltsen789@oksbi";
-  let name = "Everstmart";
+
+  let merchantName = "Everstmart";
+
 
   let upiURL =
     "upi://pay?pa=" +
     encodeURIComponent(upiId) +
     "&pn=" +
-    encodeURIComponent(name) +
+    encodeURIComponent(merchantName) +
     "&am=" +
     total.toFixed(2) +
     "&cu=INR";
 
+
   window.location.href = upiURL;
+
 }
     
 updateCartCount();
