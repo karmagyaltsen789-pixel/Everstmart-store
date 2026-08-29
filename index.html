@@ -1152,13 +1152,17 @@ let checkoutBox =
 
 
       let upiURL =
-        "upi://pay?pa=" +
-        encodeURIComponent(upiId) +
-        "&pn=" +
-        encodeURIComponent(merchantName) +
-        "&am=" +
-        total.toFixed(2) +
-        "&cu=INR";
+  "upi://pay?pa=" +
+  encodeURIComponent(upiId) +
+  "&pn=" +
+  encodeURIComponent(merchantName) +
+  "&tr=" +
+  encodeURIComponent(orderId) +
+  "&tn=" +
+  encodeURIComponent("Everstmart Order " + orderId) +
+  "&am=" +
+  total.toFixed(2) +
+  "&cu=INR";
 
 
       window.location.href = upiURL;
