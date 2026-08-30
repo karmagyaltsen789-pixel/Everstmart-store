@@ -1159,7 +1159,16 @@ let upiURL =
   total.toFixed(2) +
   "&cu=INR";
 
-window.location.href = upiURL;
+let upiLink = document.createElement("a");
+upiLink.href = upiURL;
+upiLink.style.display = "none";
+
+document.body.appendChild(upiLink);
+upiLink.click();
+
+setTimeout(() => {
+  upiLink.remove();
+}, 1000);
 
     };
 
