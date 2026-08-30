@@ -1145,13 +1145,12 @@ let checkoutBox =
     ).onclick = function() {
 
       let upiId =
-        "Karmagyaltsen789@oksbi";
+  "Karmagyaltsen789@oksbi";
 
-      let merchantName =
-        "Everstmart";
+let merchantName =
+  "Karma Gyaltsen";
 
-
-      let upiURL =
+let upiURL =
   "upi://pay?pa=" +
   encodeURIComponent(upiId) +
   "&pn=" +
@@ -1160,8 +1159,7 @@ let checkoutBox =
   total.toFixed(2) +
   "&cu=INR";
 
-
-      window.location.href = upiURL;
+window.location.href = upiURL;
 
     };
 
