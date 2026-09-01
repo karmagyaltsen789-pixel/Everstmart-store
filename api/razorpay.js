@@ -56,10 +56,11 @@ export default async function handler(req, res) {
       }
 
       return res.status(200).json({
-        order_id: data.id,
-        amount: data.amount,
-        currency: data.currency
-      });
+  key_id: keyId,
+  order_id: data.id,
+  amount: data.amount,
+  currency: data.currency
+});
     }
 
     // VERIFY PAYMENT
