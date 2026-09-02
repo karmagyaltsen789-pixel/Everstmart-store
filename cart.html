@@ -591,7 +591,7 @@ let orderDetails =
   };
 
 
-  document.getElementById("payUPIBtn").onclick = function() {
+  document.getElementById("payUPIBtn").onclick = async function() {
 
     let name = document.getElementById("customerName").value.trim();
     let phone = document.getElementById("customerPhone").value.trim();
@@ -618,166 +618,213 @@ let orderDetails =
         return;
     }
 
-    let orderId = "EM-" + Date.now();
+    try {
 
-    let now = new Date();
+        // CREATE RAZORPAY ORDER
+        const response = await fetch("/api/razorpay", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                action: "create",
+                amount: total
+            })
+        });
 
-    let orderDate = now.toLocaleDateString("en-IN");
+        const orderData = await response.json();
 
-    let orderTime = now.toLocaleTimeString("en-IN", {
-        hour: "2-digit",
-        minute: "2-digit"
-    });
+        if (!response.ok) {
+            throw new Error(
+                orderData.error || "Unable to create payment order"
+            );
+        }
 
-    let pendingOrder = {
-        orderId: orderId,
-        date: orderDate,
-        time: orderTime,
-        name: name,
-        phone: phone,
-        address: address,
-        pin: pin,
-        total: total,
-        paymentStatus: "UPI payment initiated"
-    };
+        // OPEN RAZORPAY CHECKOUT
+        const options = {
 
-    localStorage.setItem(
-        "everstmartPendingOrder",
-        JSON.stringify(pendingOrder)
-    );
+            key: orderData.key_id,
 
-    /* Show Order Created screen */
+            amount: orderData.amount,
 
-    checkoutBox.innerHTML = `
-        <div style="
-            background:white;
-            width:100%;
-            max-width:500px;
-            border-radius:24px;
-            padding:30px 24px;
-            box-sizing:border-box;
-            text-align:center;
-        ">
+            currency: orderData.currency,
 
-            <div style="
-                font-size:60px;
-                margin-bottom:10px;
-            ">
-                ✅
-            </div>
+            name: "Everstmart",
 
-            <h2 style="
-                margin:0 0 10px;
-                font-size:28px;
-            ">
-                Order Created
-            </h2>
+            description: "Everstmart Order",
 
-            <p style="
-                color:#666;
-                font-size:17px;
-                margin-bottom:25px;
-            ">
-                Your order has been prepared successfully.
-            </p>
+            order_id: orderData.order_id,
 
-            <div style="
-                background:#f8f8f8;
-                border-radius:16px;
-                padding:20px;
-                text-align:left;
-                margin-bottom:20px;
-            ">
+            prefill: {
+                name: name,
+                contact: phone
+            },
 
-                <p style="margin:0 0 12px;">
-                    <b>Order ID:</b> ${orderId}
-                </p>
+            theme: {
+                color: "#111111"
+            },
 
-                <p style="margin:0 0 12px;">
-                    <b>Date:</b> ${orderDate}
-                </p>
+            handler: async function(paymentResponse) {
 
-                <p style="margin:0 0 12px;">
-                    <b>Time:</b> ${orderTime}
-                </p>
+                try {
 
-                <p style="margin:0 0 12px;">
-                    <b>Customer:</b> ${name}
-                </p>
+                    // VERIFY PAYMENT
+                    const verifyResponse = await fetch("/api/razorpay", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            action: "verify",
+                            razorpay_order_id:
+                                paymentResponse.razorpay_order_id,
+                            razorpay_payment_id:
+                                paymentResponse.razorpay_payment_id,
+                            razorpay_signature:
+                                paymentResponse.razorpay_signature
+                        })
+                    });
 
-                <p style="
-                    margin:0;
-                    font-size:20px;
-                    font-weight:bold;
-                ">
-                    Total: ₹${total.toLocaleString("en-IN")}
-                </p>
+                    const verifyData =
+                        await verifyResponse.json();
 
-            </div>
+                    if (!verifyResponse.ok ||
+                        !verifyData.success) {
 
-            <p style="
-                color:#555;
-                font-size:16px;
-                margin-bottom:18px;
-            ">
-                Please complete your payment using UPI.
-            </p>
+                        throw new Error(
+                            "Payment verification failed"
+                        );
+                    }
 
-            <button id="finalPayUPIBtn" style="
-                width:100%;
-                padding:16px;
-                background:#111;
-                color:white;
-                border:none;
-                border-radius:12px;
-                font-size:18px;
-                font-weight:bold;
-                margin-bottom:10px;
-            ">
-                💳 Pay ₹${total.toLocaleString("en-IN")} with UPI
-            </button>
+                    // PAYMENT SUCCESS
+                    let orderId = "EM-" + Date.now();
 
-            <button id="cancelOrderBtn" style="
-                width:100%;
-                padding:14px;
-                background:#eee;
-                color:#333;
-                border:none;
-                border-radius:12px;
-                font-size:17px;
-            ">
-                Cancel
-            </button>
+                    let now = new Date();
 
-        </div>
-    `;
+                    let orderDate =
+                        now.toLocaleDateString("en-IN");
 
-    /* Final UPI payment button */
+                    let orderTime =
+                        now.toLocaleTimeString("en-IN", {
+                            hour: "2-digit",
+                            minute: "2-digit"
+                        });
 
-    document.getElementById("finalPayUPIBtn").onclick = function() {
+                    let orderDetails =
+                        "🛍️ EVERSTMART ORDER\n\n" +
 
-        let upiId = "Karmagyaltsen789@oksbi";
-        let merchantName = "Everstmart";
+                        "🆔 Order ID: " +
+                        orderId + "\n" +
 
-        let upiURL =
-            "upi://pay?pa=" +
-            encodeURIComponent(upiId) +
-            "&pn=" +
-            encodeURIComponent(merchantName) +
-            "&am=" +
-            total.toFixed(2) +
-            "&cu=INR";
+                        "📅 Date: " +
+                        orderDate + "\n" +
 
-        window.location.href = upiURL;
-    };
+                        "🕐 Time: " +
+                        orderTime + "\n\n" +
 
-    document.getElementById("cancelOrderBtn").onclick = function() {
-        checkoutBox.remove();
-    };
+                        "👤 CUSTOMER DETAILS\n" +
 
+                        "Name: " +
+                        name + "\n" +
+
+                        "Phone: " +
+                        phone + "\n" +
+
+                        "Address: " +
+                        address + "\n" +
+
+                        "PIN Code: " +
+                        pin + "\n\n" +
+
+                        "📦 PRODUCTS\n" +
+
+                        Object.values(grouped)
+                            .map(item =>
+                                item.name +
+                                " × " +
+                                item.quantity +
+                                " — ₹" +
+                                (
+                                    item.price *
+                                    item.quantity
+                                ).toLocaleString("en-IN")
+                            )
+                            .join("\n") +
+
+                        "\n\n💰 TOTAL PAID: ₹" +
+                        total.toLocaleString("en-IN") +
+
+                        "\n\n💳 Payment ID: " +
+                        paymentResponse.razorpay_payment_id +
+
+                        "\n\n" +
+
+                        "Thank you for shopping with Everstmart! 🙏";
+
+                    // SAVE COMPLETED ORDER
+                    let completedOrder = {
+                        orderId: orderId,
+                        date: orderDate,
+                        time: orderTime,
+                        name: name,
+                        phone: phone,
+                        address: address,
+                        pin: pin,
+                        total: total,
+                        paymentStatus: "Paid",
+                        razorpayPaymentId:
+                            paymentResponse.razorpay_payment_id,
+                        razorpayOrderId:
+                            paymentResponse.razorpay_order_id
+                    };
+
+                    localStorage.setItem(
+                        "everstmartCompletedOrder",
+                        JSON.stringify(completedOrder)
+                    );
+
+                    /*
+                       IMPORTANT:
+                       Do NOT show "Order Placed"
+                       before WhatsApp is sent.
+                    */
+
+                    let whatsappURL =
+                        "https://wa.me/YOUR_WHATSAPP_NUMBER?text=" +
+                        encodeURIComponent(orderDetails);
+
+                    window.location.href = whatsappURL;
+
+                } catch (error) {
+
+                    console.error(error);
+
+                    alert(
+                        "Payment was received, but verification could not be completed. Please contact Everstmart."
+                    );
+                }
+            },
+
+            modal: {
+                ondismiss: function() {
+                    console.log("Razorpay checkout closed.");
+                }
+            }
+        };
+
+        const razorpay = new Razorpay(options);
+
+        razorpay.open();
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert(
+            "Unable to start payment. Please try again."
+        );
+    }
 };
-
-}
 
 displayCart();
 
