@@ -910,7 +910,7 @@ header p {
         try {
 
             const response =
-                await fetch("/api/razorpay", {
+                await fetch("https://everstmart-store.vercel.app/api/razorpay", {
                     method: "POST",
                     headers: {
                         "Content-Type":
@@ -968,7 +968,7 @@ header p {
 
                             const verifyResponse =
                                 await fetch(
-                                    "/api/razorpay",
+                                    "https://everstmart-store.vercel.app/api/razorpay",
                                     {
                                         method: "POST",
                                         headers: {
