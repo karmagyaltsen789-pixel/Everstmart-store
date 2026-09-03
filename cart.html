@@ -159,7 +159,15 @@ header p {
 
 <script>
 
-let cart = JSON.parse(localStorage.getItem("everstmartCart")) || [];
+let cart = [];
+
+try {
+    cart = JSON.parse(localStorage.getItem("everstmartCart")) || [];
+} catch (error) {
+    console.error("Cart data error:", error);
+    localStorage.removeItem("everstmartCart");
+    cart = [];
+}
     const stockLimits = {
     "Tibetan Traditional Carpet": 10,
     "Potala Incense": 50
