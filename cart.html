@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Your Cart - Everstmart</title>
+
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
 <style>
 body {
     margin: 0;
@@ -127,6 +130,29 @@ header p {
     padding: 50px 10px;
     font-size: 20px;
 }
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    .cart-box {
+        padding: 20px;
+    }
+
+    .cart-item {
+        flex-wrap: wrap;
+    }
+
+    .item-info {
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+    .quantity {
+        margin-top: 5px;
+    }
+}
 </style>
 </head>
 
@@ -145,7 +171,7 @@ header p {
 
         <div id="cartTotal" class="total"></div>
 
-        <button class="checkout" onclick="checkout()">
+        <button id="placeOrderBtn" class="checkout">
             Place Order
         </button>
 
@@ -159,683 +185,995 @@ header p {
 
 <script>
 
-alert("JavaScript is running");
-let cart = [];
+(function () {
 
-try {
-    cart = JSON.parse(localStorage.getItem("everstmartCart")) || [];
-} catch (error) {
-    console.error("Cart data error:", error);
-    localStorage.removeItem("everstmartCart");
-    cart = [];
-}
+    "use strict";
+
+    let cart = [];
+
     const stockLimits = {
-    "Tibetan Traditional Carpet": 10,
-    "Potala Incense": 50
-};
+        "Tibetan Traditional Carpet": 10,
+        "Potala Incense": 50
+    };
 
-function saveCart() {
-    localStorage.setItem("everstmartCart", JSON.stringify(cart));
-}
+    function loadCart() {
 
-function displayCart() {
+        try {
 
-    const cartItems = document.getElementById("cartItems");
-    const cartTotal = document.getElementById("cartTotal");
+            const savedCart =
+                localStorage.getItem("everstmartCart");
 
-    if (cart.length === 0) {
+            if (savedCart) {
+                const parsedCart = JSON.parse(savedCart);
 
-        cartItems.innerHTML = `
-            <div class="empty">
-                🛒 Your cart is empty.
-                <br><br>
-                <a href="index.html">Start Shopping</a>
-            </div>
-        `;
+                if (Array.isArray(parsedCart)) {
+                    cart = parsedCart;
+                } else {
+                    cart = [];
+                }
+            } else {
+                cart = [];
+            }
 
-        cartTotal.innerHTML = "";
-        return;
+        } catch (error) {
+
+            console.error("Cart loading error:", error);
+
+            cart = [];
+        }
     }
 
-    let grouped = {};
+    function saveCart() {
 
-    cart.forEach(item => {
+        try {
+            localStorage.setItem(
+                "everstmartCart",
+                JSON.stringify(cart)
+            );
+        } catch (error) {
+            console.error("Cart saving error:", error);
+        }
+    }
 
-        if (!grouped[item.name]) {
-            grouped[item.name] = {
-                name: item.name,
-                price: item.price,
-                quantity: 0
-            };
+    function groupCart() {
+
+        const grouped = {};
+
+        cart.forEach(function (item) {
+
+            if (!item || !item.name) {
+                return;
+            }
+
+            if (!grouped[item.name]) {
+
+                grouped[item.name] = {
+                    name: item.name,
+                    price: Number(item.price) || 0,
+                    quantity: 0
+                };
+            }
+
+            grouped[item.name].quantity++;
+
+        });
+
+        return grouped;
+    }
+
+    function calculateTotal() {
+
+        return cart.reduce(function (sum, item) {
+
+            return sum + (Number(item.price) || 0);
+
+        }, 0);
+    }
+
+    function displayCart() {
+
+        const cartItems =
+            document.getElementById("cartItems");
+
+        const cartTotal =
+            document.getElementById("cartTotal");
+
+        if (!cartItems || !cartTotal) {
+            return;
         }
 
-        grouped[item.name].quantity++;
+        if (cart.length === 0) {
 
-    });
+            cartItems.innerHTML = `
+                <div class="empty">
+                    🛒 Your cart is empty.
+                    <br><br>
+                    <a href="index.html">
+                        Start Shopping
+                    </a>
+                </div>
+            `;
 
-    let total = 0;
+            cartTotal.innerHTML = "";
 
-    cartItems.innerHTML = Object.values(grouped).map((item, index) => {
+            return;
+        }
 
-        total += item.price * item.quantity;
+        const grouped = groupCart();
 
-        return `
-            <div class="cart-item">
+        let html = "";
 
-                <div class="item-info">
-                    <div class="item-name">
-                        ${item.name}
+        Object.values(grouped).forEach(function (item) {
+
+            html += `
+                <div class="cart-item">
+
+                    <div class="item-info">
+
+                        <div class="item-name">
+                            ${escapeHTML(item.name)}
+                        </div>
+
+                        <div class="item-price">
+                            ₹${item.price.toLocaleString("en-IN")}
+                            × ${item.quantity}
+                        </div>
+
                     </div>
 
-                    <div class="item-price">
-                        ₹${item.price} × ${item.quantity}
+                    <div class="quantity">
+
+                        <button
+                            type="button"
+                            data-action="decrease"
+                            data-name="${escapeAttribute(item.name)}">
+                            −
+                        </button>
+
+                        <span>
+                            ${item.quantity}
+                        </span>
+
+                        <button
+                            type="button"
+                            data-action="increase"
+                            data-name="${escapeAttribute(item.name)}">
+                            +
+                        </button>
+
                     </div>
-                </div>
 
-                <div class="quantity">
-
-                    <button onclick="decrease('${item.name}')">
-                        −
-                    </button>
-
-                    <span>
-                        ${item.quantity}
-                    </span>
-
-                    <button onclick="increase('${item.name}')">
-                        +
+                    <button
+                        type="button"
+                        class="remove"
+                        data-action="remove"
+                        data-name="${escapeAttribute(item.name)}">
+                        Remove
                     </button>
 
                 </div>
+            `;
+        });
 
-                <button class="remove"
-                        onclick="removeItem('${item.name}')">
-                    Remove
+        cartItems.innerHTML = html;
+
+        const total = calculateTotal();
+
+        cartTotal.innerHTML =
+            "Total: ₹" +
+            total.toLocaleString("en-IN");
+
+    }
+
+    function escapeHTML(value) {
+
+        return String(value)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+
+    function escapeAttribute(value) {
+
+        return String(value)
+            .replace(/&/g, "&amp;")
+            .replace(/"/g, "&quot;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;");
+    }
+
+    function increase(name) {
+
+        const item =
+            cart.find(function (product) {
+                return product.name === name;
+            });
+
+        if (!item) {
+            return;
+        }
+
+        const currentQuantity =
+            cart.filter(function (product) {
+                return product.name === name;
+            }).length;
+
+        const availableStock =
+            stockLimits[name];
+
+        if (
+            availableStock !== undefined &&
+            currentQuantity >= availableStock
+        ) {
+
+            alert(
+                "Only " +
+                availableStock +
+                " available for " +
+                name +
+                "."
+            );
+
+            return;
+        }
+
+        cart.push({
+            id: item.id,
+            name: item.name,
+            price: item.price
+        });
+
+        saveCart();
+        displayCart();
+    }
+
+    function decrease(name) {
+
+        const index =
+            cart.findIndex(function (item) {
+                return item.name === name;
+            });
+
+        if (index !== -1) {
+            cart.splice(index, 1);
+        }
+
+        saveCart();
+        displayCart();
+    }
+
+    function removeItem(name) {
+
+        cart = cart.filter(function (item) {
+            return item.name !== name;
+        });
+
+        saveCart();
+        displayCart();
+    }
+
+    function openCheckout() {
+
+        if (cart.length === 0) {
+
+            alert("Your cart is empty.");
+
+            return;
+        }
+
+        const total = calculateTotal();
+
+        const grouped = groupCart();
+
+        let orderItems = "";
+
+        Object.values(grouped).forEach(function (item) {
+
+            orderItems += `
+                <div style="padding:7px 0;">
+                    ${escapeHTML(item.name)}
+                    × ${item.quantity}
+                    — ₹${(
+                        item.price * item.quantity
+                    ).toLocaleString("en-IN")}
+                </div>
+            `;
+        });
+
+        const checkoutBox =
+            document.createElement("div");
+
+        checkoutBox.id = "checkoutBox";
+
+        checkoutBox.style.cssText = `
+            position:fixed;
+            inset:0;
+            background:rgba(0,0,0,0.65);
+            z-index:9999;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:20px;
+            box-sizing:border-box;
+        `;
+
+        checkoutBox.innerHTML = `
+
+            <div style="
+                background:white;
+                width:100%;
+                max-width:500px;
+                max-height:90vh;
+                overflow-y:auto;
+                border-radius:24px;
+                padding:28px 24px;
+                box-sizing:border-box;
+            ">
+
+                <h2 style="
+                    margin:0 0 8px;
+                    font-size:25px;
+                    text-align:center;
+                ">
+                    🛒 Everstmart Checkout
+                </h2>
+
+                <p style="color:#666;">
+                    Please enter your delivery details.
+                </p>
+
+                <label>
+                    <b>Full Name</b>
+                </label>
+
+                <input
+                    id="customerName"
+                    type="text"
+                    placeholder="Enter your full name"
+                    style="
+                        width:100%;
+                        padding:14px 16px;
+                        margin:8px 0 18px;
+                        box-sizing:border-box;
+                        border:1px solid #ddd;
+                        border-radius:12px;
+                        font-size:16px;
+                    "
+                >
+
+                <label>
+                    <b>Phone Number</b>
+                </label>
+
+                <input
+                    id="customerPhone"
+                    type="tel"
+                    placeholder="Enter your 10-digit phone number"
+                    maxlength="10"
+                    inputmode="numeric"
+                    style="
+                        width:100%;
+                        padding:14px 16px;
+                        margin:8px 0 18px;
+                        box-sizing:border-box;
+                        border:1px solid #ddd;
+                        border-radius:12px;
+                        font-size:16px;
+                    "
+                >
+
+                <label>
+                    <b>Delivery Address</b>
+                </label>
+
+                <textarea
+                    id="customerAddress"
+                    placeholder="Enter your complete delivery address"
+                    rows="4"
+                    style="
+                        width:100%;
+                        padding:14px 16px;
+                        margin:8px 0 18px;
+                        box-sizing:border-box;
+                        border:1px solid #ddd;
+                        border-radius:12px;
+                        font-size:16px;
+                        resize:vertical;
+                    "
+                ></textarea>
+
+                <label>
+                    <b>PIN Code</b>
+                </label>
+
+                <input
+                    id="customerPin"
+                    type="tel"
+                    placeholder="Enter 6-digit PIN code"
+                    maxlength="6"
+                    inputmode="numeric"
+                    style="
+                        width:100%;
+                        padding:14px 16px;
+                        margin:8px 0 18px;
+                        box-sizing:border-box;
+                        border:1px solid #ddd;
+                        border-radius:12px;
+                        font-size:16px;
+                    "
+                >
+
+                <h3 style="margin:20px 0 10px;">
+                    Order Summary
+                </h3>
+
+                <div style="
+                    background:#f8f8f8;
+                    padding:16px;
+                    border:1px solid #eee;
+                    border-radius:14px;
+                    margin-bottom:20px;
+                ">
+
+                    ${orderItems}
+
+                    <hr>
+
+                    <b style="
+                        font-size:20px;
+                        display:block;
+                        text-align:right;
+                    ">
+                        Total:
+                        ₹${total.toLocaleString("en-IN")}
+                    </b>
+
+                </div>
+
+                <button
+                    id="payUPIBtn"
+                    type="button"
+                    style="
+                        width:100%;
+                        padding:15px;
+                        background:#111;
+                        color:white;
+                        border:none;
+                        border-radius:10px;
+                        font-size:17px;
+                        font-weight:bold;
+                        margin-bottom:10px;
+                    "
+                >
+                    💳 Pay with UPI
+                </button>
+
+                <button
+                    id="whatsappOrderBtn"
+                    type="button"
+                    style="
+                        width:100%;
+                        padding:15px;
+                        background:#25D366;
+                        color:white;
+                        border:none;
+                        border-radius:10px;
+                        font-size:17px;
+                        font-weight:bold;
+                        margin-bottom:10px;
+                    "
+                >
+                    📲 Place Order on WhatsApp
+                </button>
+
+                <button
+                    id="closeCheckoutBtn"
+                    type="button"
+                    style="
+                        width:100%;
+                        padding:13px;
+                        background:#eee;
+                        color:#333;
+                        border:none;
+                        border-radius:10px;
+                        font-size:16px;
+                    "
+                >
+                    Cancel
                 </button>
 
             </div>
         `;
 
-    }).join("");
+        document.body.appendChild(checkoutBox);
 
-    cartTotal.innerHTML =
-        `Total: ₹${total.toLocaleString("en-IN")}`;
-}
+        document
+            .getElementById("closeCheckoutBtn")
+            .addEventListener("click", function () {
 
-function increase(name) {
+                checkoutBox.remove();
 
-    const item = cart.find(item => item.name === name);
+            });
 
-    if (!item) {
-        return;
+        document
+            .getElementById("whatsappOrderBtn")
+            .addEventListener("click", function () {
+
+                placeWhatsAppOrder(
+                    grouped,
+                    total
+                );
+
+            });
+
+        document
+            .getElementById("payUPIBtn")
+            .addEventListener("click", function () {
+
+                startRazorpayPayment(
+                    grouped,
+                    total
+                );
+
+            });
+
     }
 
-    const currentQuantity = cart.filter(
-        cartItem => cartItem.name === name
-    ).length;
-
-    const availableStock = stockLimits[name];
-
-    if (
-        availableStock !== undefined &&
-        currentQuantity >= availableStock
-    ) {
-        alert(
-            "Only " +
-            availableStock +
-            " available for " +
-            name +
-            "."
-        );
-        return;
-    }
-
-    cart.push({
-        id: item.id,
-        name: item.name,
-        price: item.price
-    });
-
-    saveCart();
-    displayCart();
-}
-
-function decrease(name) {
-
-    const index = cart.findIndex(item => item.name === name);
-
-    if (index !== -1) {
-        cart.splice(index, 1);
-    }
-
-    saveCart();
-    displayCart();
-}
-
-function removeItem(name) {
-
-    cart = cart.filter(item => item.name !== name);
-
-    saveCart();
-    displayCart();
-}
-
-function checkout() {
-
-  if (cart.length === 0) {
-    alert("Your cart is empty.");
-    return;
-  }
-
-  let total = cart.reduce((sum, item) => sum + item.price, 0);
-
-  let grouped = {};
-
-  cart.forEach(item => {
-    if (!grouped[item.name]) {
-      grouped[item.name] = {
-    name: item.name,
-    price: item.price,
-    quantity: 0
-};
-    }
-
-    grouped[item.name].quantity++;
-  });
-
-  let orderItems = Object.entries(grouped).map(([name, item]) => `
-  <div style="padding:7px 0;">
-    ${name} × ${item.quantity}
-    — ₹${(item.price * item.quantity).toLocaleString("en-IN")}
-  </div>
-`).join("");
-
-  let checkoutBox = document.createElement("div");
-
-  checkoutBox.style.cssText = `
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.65);
-    z-index:9999;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-  `;
-
-  checkoutBox.innerHTML = `
-    <div style="
-      background:white;
-      width:100%;
-      max-width:500px;
-      max-height:90vh;
-      overflow-y:auto;
-      border-radius:24px;
-      padding:28px 24px;
-      box-sizing:border-box;
-    ">
-
-      <h2 style="
-        margin:0 0 8px;
-        font-size:25px;
-        text-align:center;
-      ">
-        🛒 Everstmart Checkout
-      </h2>
-
-      <p style="color:#666;">
-        Please enter your delivery details.
-      </p>
-
-      <label><b>Full Name</b></label>
-
-      <input id="customerName"
-        type="text"
-        placeholder="Enter your full name"
-        style="
-          width:100%;
-          padding:14px 16px;
-          margin:8px 0 18px;
-          box-sizing:border-box;
-          border:1px solid #ddd;
-          border-radius:12px;
-          font-size:16px;
-        ">
-
-      <label><b>Phone Number</b></label>
-
-      <input id="customerPhone"
-        type="tel"
-        placeholder="Enter your 10-digit phone number"
-        maxlength="10"
-        inputmode="numeric"
-        style="
-          width:100%;
-          padding:14px 16px;
-          margin:8px 0 18px;
-          box-sizing:border-box;
-          border:1px solid #ddd;
-          border-radius:12px;
-          font-size:16px;
-        ">
-
-      <label><b>Delivery Address</b></label>
-
-      <textarea id="customerAddress"
-        placeholder="Enter your complete delivery address"
-        rows="4"
-        style="
-          width:100%;
-          padding:14px 16px;
-          margin:8px 0 18px;
-          box-sizing:border-box;
-          border:1px solid #ddd;
-          border-radius:12px;
-          font-size:16px;
-          resize:vertical;
-        "></textarea>
-
-      <label><b>PIN Code</b></label>
-
-      <input id="customerPin"
-        type="tel"
-        placeholder="Enter 6-digit PIN code"
-        maxlength="6"
-        inputmode="numeric"
-        style="
-          width:100%;
-          padding:14px 16px;
-          margin:8px 0 18px;
-          box-sizing:border-box;
-          border:1px solid #ddd;
-          border-radius:12px;
-          font-size:16px;
-        ">
-
-      <h3 style="margin:20px 0 10px;">
-        Order Summary
-      </h3>
-
-      <div style="
-        background:#f8f8f8;
-        padding:16px;
-        border:1px solid #eee;
-        border-radius:14px;
-        margin-bottom:20px;
-      ">
-
-        ${orderItems}
-
-        <hr>
-
-        <b style="
-          font-size:20px;
-          display:block;
-          text-align:right;
-        ">
-          Total: ₹${total.toLocaleString("en-IN")}
-        </b>
-
-      </div>
-
-      <button id="payUPIBtn" style="
-        width:100%;
-        padding:15px;
-        background:#111;
-        color:white;
-        border:none;
-        border-radius:10px;
-        font-size:17px;
-        font-weight:bold;
-        margin-bottom:10px;
-      ">
-        💳 Pay with UPI
-      </button>
-
-      <button id="whatsappOrderBtn" style="
-        width:100%;
-        padding:15px;
-        background:#25D366;
-        color:white;
-        border:none;
-        border-radius:10px;
-        font-size:17px;
-        font-weight:bold;
-        margin-bottom:10px;
-      ">
-        📲 Place Order on WhatsApp
-      </button>
-
-      <button id="closeCheckoutBtn" style="
-        width:100%;
-        padding:13px;
-        background:#eee;
-        color:#333;
-        border:none;
-        border-radius:10px;
-        font-size:16px;
-      ">
-        Cancel
-      </button>
-
-    </div>
-  `;
-
-  document.body.appendChild(checkoutBox);
-
-
-  document.getElementById("closeCheckoutBtn").onclick = function() {
-    checkoutBox.remove();
-  };
-
-
-  document.getElementById("whatsappOrderBtn").onclick = function() {
-
-    let name = document.getElementById("customerName").value.trim();
-    let phone = document.getElementById("customerPhone").value.trim();
-    let address = document.getElementById("customerAddress").value.trim();
-    let pin = document.getElementById("customerPin").value.trim();
-
-    if (!name) {
-      alert("Please enter your full name.");
-      return;
-    }
-
-    if (!/^[6-9]\d{9}$/.test(phone)) {
-      alert("Please enter a valid 10-digit Indian mobile number.");
-      return;
-    }
-
-    if (!address) {
-      alert("Please enter your delivery address.");
-      return;
-    }
-
-    if (!/^[1-9][0-9]{5}$/.test(pin)) {
-      alert("Please enter a valid 6-digit Indian PIN code.");
-      return;
-    }
-
-      let orderId = "EM-" + Date.now();
-
-let orderDate = new Date().toLocaleDateString("en-IN");
-let orderTime = new Date().toLocaleTimeString("en-IN", {
-    hour: "2-digit",
-    minute: "2-digit"
-});
-
-let orderDetails =
-    "🛍️ EVERSTMART ORDER\n\n" +
-    "🆔 Order ID: " + orderId + "\n" +
-    "📅 Date: " + orderDate + "\n" +
-    "🕐 Time: " + orderTime + "\n\n" +
-
-    "👤 CUSTOMER DETAILS\n" +
-    "Name: " + name + "\n" +
-    "Phone: " + phone + "\n" +
-    "Address: " + address + "\n" +
-    "PIN Code: " + pin + "\n\n" +
-
-    "📦 PRODUCTS\n" +
-    Object.values(grouped)
-        .map(item =>
-            item.name +
-            " × " +
-            item.quantity +
-            " — ₹" +
-            (item.price * item.quantity).toLocaleString("en-IN")
-        )
-        .join("\n") +
-
-    "\n\n💰 TOTAL: ₹" +
-    total.toLocaleString("en-IN") +
-    "\n\n" +
-    "Thank you for shopping with Everstmart! 🙏";
-
-    let whatsappURL =
-      "https://wa.me/918580804579?text=" +
-      encodeURIComponent(orderDetails);
-
-    window.location.href = whatsappURL;
-  };
-
-
-  document.getElementById("payUPIBtn").onclick = async function() {
-
-    let name = document.getElementById("customerName").value.trim();
-    let phone = document.getElementById("customerPhone").value.trim();
-    let address = document.getElementById("customerAddress").value.trim();
-    let pin = document.getElementById("customerPin").value.trim();
-
-    if (!name) {
-        alert("Please enter your full name.");
-        return;
-    }
-
-    if (!/^[6-9]\d{9}$/.test(phone)) {
-        alert("Please enter a valid 10-digit Indian mobile number.");
-        return;
-    }
-
-    if (!address) {
-        alert("Please enter your delivery address.");
-        return;
-    }
-
-    if (!/^[1-9][0-9]{5}$/.test(pin)) {
-        alert("Please enter a valid 6-digit Indian PIN code.");
-        return;
-    }
-
-    try {
-
-        // CREATE RAZORPAY ORDER
-        const response = await fetch("/api/razorpay", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                action: "create",
-                amount: total
-            })
-        });
-
-        const orderData = await response.json();
-
-        if (!response.ok) {
-            throw new Error(
-                orderData.error || "Unable to create payment order"
-            );
+    function getCustomerDetails() {
+
+        const name =
+            document.getElementById("customerName")
+                .value.trim();
+
+        const phone =
+            document.getElementById("customerPhone")
+                .value.trim();
+
+        const address =
+            document.getElementById("customerAddress")
+                .value.trim();
+
+        const pin =
+            document.getElementById("customerPin")
+                .value.trim();
+
+        if (!name) {
+            alert("Please enter your full name.");
+            return null;
         }
 
-        // OPEN RAZORPAY CHECKOUT
-        const options = {
+        if (!/^[6-9]\d{9}$/.test(phone)) {
+            alert(
+                "Please enter a valid 10-digit Indian mobile number."
+            );
+            return null;
+        }
 
-            key: orderData.key_id,
+        if (!address) {
+            alert("Please enter your delivery address.");
+            return null;
+        }
 
-            amount: orderData.amount,
+        if (!/^[1-9][0-9]{5}$/.test(pin)) {
+            alert(
+                "Please enter a valid 6-digit Indian PIN code."
+            );
+            return null;
+        }
 
-            currency: orderData.currency,
-
-            name: "Everstmart",
-
-            description: "Everstmart Order",
-
-            order_id: orderData.order_id,
-
-            prefill: {
-                name: name,
-                contact: phone
-            },
-
-            theme: {
-                color: "#111111"
-            },
-
-            handler: async function(paymentResponse) {
-
-                try {
-
-                    // VERIFY PAYMENT
-                    const verifyResponse = await fetch("/api/razorpay", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            action: "verify",
-                            razorpay_order_id:
-                                paymentResponse.razorpay_order_id,
-                            razorpay_payment_id:
-                                paymentResponse.razorpay_payment_id,
-                            razorpay_signature:
-                                paymentResponse.razorpay_signature
-                        })
-                    });
-
-                    const verifyData =
-                        await verifyResponse.json();
-
-                    if (!verifyResponse.ok ||
-                        !verifyData.success) {
-
-                        throw new Error(
-                            "Payment verification failed"
-                        );
-                    }
-
-                    // PAYMENT SUCCESS
-                    let orderId = "EM-" + Date.now();
-
-                    let now = new Date();
-
-                    let orderDate =
-                        now.toLocaleDateString("en-IN");
-
-                    let orderTime =
-                        now.toLocaleTimeString("en-IN", {
-                            hour: "2-digit",
-                            minute: "2-digit"
-                        });
-
-                    let orderDetails =
-                        "🛍️ EVERSTMART ORDER\n\n" +
-
-                        "🆔 Order ID: " +
-                        orderId + "\n" +
-
-                        "📅 Date: " +
-                        orderDate + "\n" +
-
-                        "🕐 Time: " +
-                        orderTime + "\n\n" +
-
-                        "👤 CUSTOMER DETAILS\n" +
-
-                        "Name: " +
-                        name + "\n" +
-
-                        "Phone: " +
-                        phone + "\n" +
-
-                        "Address: " +
-                        address + "\n" +
-
-                        "PIN Code: " +
-                        pin + "\n\n" +
-
-                        "📦 PRODUCTS\n" +
-
-                        Object.values(grouped)
-                            .map(item =>
-                                item.name +
-                                " × " +
-                                item.quantity +
-                                " — ₹" +
-                                (
-                                    item.price *
-                                    item.quantity
-                                ).toLocaleString("en-IN")
-                            )
-                            .join("\n") +
-
-                        "\n\n💰 TOTAL PAID: ₹" +
-                        total.toLocaleString("en-IN") +
-
-                        "\n\n💳 Payment ID: " +
-                        paymentResponse.razorpay_payment_id +
-
-                        "\n\n" +
-
-                        "Thank you for shopping with Everstmart! 🙏";
-
-                    // SAVE COMPLETED ORDER
-                    let completedOrder = {
-                        orderId: orderId,
-                        date: orderDate,
-                        time: orderTime,
-                        name: name,
-                        phone: phone,
-                        address: address,
-                        pin: pin,
-                        total: total,
-                        paymentStatus: "Paid",
-                        razorpayPaymentId:
-                            paymentResponse.razorpay_payment_id,
-                        razorpayOrderId:
-                            paymentResponse.razorpay_order_id
-                    };
-
-                    localStorage.setItem(
-                        "everstmartCompletedOrder",
-                        JSON.stringify(completedOrder)
-                    );
-
-                    /*
-                       IMPORTANT:
-                       Do NOT show "Order Placed"
-                       before WhatsApp is sent.
-                    */
-
-                    let whatsappURL =
-                        "https://wa.me/YOUR_WHATSAPP_NUMBER?text=" +
-                        encodeURIComponent(orderDetails);
-
-                    window.location.href = whatsappURL;
-
-                } catch (error) {
-
-                    console.error(error);
-
-                    alert(
-                        "Payment was received, but verification could not be completed. Please contact Everstmart."
-                    );
-                }
-            },
-
-            modal: {
-                ondismiss: function() {
-                    console.log("Razorpay checkout closed.");
-                }
-            }
+        return {
+            name: name,
+            phone: phone,
+            address: address,
+            pin: pin
         };
-
-        const razorpay = new Razorpay(options);
-
-        razorpay.open();
-
-    } catch (error) {
-
-        console.error(error);
-
-        alert(
-            "Unable to start payment. Please try again."
-        );
     }
-};
 
-displayCart();
+    function createOrderDetails(
+        customer,
+        grouped,
+        total,
+        paymentId
+    ) {
+
+        const orderId =
+            "EM-" + Date.now();
+
+        const now = new Date();
+
+        const orderDate =
+            now.toLocaleDateString("en-IN");
+
+        const orderTime =
+            now.toLocaleTimeString("en-IN", {
+                hour: "2-digit",
+                minute: "2-digit"
+            });
+
+        let products = "";
+
+        Object.values(grouped).forEach(function (item) {
+
+            products +=
+                item.name +
+                " × " +
+                item.quantity +
+                " — ₹" +
+                (
+                    item.price *
+                    item.quantity
+                ).toLocaleString("en-IN") +
+                "\n";
+
+        });
+
+        let details =
+            "🛍️ EVERSTMART ORDER\n\n" +
+
+            "🆔 Order ID: " +
+            orderId +
+            "\n" +
+
+            "📅 Date: " +
+            orderDate +
+            "\n" +
+
+            "🕐 Time: " +
+            orderTime +
+            "\n\n" +
+
+            "👤 CUSTOMER DETAILS\n" +
+
+            "Name: " +
+            customer.name +
+            "\n" +
+
+            "Phone: " +
+            customer.phone +
+            "\n" +
+
+            "Address: " +
+            customer.address +
+            "\n" +
+
+            "PIN Code: " +
+            customer.pin +
+            "\n\n" +
+
+            "📦 PRODUCTS\n" +
+
+            products +
+
+            "\n💰 TOTAL: ₹" +
+            total.toLocaleString("en-IN");
+
+        if (paymentId) {
+
+            details +=
+                "\n\n💳 Payment ID: " +
+                paymentId;
+        }
+
+        details +=
+            "\n\nThank you for shopping with Everstmart! 🙏";
+
+        return {
+            orderId: orderId,
+            date: orderDate,
+            time: orderTime,
+            details: details
+        };
+    }
+
+    function placeWhatsAppOrder(
+        grouped,
+        total
+    ) {
+
+        const customer =
+            getCustomerDetails();
+
+        if (!customer) {
+            return;
+        }
+
+        const order =
+            createOrderDetails(
+                customer,
+                grouped,
+                total,
+                null
+            );
+
+        const whatsappURL =
+            "https://wa.me/918580804579?text=" +
+            encodeURIComponent(order.details);
+
+        window.location.href =
+            whatsappURL;
+    }
+
+    async function startRazorpayPayment(
+        grouped,
+        total
+    ) {
+
+        const customer =
+            getCustomerDetails();
+
+        if (!customer) {
+            return;
+        }
+
+        try {
+
+            const response =
+                await fetch("/api/razorpay", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+                    body: JSON.stringify({
+                        action: "create",
+                        amount: total
+                    })
+                });
+
+            const orderData =
+                await response.json();
+
+            if (!response.ok) {
+
+                throw new Error(
+                    orderData.error ||
+                    "Unable to create payment order"
+                );
+            }
+
+            const options = {
+
+                key: orderData.key_id,
+
+                amount: orderData.amount,
+
+                currency:
+                    orderData.currency,
+
+                name: "Everstmart",
+
+                description:
+                    "Everstmart Order",
+
+                order_id:
+                    orderData.order_id,
+
+                prefill: {
+                    name: customer.name,
+                    contact: customer.phone
+                },
+
+                theme: {
+                    color: "#111111"
+                },
+
+                handler:
+                    async function (
+                        paymentResponse
+                    ) {
+
+                        try {
+
+                            const verifyResponse =
+                                await fetch(
+                                    "/api/razorpay",
+                                    {
+                                        method: "POST",
+                                        headers: {
+                                            "Content-Type":
+                                                "application/json"
+                                        },
+                                        body:
+                                            JSON.stringify({
+                                                action:
+                                                    "verify",
+
+                                                razorpay_order_id:
+                                                    paymentResponse
+                                                        .razorpay_order_id,
+
+                                                razorpay_payment_id:
+                                                    paymentResponse
+                                                        .razorpay_payment_id,
+
+                                                razorpay_signature:
+                                                    paymentResponse
+                                                        .razorpay_signature
+                                            })
+                                    }
+                                );
+
+                            const verifyData =
+                                await verifyResponse
+                                    .json();
+
+                            if (
+                                !verifyResponse.ok ||
+                                !verifyData.success
+                            ) {
+
+                                throw new Error(
+                                    "Payment verification failed"
+                                );
+                            }
+
+                            const order =
+                                createOrderDetails(
+                                    customer,
+                                    grouped,
+                                    total,
+                                    paymentResponse
+                                        .razorpay_payment_id
+                                );
+
+                            const completedOrder = {
+
+                                orderId:
+                                    order.orderId,
+
+                                date:
+                                    order.date,
+
+                                time:
+                                    order.time,
+
+                                name:
+                                    customer.name,
+
+                                phone:
+                                    customer.phone,
+
+                                address:
+                                    customer.address,
+
+                                pin:
+                                    customer.pin,
+
+                                total:
+                                    total,
+
+                                paymentStatus:
+                                    "Paid",
+
+                                razorpayPaymentId:
+                                    paymentResponse
+                                        .razorpay_payment_id,
+
+                                razorpayOrderId:
+                                    paymentResponse
+                                        .razorpay_order_id
+                            };
+
+                            localStorage.setItem(
+                                "everstmartCompletedOrder",
+                                JSON.stringify(
+                                    completedOrder
+                                )
+                            );
+
+                            const whatsappURL =
+                                "https://wa.me/918580804579?text=" +
+                                encodeURIComponent(
+                                    order.details
+                                );
+
+                            window.location.href =
+                                whatsappURL;
+
+                        } catch (error) {
+
+                            console.error(
+                                error
+                            );
+
+                            alert(
+                                "Payment was received, but verification could not be completed. Please contact Everstmart."
+                            );
+                        }
+                    },
+
+                modal: {
+
+                    ondismiss:
+                        function () {
+
+                            console.log(
+                                "Razorpay checkout closed."
+                            );
+
+                        }
+
+                }
+
+            };
+
+            if (
+                typeof Razorpay ===
+                "undefined"
+            ) {
+
+                alert(
+                    "Payment system is not available right now. Please try WhatsApp ordering."
+                );
+
+                return;
+            }
+
+            const razorpay =
+                new Razorpay(options);
+
+            razorpay.open();
+
+        } catch (error) {
+
+            console.error(error);
+
+            alert(
+                "Unable to start payment. Please try again."
+            );
+        }
+    }
+
+    document
+        .getElementById("placeOrderBtn")
+        .addEventListener(
+            "click",
+            openCheckout
+        );
+
+    document
+        .getElementById("cartItems")
+        .addEventListener(
+            "click",
+            function (event) {
+
+                const button =
+                    event.target.closest(
+                        "button"
+                    );
+
+                if (!button) {
+                    return;
+                }
+
+                const action =
+                    button.dataset.action;
+
+                const name =
+                    button.dataset.name;
+
+                if (action === "increase") {
+                    increase(name);
+                }
+
+                if (action === "decrease") {
+                    decrease(name);
+                }
+
+                if (action === "remove") {
+                    removeItem(name);
+                }
+
+            }
+        );
+
+    loadCart();
+
+    displayCart();
+
+})();
 
 </script>
 
