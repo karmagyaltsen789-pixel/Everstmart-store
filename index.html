@@ -841,89 +841,38 @@ box-sizing:border-box;border:1px solid #ddd;border-radius:12px;font-size:16px;ou
 
   document.getElementById("whatsappOrderBtn").onclick = function() {
 
-    let name = document.getElementById("customerName").value.trim();
-    let phone = document.getElementById("customerPhone").value.trim();
-    let address = document.getElementById("customerAddress").value.trim();
-    let pin = document.getElementById("customerPin").value.trim();
+  let groupedOrder = {};
 
-    if (!name) {
-      alert("Please enter your full name.");
-      return;
+  cart.forEach((item) => {
+    if (!groupedOrder[item.name]) {
+      groupedOrder[item.name] = {
+        quantity: 0
+      };
     }
 
-    if (!phone) {
-      alert("Please enter your phone number.");
-      return;
-    }
-if (!/^[6-9]\d{9}$/.test(phone)) {
-  alert("Please enter a valid 10-digit Indian mobile number.");
-  return;
-}
-    if (!address) {
-      alert("Please enter your delivery address.");
-      return;
-    }
-    if (!/^[1-9][0-9]{5}$/.test(pin)) {
-  alert("Please enter a valid 6-digit Indian PIN code.");
-  return;
-}
-    let total = cart.reduce((sum, item) => sum + item.price, 0);
-let groupedOrder = {};
+    groupedOrder[item.name].quantity++;
+  });
 
-cart.forEach((item) => {
-  if (!groupedOrder[item.name]) {
-    groupedOrder[item.name] = {
-      price: item.price,
-      quantity: 0
-    };
-  }
+  let productDetails = Object.entries(groupedOrder)
+    .map(([name, item]) =>
+      `${name} × ${item.quantity}`
+    )
+    .join("\n");
 
-  groupedOrder[item.name].quantity++;
-});
+  let enquiryMessage =
+    "💬 EVERSTMART ENQUIRY\n\n" +
+    "📦 PRODUCT\n" +
+    productDetails +
+    "\n\n" +
+    "💬 Hi, I'm interested in this product and would like to make an enquiry.\n\n" +
+    "Thank you! 🙏";
 
-let orderItems = Object.entries(groupedOrder)
-  .map(([name, item]) =>
-    `${name} × ${item.quantity} — ₹${(item.price * item.quantity).toLocaleString("en-IN")}`
-  )
-  .join("\n");
-    let orderId = "EM-" + Date.now();
+  let whatsappURL =
+    "https://wa.me/918580804579?text=" +
+    encodeURIComponent(enquiryMessage);
 
-let orderDate = new Date().toLocaleDateString("en-IN");
-
-let orderTime = new Date().toLocaleTimeString("en-IN", {
-  hour: "2-digit",
-  minute: "2-digit"
-});
-
-let orderDetails =
-  "🛍️ EVERSTMART ORDER\n\n" +
-  "🆔 Order ID: " + orderId + "\n" +
-  "📅 Date: " + orderDate + "\n" +
-  "🕐 Time: " + orderTime + "\n\n" +
-
-  "👤 CUSTOMER DETAILS\n" +
-  "Name: " + name + "\n" +
-  "Phone: " + phone + "\n" +
-  "Address: " + address + "\n" +
-  "PIN Code: " + pin + "\n\n" +
-
-  "📦 PRODUCTS\n" +
-  orderItems +
-
-  "\n\n💰 TOTAL: ₹" +
-  total.toLocaleString("en-IN") +
-
-  "\n\n" +
-"⚠️ IMPORTANT: Please tap SEND to complete your order." +
-"\n\n" +
-"Thank you for shopping with Everstmart! 🙏";
-
-let whatsappURL =
-  "https://wa.me/918580804579?text=" +
-  encodeURIComponent(orderDetails);
-
-window.location.href = whatsappURL;
-  };
+  window.location.href = whatsappURL;
+};
 }
     async function payWithUPI() {
 
