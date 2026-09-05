@@ -362,7 +362,10 @@ const products = {
         price: 100,
         stock: 50,
         category: "Incense & Herbal Products",
-        image: "Potala big.PNG",
+        images: [
+    "Potala big.PNG",
+    "Potala incense 2.PNG"
+],
         description:
         "Traditional Potala incense made with carefully selected natural ingredients and inspired by the rich incense traditions of Tibet and the Himalayas. Ideal for meditation, relaxation, prayer spaces and creating a peaceful atmosphere at home or work.",
 
@@ -450,11 +453,58 @@ if (product.stock > 0) {
     document.getElementById("productDescription").textContent =
         product.description;
 
-    document.getElementById("productImage").src =
-        product.image;
+    const productImage = document.getElementById("productImage");
 
-    document.getElementById("productImage").alt =
-        product.name;
+const productImages = product.images || [product.image];
+
+productImage.src = productImages[0];
+productImage.alt = product.name;
+
+if (productImages.length > 1) {
+
+    const gallery = document.createElement("div");
+
+    gallery.style.display = "flex";
+    gallery.style.gap = "10px";
+    gallery.style.marginTop = "15px";
+    gallery.style.overflowX = "auto";
+
+    productImages.forEach((image, index) => {
+
+        const thumbnail = document.createElement("img");
+
+        thumbnail.src = image;
+        thumbnail.alt = product.name;
+
+        thumbnail.style.width = "80px";
+        thumbnail.style.height = "80px";
+        thumbnail.style.objectFit = "cover";
+        thumbnail.style.borderRadius = "10px";
+        thumbnail.style.cursor = "pointer";
+        thumbnail.style.border =
+            index === 0
+                ? "2px solid #111"
+                : "2px solid transparent";
+
+        thumbnail.onclick = function () {
+
+            productImage.src = image;
+
+            document.querySelectorAll(".product-thumbnail")
+                .forEach(img => {
+                    img.style.border = "2px solid transparent";
+                });
+
+            thumbnail.style.border = "2px solid #111";
+        };
+
+        thumbnail.className = "product-thumbnail";
+
+        gallery.appendChild(thumbnail);
+    });
+
+    productImage.parentElement.appendChild(gallery);
+}
 
 const detailsBox = document.getElementById("productDetails");
 
