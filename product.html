@@ -360,9 +360,18 @@ const products = {
         id: "EM-INCENSE-001",
         name: "Potala Incense",
         price: 100,
-        stock: 50,
-        category: "Incense & Herbal Products",
-        images: [
+stock: 50,
+category: "Incense & Herbal Products",
+packOptions: [
+    { label: "1 pc", quantity: 1, price: 100 },
+    { label: "5 pcs", quantity: 5, price: 300 },
+    { label: "10 pcs", quantity: 10, price: 600 },
+    { label: "15 pcs", quantity: 15, price: 900 },
+    { label: "20 pcs", quantity: 20, price: 1200 },
+    { label: "1 Box (25 pcs)", quantity: 25, price: 1400 }
+],
+wholesale: true,
+images: [
     "Potala big.PNG",
     "Potala-incense-2.PNG"
 ],
