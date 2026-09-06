@@ -271,23 +271,36 @@ header p {
 
 
 
-            <h3>Quantity</h3>
+    <h3>Choose Pack</h3>
 
-            <div class="quantity-box">
+<select id="packSelect" onchange="selectPack()" style="
+    width:100%;
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+    background:white;
+    margin-bottom:10px;
+">
+    <option value="1">1 pc — ₹100</option>
+    <option value="5">5 pcs — ₹300</option>
+    <option value="10">10 pcs — ₹600</option>
+    <option value="15">15 pcs — ₹900</option>
+    <option value="20">20 pcs — ₹1,200</option>
+    <option value="25">1 Box (25 pcs) — ₹1,400</option>
+</select>
 
-                <button onclick="decreaseQuantity()">
-                    −
-                </button>
-
-                <span id="quantity">
-                    1
-                </span>
-
-                <button onclick="increaseQuantity()">
-                    +
-                </button>
-
-            </div>
+<div style="
+    margin:12px 0 20px;
+    padding:12px 15px;
+    background:#f7f7f7;
+    border-radius:10px;
+    font-size:15px;
+    color:#555;
+">
+    <strong>Wholesale Available</strong><br>
+    Contact us for wholesale pricing.
+</div>
 
 
             <button
@@ -548,40 +561,41 @@ detailsBox.innerHTML = `
 
 
 let quantity = 1;
+let selectedPackPrice = product.price;
 
 
-function increaseQuantity() {
+function selectPack() {
 
-    if (quantity >= product.stock) {
+    const packSelect =
+        document.getElementById("packSelect");
 
-        alert(
-            "Only " +
-            product.stock +
-            " available for " +
-            product.name +
-            "."
+    const selectedQuantity =
+        parseInt(packSelect.value);
+
+    const selectedOption =
+        product.packOptions.find(
+            option => option.quantity === selectedQuantity
         );
 
+    if (!selectedOption) {
         return;
     }
 
-    quantity++;
+    quantity = selectedOption.quantity;
+    selectedPackPrice = selectedOption.price;
 
-    document.getElementById("quantity").textContent =
-        quantity;
+    document.getElementById("productPrice").textContent =
+        "₹" +
+        selectedPackPrice.toLocaleString("en-IN");
 }
 
 
-function decreaseQuantity() {
+if (product.packOptions) {
 
-    if (quantity > 1) {
+    document.getElementById("packSelectorBox").style.display =
+        "block";
 
-        quantity--;
-
-        document.getElementById("quantity").textContent =
-            quantity;
-
-    }
+    selectPack();
 
 }
 
@@ -593,27 +607,77 @@ function addProductToCart() {
             localStorage.getItem("everstmartCart")
         ) || [];
 
-    let existingQuantity = cart.filter(
-        item => item.name === product.name
-    ).length;
+    let packName = "1 pc";
+    let packQuantity = 1;
+    let packPrice = product.price;
 
-    if (existingQuantity + quantity > product.stock) {
+    if (product.packOptions) {
 
-        let remaining = product.stock - existingQuantity;
+        const packSelect =
+            document.getElementById("packSelect");
 
-        if (remaining <= 0) {
-            alert(
-                "Sorry, this product is already at the maximum available stock in your cart."
+        const selectedQuantity =
+            parseInt(packSelect.value);
+
+        const selectedOption =
+            product.packOptions.find(
+                option =>
+                    option.quantity === selectedQuantity
             );
-        } else {
-            alert(
-                "Only " +
-                remaining +
-                " more available for " +
-                product.name +
-                "."
-            );
+
+        if (!selectedOption) {
+            return;
         }
+
+        packQuantity = selectedOption.quantity;
+        packPrice = selectedOption.price;
+
+        if (packQuantity === 25) {
+            packName = "1 Box (25 pcs)";
+        } else {
+            packName = packQuantity + " pcs";
+        }
+    }
+
+    if (packQuantity > product.stock) {
+
+        alert(
+            "Only " +
+            product.stock +
+            " pcs available for " +
+            product.name +
+            "."
+        );
+
+        return;
+    }
+
+    cart.push({
+
+        id: product.id,
+
+        name: product.name,
+
+        price: packPrice,
+
+        pack: packName,
+
+        packQuantity: packQuantity
+
+    });
+
+    localStorage.setItem(
+        "everstmartCart",
+        JSON.stringify(cart)
+    );
+
+    alert(
+        packName +
+        " × " +
+        product.name +
+        " added to cart."
+    );
+}
 
         return;
     }
