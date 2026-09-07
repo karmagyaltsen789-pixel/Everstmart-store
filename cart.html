@@ -237,29 +237,29 @@ header p {
 
     function groupCart() {
 
-        const grouped = {};
+    const grouped = {};
 
-        cart.forEach(function (item) {
+    cart.forEach(function (item) {
 
-            if (!item || !item.name) {
-                return;
-            }
+        if (!item || !item.name) {
+            return;
+        }
 
-            if (!grouped[item.name]) {
+        if (!grouped[item.name]) {
 
-                grouped[item.name] = {
-                    name: item.name,
-                    price: Number(item.price) || 0,
-                    quantity: 0
-                };
-            }
+            grouped[item.name] = {
+                name: item.name,
+                price: Number(item.price) || 0,
+                quantity: 0
+            };
+        }
 
-            grouped[item.name].quantity++;
+        grouped[item.name].quantity++;
 
-        });
+    });
 
-        return grouped;
-    }
+    return grouped;
+}
 
     function calculateTotal() {
 
@@ -272,100 +272,122 @@ header p {
 
     function displayCart() {
 
-        const cartItems =
-            document.getElementById("cartItems");
+    const cartItems =
+        document.getElementById("cartItems");
 
-        const cartTotal =
-            document.getElementById("cartTotal");
+    const cartTotal =
+        document.getElementById("cartTotal");
 
-        if (!cartItems || !cartTotal) {
-            return;
-        }
+    if (!cartItems || !cartTotal) {
+        return;
+    }
 
-        if (cart.length === 0) {
+    if (cart.length === 0) {
 
-            cartItems.innerHTML = `
-                <div class="empty">
-                    🛒 Your cart is empty.
-                    <br><br>
-                    <a href="index.html">
-                        Start Shopping
-                    </a>
+        cartItems.innerHTML = `
+            <div class="empty">
+                🛒 Your cart is empty.
+                <br><br>
+                <a href="index.html">
+                    Start Shopping
+                </a>
+            </div>
+        `;
+
+        cartTotal.innerHTML = "";
+
+        return;
+    }
+
+    const grouped = groupCart();
+
+    let html = "";
+
+    Object.values(grouped).forEach(function (item) {
+
+        const packLabel =
+            item.pack && item.pack !== "single"
+                ? item.pack
+                : "";
+
+        const itemKey =
+            item.name + "|" + (item.pack || "single");
+
+        html += `
+            <div class="cart-item">
+
+                <div class="item-info">
+
+                    <div class="item-name">
+                        ${escapeHTML(item.name)}
+                    </div>
+
+                    ${
+                        packLabel
+                            ? `
+                                <div style="
+                                    margin-top:5px;
+                                    font-size:14px;
+                                    color:#666;
+                                ">
+                                    ${escapeHTML(packLabel)}
+                                </div>
+                              `
+                            : ""
+                    }
+
+                    <div class="item-price">
+                        ₹${item.price.toLocaleString("en-IN")}
+                        × ${item.quantity}
+                    </div>
+
                 </div>
-            `;
 
-            cartTotal.innerHTML = "";
-
-            return;
-        }
-
-        const grouped = groupCart();
-
-        let html = "";
-
-        Object.values(grouped).forEach(function (item) {
-
-            html += `
-                <div class="cart-item">
-
-                    <div class="item-info">
-
-                        <div class="item-name">
-                            ${escapeHTML(item.name)}
-                        </div>
-
-                        <div class="item-price">
-                            ₹${item.price.toLocaleString("en-IN")}
-                            × ${item.quantity}
-                        </div>
-
-                    </div>
-
-                    <div class="quantity">
-
-                        <button
-                            type="button"
-                            data-action="decrease"
-                            data-name="${escapeAttribute(item.name)}">
-                            −
-                        </button>
-
-                        <span>
-                            ${item.quantity}
-                        </span>
-
-                        <button
-                            type="button"
-                            data-action="increase"
-                            data-name="${escapeAttribute(item.name)}">
-                            +
-                        </button>
-
-                    </div>
+                <div class="quantity">
 
                     <button
                         type="button"
-                        class="remove"
-                        data-action="remove"
-                        data-name="${escapeAttribute(item.name)}">
-                        Remove
+                        data-action="decrease"
+                        data-name="${escapeAttribute(item.name)}"
+                        data-pack="${escapeAttribute(item.pack || "single")}">
+                        −
+                    </button>
+
+                    <span>
+                        ${item.quantity}
+                    </span>
+
+                    <button
+                        type="button"
+                        data-action="increase"
+                        data-name="${escapeAttribute(item.name)}"
+                        data-pack="${escapeAttribute(item.pack || "single")}">
+                        +
                     </button>
 
                 </div>
-            `;
-        });
 
-        cartItems.innerHTML = html;
+                <button
+                    type="button"
+                    class="remove"
+                    data-action="remove"
+                    data-name="${escapeAttribute(item.name)}"
+                    data-pack="${escapeAttribute(item.pack || "single")}">
+                    Remove
+                </button>
 
-        const total = calculateTotal();
+            </div>
+        `;
+    });
 
-        cartTotal.innerHTML =
-            "Total: ₹" +
-            total.toLocaleString("en-IN");
+    cartItems.innerHTML = html;
 
-    }
+    const total = calculateTotal();
 
-    function escapeHTML(value) {
+    cartTotal.innerHTML =
+        "Total: ₹" +
+        total.toLocaleString("en-IN");
+}
 
         return String(value)
             .replace(/&/g, "&amp;")
@@ -384,65 +406,75 @@ header p {
             .replace(/>/g, "&gt;");
     }
 
-    function increase(name) {
+    function increase(name, pack) {
 
-        const item =
-            cart.find(function (product) {
-                return product.name === name;
-            });
+    const packKey = pack || "single";
 
-        if (!item) {
-            return;
-        }
+    const item = cart.find(function (product) {
+        return (
+            product.name === name &&
+            (product.pack || "single") === packKey
+        );
+    });
 
-        const currentQuantity =
-            cart.filter(function (product) {
-                return product.name === name;
-            }).length;
-
-        const availableStock =
-            stockLimits[name];
-
-        if (
-            availableStock !== undefined &&
-            currentQuantity >= availableStock
-        ) {
-
-            alert(
-                "Only " +
-                availableStock +
-                " available for " +
-                name +
-                "."
-            );
-
-            return;
-        }
-
-        cart.push({
-            id: item.id,
-            name: item.name,
-            price: item.price
-        });
-
-        saveCart();
-        displayCart();
+    if (!item) {
+        return;
     }
 
-    function decrease(name) {
+    const currentQuantity = cart.filter(function (product) {
+        return (
+            product.name === name &&
+            (product.pack || "single") === packKey
+        );
+    }).length;
 
-        const index =
-            cart.findIndex(function (item) {
-                return item.name === name;
-            });
+    const availableStock = stockLimits[name];
 
-        if (index !== -1) {
-            cart.splice(index, 1);
-        }
+    if (
+        availableStock !== undefined &&
+        currentQuantity >= availableStock
+    ) {
+        alert(
+            "Only " +
+            availableStock +
+            " available for " +
+            name +
+            "."
+        );
 
-        saveCart();
-        displayCart();
+        return;
     }
+
+    cart.push({
+        id: item.id,
+        name: item.name,
+        price: item.price,
+        pack: item.pack || null,
+        packQuantity: Number(item.packQuantity) || 1
+    });
+
+    saveCart();
+    displayCart();
+}
+
+        function decrease(name, pack) {
+
+    const packKey = pack || "single";
+
+    const index = cart.findIndex(function (item) {
+        return (
+            item.name === name &&
+            (item.pack || "single") === packKey
+        );
+    });
+
+    if (index !== -1) {
+        cart.splice(index, 1);
+    }
+
+    saveCart();
+    displayCart();
+}
 
     function removeItem(name) {
 
