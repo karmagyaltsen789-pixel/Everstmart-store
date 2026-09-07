@@ -271,35 +271,34 @@ header p {
 
 
 
+    <div id="packSelectorBox" style="display:none;">
+
     <h3>Choose Pack</h3>
 
-<select id="packSelect" onchange="selectPack()" style="
-    width:100%;
-    padding:14px;
-    border:1px solid #ddd;
-    border-radius:10px;
-    font-size:16px;
-    background:white;
-    margin-bottom:10px;
-">
-    <option value="1">1 pc — ₹100</option>
-    <option value="5">5 pcs — ₹300</option>
-    <option value="10">10 pcs — ₹600</option>
-    <option value="15">15 pcs — ₹900</option>
-    <option value="20">20 pcs — ₹1,200</option>
-    <option value="25">1 Box (25 pcs) — ₹1,400</option>
-</select>
+    <select id="packSelect" onchange="selectPack()" style="
+        width:100%;
+        padding:14px;
+        border:1px solid #ddd;
+        border-radius:10px;
+        font-size:16px;
+        background:white;
+        margin-bottom:10px;
+    ">
+    </select>
 
-<div style="
-    margin:12px 0 20px;
-    padding:12px 15px;
-    background:#f7f7f7;
-    border-radius:10px;
-    font-size:15px;
-    color:#555;
-">
-    <strong>Wholesale Available</strong><br>
-    Contact us for wholesale pricing.
+    <div id="wholesaleBox" style="
+        margin:12px 0 20px;
+        padding:12px 15px;
+        background:#f7f7f7;
+        border-radius:10px;
+        font-size:15px;
+        color:#555;
+        display:none;
+    ">
+        <strong>Wholesale Available</strong><br>
+        Contact us for wholesale pricing.
+    </div>
+
 </div>
 
 
@@ -562,9 +561,64 @@ detailsBox.innerHTML = `
 
 let quantity = 1;
 let selectedPackPrice = product.price;
+let selectedPackName = "1 pc";
 
+
+/* Pack Selector */
+
+function setupPackSelector() {
+
+    const packSelectorBox =
+        document.getElementById("packSelectorBox");
+
+    const packSelect =
+        document.getElementById("packSelect");
+
+    const wholesaleBox =
+        document.getElementById("wholesaleBox");
+
+    if (!product.packOptions) {
+
+        packSelectorBox.style.display = "none";
+
+        return;
+    }
+
+    packSelectorBox.style.display = "block";
+
+    packSelect.innerHTML = "";
+
+    product.packOptions.forEach(option => {
+
+        const optionElement =
+            document.createElement("option");
+
+        optionElement.value = option.quantity;
+
+        optionElement.textContent =
+            option.label +
+            " — ₹" +
+            option.price.toLocaleString("en-IN");
+
+        packSelect.appendChild(optionElement);
+
+    });
+
+    if (product.wholesale) {
+        wholesaleBox.style.display = "block";
+    }
+
+    selectPack();
+}
+
+
+/* Select Pack */
 
 function selectPack() {
+
+    if (!product.packOptions) {
+        return;
+    }
 
     const packSelect =
         document.getElementById("packSelect");
@@ -574,7 +628,8 @@ function selectPack() {
 
     const selectedOption =
         product.packOptions.find(
-            option => option.quantity === selectedQuantity
+            option =>
+                option.quantity === selectedQuantity
         );
 
     if (!selectedOption) {
@@ -582,7 +637,12 @@ function selectPack() {
     }
 
     quantity = selectedOption.quantity;
-    selectedPackPrice = selectedOption.price;
+
+    selectedPackPrice =
+        selectedOption.price;
+
+    selectedPackName =
+        selectedOption.label;
 
     document.getElementById("productPrice").textContent =
         "₹" +
@@ -590,15 +650,7 @@ function selectPack() {
 }
 
 
-if (product.packOptions) {
-
-    document.getElementById("packSelectorBox").style.display =
-        "block";
-
-    selectPack();
-
-}
-
+/* Add to Cart */
 
 function addProductToCart() {
 
@@ -607,9 +659,14 @@ function addProductToCart() {
             localStorage.getItem("everstmartCart")
         ) || [];
 
-    let packName = "1 pc";
-    let packQuantity = 1;
-    let packPrice = product.price;
+
+    let itemQuantity = 1;
+    let itemPrice = product.price;
+    let itemPack = null;
+    let itemPackQuantity = 1;
+
+
+    /* Products with Pack Selector */
 
     if (product.packOptions) {
 
@@ -629,22 +686,29 @@ function addProductToCart() {
             return;
         }
 
-        packQuantity = selectedOption.quantity;
-        packPrice = selectedOption.price;
+        itemQuantity =
+            selectedOption.quantity;
 
-        if (packQuantity === 25) {
-            packName = "1 Box (25 pcs)";
-        } else {
-            packName = packQuantity + " pcs";
-        }
+        itemPrice =
+            selectedOption.price;
+
+        itemPack =
+            selectedOption.label;
+
+        itemPackQuantity =
+            selectedOption.quantity;
+
     }
 
-    if (packQuantity > product.stock) {
+
+    /* Stock Check */
+
+    if (itemQuantity > product.stock) {
 
         alert(
             "Only " +
             product.stock +
-            " pcs available for " +
+            " available for " +
             product.name +
             "."
         );
@@ -652,74 +716,130 @@ function addProductToCart() {
         return;
     }
 
+
+    /* Add Item */
+
     cart.push({
 
         id: product.id,
 
         name: product.name,
 
-        price: packPrice,
+        price: itemPrice,
 
-        pack: packName,
+        quantity: 1,
 
-        packQuantity: packQuantity
+        pack: itemPack,
+
+        packQuantity: itemPackQuantity
 
     });
 
-    localStorage.setItem(
-        "everstmartCart",
-        JSON.stringify(cart)
-    );
-
-    alert(
-        packName +
-        " × " +
-        product.name +
-        " added to cart."
-    );
-}
-
-        return;
-    }
-
-    for (let i = 0; i < quantity; i++) {
-
-        cart.push({
-            id: product.id,
-            name: product.name,
-            price: product.price
-        });
-
-    }
 
     localStorage.setItem(
         "everstmartCart",
         JSON.stringify(cart)
     );
 
-    alert(
-        quantity +
-        " × " +
-        product.name +
-        " added to cart."
-    );
+
+    if (product.packOptions) {
+
+        alert(
+            itemPack +
+            " × " +
+            product.name +
+            " added to cart."
+        );
+
+    } else {
+
+        alert(
+            product.name +
+            " added to cart."
+        );
+
+    }
 
 }
 
+
+/* Buy Now */
 
 function buyProductNow() {
 
     let cart = [];
 
 
-    for (let i = 0; i < quantity; i++) {
+    let itemPrice = product.price;
+    let itemPack = null;
+    let itemPackQuantity = 1;
 
-        cart.push({
-            name: product.name,
-            price: product.price
-        });
+
+    /* Products with Pack Selector */
+
+    if (product.packOptions) {
+
+        const packSelect =
+            document.getElementById("packSelect");
+
+        const selectedQuantity =
+            parseInt(packSelect.value);
+
+        const selectedOption =
+            product.packOptions.find(
+                option =>
+                    option.quantity === selectedQuantity
+            );
+
+        if (!selectedOption) {
+            return;
+        }
+
+        itemPrice =
+            selectedOption.price;
+
+        itemPack =
+            selectedOption.label;
+
+        itemPackQuantity =
+            selectedOption.quantity;
 
     }
+
+
+    /* Stock Check */
+
+    if (itemPackQuantity > product.stock) {
+
+        alert(
+            "Only " +
+            product.stock +
+            " available for " +
+            product.name +
+            "."
+        );
+
+        return;
+    }
+
+
+    /* Buy Now Item */
+
+    cart.push({
+
+        id: product.id,
+
+        name: product.name,
+
+        price: itemPrice,
+
+        quantity: 1,
+
+        pack: itemPack,
+
+        packQuantity: itemPackQuantity
+
+    });
 
 
     localStorage.setItem(
@@ -728,9 +848,15 @@ function buyProductNow() {
     );
 
 
-    window.location.href = "cart.html";
+    window.location.href =
+        "cart.html";
 
 }
+
+
+/* Set up product options */
+
+setupPackSelector();
 
 </script>
 
