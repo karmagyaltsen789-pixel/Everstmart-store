@@ -558,7 +558,7 @@ detailsBox.innerHTML = `
 
 }
 
-let selectedPackPrice = product.price;
+let selectedPackPrice = product ? product.price : 0;
 
 
 /* Pack Selector */
@@ -633,14 +633,8 @@ function selectPack() {
         return;
     }
 
-    quantity = selectedOption.quantity;
-
-    selectedPackPrice =
+        selectedPackPrice =
         selectedOption.price;
-
-    selectedPackName =
-        selectedOption.label;
-
     document.getElementById("productPrice").textContent =
         "₹" +
         selectedPackPrice.toLocaleString("en-IN");
