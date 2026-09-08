@@ -395,6 +395,7 @@ header p {
     cartTotal.innerHTML =
         "Total: ₹" +
         total.toLocaleString("en-IN");
+        }
 
 
 function escapeHTML(value) {
@@ -488,15 +489,20 @@ function escapeAttribute(value) {
     displayCart();
 }
 
-    function removeItem(name) {
+    function removeItem(name, pack) {
 
-        cart = cart.filter(function (item) {
-            return item.name !== name;
-        });
+    const packKey = pack || "single";
 
-        saveCart();
-        displayCart();
-    }
+    cart = cart.filter(function (item) {
+        return !(
+            item.name === name &&
+            (item.pack || "single") === packKey
+        );
+    });
+
+    saveCart();
+    displayCart();
+}
 
     function openCheckout() {
 
@@ -1201,17 +1207,26 @@ function escapeAttribute(value) {
                 const name =
                     button.dataset.name;
 
-                if (action === "increase") {
-                    increase(name);
-                }
+            const action =
+    button.dataset.action;
 
-                if (action === "decrease") {
-                    decrease(name);
-                }
+const name =
+    button.dataset.name;
 
-                if (action === "remove") {
-                    removeItem(name);
-                }
+const pack =
+    button.dataset.pack || "single";
+
+if (action === "increase") {
+    increase(name, pack);
+}
+
+if (action === "decrease") {
+    decrease(name, pack);
+}
+
+if (action === "remove") {
+    removeItem(name, pack);
+}
 
             }
         );
