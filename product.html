@@ -327,7 +327,12 @@ header p {
 
 
 <script>
-
+const defaultShipping = [
+    "🚚 Free Shipping across India",
+    "📦 Processing time: 2–3 business days",
+    "🚚 Estimated delivery: 5–10 business days"
+];
+    
 const products = {
 
         carpet: {
@@ -550,7 +555,7 @@ detailsBox.innerHTML = `
     <h3>Delivery & Shipping</h3>
 
     <ul>
-        ${product.details.shipping.map(info => `
+        ${defaultShipping.map(info => `
             <li>${info}</li>
         `).join("")}
     </ul>
