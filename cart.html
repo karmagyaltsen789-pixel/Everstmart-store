@@ -519,18 +519,28 @@ function escapeAttribute(value) {
 
         let orderItems = "";
 
-        Object.values(grouped).forEach(function (item) {
+Object.values(grouped).forEach(function (item) {
 
-            orderItems += `
-                <div style="padding:7px 0;">
-                    ${escapeHTML(item.name)}
-                    × ${item.quantity}
-                    — ₹${(
-                        item.price * item.quantity
-                    ).toLocaleString("en-IN")}
-                </div>
-            `;
-        });
+    const packLabel =
+        item.pack && item.pack !== "single"
+            ? item.pack
+            : "";
+
+    orderItems += `
+        <div style="padding:7px 0;">
+            ${escapeHTML(item.name)}
+            ${
+                packLabel
+                    ? " — " + escapeHTML(packLabel)
+                    : ""
+            }
+            × ${item.quantity}
+            — ₹${(
+                item.price * item.quantity
+            ).toLocaleString("en-IN")}
+        </div>
+    `;
+});
 
         const checkoutBox =
             document.createElement("div");
