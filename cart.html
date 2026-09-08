@@ -245,22 +245,30 @@ header p {
             return;
         }
 
-        if (!grouped[item.name]) {
+        const packKey =
+            item.pack || "single";
 
-            grouped[item.name] = {
+        const key =
+            item.name + "|" + packKey;
+
+        if (!grouped[key]) {
+
+            grouped[key] = {
                 name: item.name,
                 price: Number(item.price) || 0,
-                quantity: 0
+                quantity: 0,
+                pack: item.pack || null,
+                packQuantity:
+                    Number(item.packQuantity) || 1
             };
         }
 
-        grouped[item.name].quantity++;
+        grouped[key].quantity++;
 
     });
 
     return grouped;
 }
-
     function calculateTotal() {
 
         return cart.reduce(function (sum, item) {
