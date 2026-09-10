@@ -617,8 +617,32 @@ padding: 70px 35px;
         <button onclick="buyNow('Himalayan Aroma 6 Inch', 349)">
             Buy Now
         </button>
+        </div>
+
+    <div class="product">
+      <img src="ratna-incense-10-1.PNG" alt="Ratna Incense 10 Inch">
+
+      <div class="product-content">
+        <h3>Ratna Incense 10 Inch</h3>
+
+        <div class="category">Incense & Herbal Products</div>
+
+        <div class="price">₹250</div>
+
+        <button onclick="window.location.href='product.html?id=ratnaIncense10'">
+          View Details
+        </button>
+
+        <button onclick="addToCart('Ratna Incense 10 Inch', 250)">
+          Add to Cart
+        </button>
+
+        <button onclick="buyNow('Ratna Incense 10 Inch', 250)">
+          Buy Now
+        </button>
+      </div>
     </div>
-</div>
+
   </main>
 
 <section id="about" class="about-section">
@@ -761,7 +785,8 @@ padding: 70px 35px;
 let cart = JSON.parse(localStorage.getItem("everstmartCart")) || [];
     const stockLimits = {
   "Tibetan Traditional Carpet": 10,
-  "Potala Incense": 50
+  "Potala Incense": 50,
+  "Ratna Incense 10 Inch": 20
 };
     function searchProducts() {
   const searchText = document.getElementById("productSearch").value.toLowerCase();
