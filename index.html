@@ -643,7 +643,29 @@ padding: 70px 35px;
         </button>
       </div>
     </div>
+        <div class="product">
+      <img src="redcrystal1.PNG" alt="Red Crystal Incense">
 
+      <div class="product-content">
+        <h3>Red Crystal Incense</h3>
+
+        <div class="category">Incense & Herbal Products</div>
+
+        <div class="price">₹1,099</div>
+
+        <button onclick="window.location.href='product.html?id=redCrystalIncense'">
+          View Details
+        </button>
+
+        <button onclick="addToCart('Red Crystal Incense', 1099)">
+          Add to Cart
+        </button>
+
+        <button onclick="buyNow('Red Crystal Incense', 1099)">
+          Buy Now
+        </button>
+      </div>
+    </div>
   </main>
 
 <section id="about" class="about-section">
@@ -787,7 +809,8 @@ let cart = JSON.parse(localStorage.getItem("everstmartCart")) || [];
     const stockLimits = {
   "Tibetan Traditional Carpet": 10,
   "Potala Incense": 50,
-  "Ratna Incense 10 Inch": 20
+  "Ratna Incense 10 Inch": 20,
+  "Red Crystal Incense": 10
 };
     function searchProducts() {
   const searchText = document.getElementById("productSearch").value.toLowerCase();
