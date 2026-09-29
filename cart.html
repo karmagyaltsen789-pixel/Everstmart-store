@@ -882,21 +882,44 @@ Object.values(grouped).forEach(function (item) {
             });
 
         let products = "";
+let totalGST = 0;
 
-        Object.values(grouped).forEach(function (item) {
+Object.values(grouped).forEach(function (item) {
 
-            products +=
-                item.name +
-                " × " +
-                item.quantity +
-                " — ₹" +
-                (
-                    item.price *
-                    item.quantity
-                ).toLocaleString("en-IN") +
-                "\n";
+    const productGST =
+        gstProducts[item.name];
 
-        });
+    const itemTotal =
+        item.price * item.quantity;
+
+    let gstLine = "";
+
+    if (productGST) {
+
+        const gstAmount =
+            itemTotal -
+            (itemTotal * 100 /
+            (100 + productGST.gstRate));
+
+        totalGST += gstAmount;
+
+        gstLine =
+            " | HSN: " +
+            productGST.hsn +
+            " | GST: " +
+            productGST.gstRate +
+            "% (included)";
+    }
+
+    products +=
+        item.name +
+        " × " +
+        item.quantity +
+        " — ₹" +
+        itemTotal.toLocaleString("en-IN") +
+        gstLine +
+        "\n";
+});
 
         let details =
             "🛍️ EVERSTMART ORDER\n\n" +
@@ -933,10 +956,13 @@ Object.values(grouped).forEach(function (item) {
 
             "📦 PRODUCTS\n" +
 
-            products +
+products +
 
-            "\n💰 TOTAL: ₹" +
-            total.toLocaleString("en-IN");
+"\n🧾 TOTAL GST: ₹" +
+totalGST.toLocaleString("en-IN") +
+
+"\n💰 TOTAL: ₹" +
+total.toLocaleString("en-IN");
 
         if (paymentId) {
 
