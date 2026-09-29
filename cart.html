@@ -959,7 +959,10 @@ Object.values(grouped).forEach(function (item) {
 products +
 
 "\n🧾 TOTAL GST: ₹" +
-totalGST.toLocaleString("en-IN") +
+totalGST.toLocaleString("en-IN", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+}) +
 
 "\n💰 TOTAL: ₹" +
 total.toLocaleString("en-IN");
