@@ -1381,6 +1381,28 @@ box-sizing:border-box;border:1px solid #ddd;border-radius:12px;font-size:16px;ou
   window.location.href = whatsappURL;
 };
 }
+    function buildOrderItems() {
+  const grouped = {};
+
+  cart.forEach(function (item) {
+    const key = item.name + "|" + (item.pack || "single");
+
+    if (!grouped[key]) {
+      grouped[key] = {
+        name: item.name,
+        pack: item.pack || null,
+        packQuantity: Number(item.packQuantity) || 1,
+        price: Number(item.price) || 0,
+        quantity: 0
+      };
+    }
+
+    grouped[key].quantity++;
+  });
+
+  return Object.values(grouped);
+}
+
     async function payWithUPI() {
 
   if (cart.length === 0) {
@@ -1441,7 +1463,14 @@ box-sizing:border-box;border:1px solid #ddd;border-radius:12px;font-size:16px;ou
       },
       body: JSON.stringify({
         action: "create",
-        amount: total
+        amount: total,
+        customer: {
+          name: customerName,
+          phone: customerPhone,
+          address: customerAddress,
+          pin: customerPin
+        },
+        items: buildOrderItems()
       })
     });
 
@@ -1450,9 +1479,11 @@ box-sizing:border-box;border:1px solid #ddd;border-radius:12px;font-size:16px;ou
 
 
     if (!response.ok) {
-      throw new Error(
+      const createError = new Error(
         orderData.error || "Unable to create Razorpay order"
       );
+      createError.userMessage = orderData.error;
+      throw createError;
     }
 
 
@@ -1720,6 +1751,7 @@ alert(
     console.error(error);
 
     alert(
+      error.userMessage ||
       "Unable to start payment. Please try again."
     );
 

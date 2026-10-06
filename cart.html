@@ -1021,7 +1021,17 @@ total.toLocaleString("en-IN");
                     },
                     body: JSON.stringify({
                         action: "create",
-                        amount: total
+                        amount: total,
+                        customer: customer,
+                        items: Object.values(grouped).map(function (item) {
+                            return {
+                                name: item.name,
+                                pack: item.pack,
+                                packQuantity: item.packQuantity,
+                                quantity: item.quantity,
+                                price: item.price
+                            };
+                        })
                     })
                 });
 
@@ -1030,10 +1040,12 @@ total.toLocaleString("en-IN");
 
             if (!response.ok) {
 
-                throw new Error(
+                const createError = new Error(
                     orderData.error ||
                     "Unable to create payment order"
                 );
+                createError.userMessage = orderData.error;
+                throw createError;
             }
 
             const options = {
@@ -1224,6 +1236,7 @@ total.toLocaleString("en-IN");
             console.error(error);
 
             alert(
+                error.userMessage ||
                 "Unable to start payment. Please try again."
             );
         }
