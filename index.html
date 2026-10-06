@@ -541,59 +541,86 @@ button:hover {
     grid-template-columns: 1fr;
   }
 }
-    /* Hero redesign */
+/* Hero redesign */
 .hero {
-  background: url("hero.PNG") center center / cover no-repeat;
-  min-height: 420px;
-  padding: 60px 5%;
-  text-align: left;
+  background:
+    linear-gradient(90deg, rgba(6,22,28,0.7) 0%, rgba(6,22,28,0.25) 40%, rgba(6,22,28,0) 60%),
+    url("hero.PNG") center center / cover no-repeat;
+  aspect-ratio: 8 / 3;
+  min-height: 0;
+  padding: 0 5.8vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  text-align: left;
 }
 
 .hero h2 {
-  max-width: 700px;
-  margin: 0 0 24px 0;
+  max-width: none;
+  margin: 0 0 1.4vw;
   color: white;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(36px, 5vw, 64px);
-  line-height: 1.12;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: clamp(28px, 4vw, 72px);
+  font-weight: 700;
+  line-height: 1.08;
   text-align: left;
 }
 
 .hero p {
-  max-width: 500px;
-  margin: 0 0 28px 0;
+  max-width: none;
+  margin: 0 0 2vw;
   color: white;
-  font-size: clamp(17px, 2vw, 22px);
-  line-height: 1.6;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: clamp(13px, 1.5vw, 26px);
+  line-height: 1.35;
   text-align: left;
 }
 
 .hero-btn {
   display: inline-block;
+  margin-top: 0;
   background: #c3942f;
   color: white;
-  padding: 16px 38px;
+  padding: 0.9em 2.2em;
   border-radius: 4px;
-  font-size: 18px;
-  font-weight: bold;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: clamp(12px, 1.4vw, 22px);
+  font-weight: 600;
+  text-transform: uppercase;
   text-decoration: none;
 }
 
 /* Mobile */
 @media (max-width: 768px) {
   .hero {
-    min-height: 380px;
-    padding: 45px 24px;
+    aspect-ratio: auto;
+    min-height: 420px;
+    padding: 40px 24px;
+    background:
+      linear-gradient(90deg, rgba(6,22,28,0.65) 0%, rgba(6,22,28,0.35) 100%),
+      url("hero.PNG") 65% center / cover no-repeat;
+  }
+
+  .hero h2 {
+    font-size: 38px;
+    margin-bottom: 16px;
+  }
+
+  .hero p {
+    font-size: 17px;
+    margin-bottom: 24px;
+  }
+
+  .hero-btn {
+    font-size: 15px;
   }
 
   #products {
     scroll-margin-top: 430px;
   }
 }
+
 
     </style>
 </head>
