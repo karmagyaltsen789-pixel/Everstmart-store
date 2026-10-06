@@ -7,6 +7,7 @@
   <meta name="description" content="Everstmart offers Tibetan and Himalayan-inspired products, traditional designs, home décor, incense, carpets and unique cultural collections.">
   <meta name="keywords" content="Tibetan products, Tibetan collection, Tibetan incense, Tibetan carpet, Himalayan products, traditional Tibetan products, Tibetan handicrafts">
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="products.js"></script>
 
   <style>
     * {
@@ -767,10 +768,10 @@ button:hover {
   </div>
 </div>
 <div class="product">
-  <img src="Himalayan-Aroma-10-1.PNG" alt="Himalayan Aroma Incense">
+  <img src="Himalayan-Aroma-10-1.PNG" alt="Himalayan Aroma 10 Inch">
 
   <div class="product-content">
-    <h3>Himalayan Aroma Incense</h3>
+    <h3>Himalayan Aroma 10 Inch</h3>
 
     <div class="category">Incense & Herbal Products</div>
 
@@ -780,11 +781,11 @@ button:hover {
       View Details
     </button>
 
-    <button onclick="addToCart('Himalayan Aroma Incense', 500)">
+    <button onclick="addToCart('Himalayan Aroma 10 Inch', 500)">
       Add to Cart
     </button>
 
-    <button onclick="buyNow('Himalayan Aroma Incense', 500)">
+    <button onclick="buyNow('Himalayan Aroma 10 Inch', 500)">
       Buy Now
     </button>
   </div>
@@ -1003,12 +1004,12 @@ button:hover {
 
   <script>
 let cart = JSON.parse(localStorage.getItem("everstmartCart")) || [];
-    const stockLimits = {
-  "Tibetan Traditional Carpet": 10,
-  "Potala Incense": 50,
-  "Ratna Incense 10 Inch": 20,
-  "Red Crystal Incense": 10
-};
+    const stockLimits = {};
+
+    Object.values(window.EVERSTMART_PRODUCTS).forEach(function (p) {
+      stockLimits[p.name] = p.stock;
+    });
+
     function searchProducts() {
   const searchText = document.getElementById("productSearch").value.toLowerCase();
   const products = document.querySelectorAll(".product");
@@ -1027,15 +1028,15 @@ let cart = JSON.parse(localStorage.getItem("everstmartCart")) || [];
 
   function addToCart(name, price) {
 
-  const currentQuantity = cart.filter(
-    item => item.name === name
-  ).length;
+  const currentQuantity = cart
+    .filter(item => item.name === name)
+    .reduce((sum, item) => sum + (Number(item.packQuantity) || 1), 0);
 
   const availableStock = stockLimits[name];
 
   if (
     availableStock !== undefined &&
-    currentQuantity >= availableStock
+    currentQuantity + 1 > availableStock
   ) {
     alert(
       "Only " +
@@ -1150,13 +1151,13 @@ function removeFromCart(index) {
 
   const availableStock = stockLimits[name];
 
-  const currentQuantity = cart.filter(
-    cartItem => cartItem.name === name
-  ).length;
+  const currentQuantity = cart
+    .filter(cartItem => cartItem.name === name)
+    .reduce((sum, cartItem) => sum + (Number(cartItem.packQuantity) || 1), 0);
 
   if (
     availableStock !== undefined &&
-    currentQuantity >= availableStock
+    currentQuantity + 1 > availableStock
   ) {
     alert(
       "Only " +

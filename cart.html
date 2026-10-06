@@ -7,6 +7,7 @@
 <title>Your Cart - Everstmart</title>
 
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="products.js"></script>
 
 <style>
 body {
@@ -191,36 +192,19 @@ header p {
 
     let cart = [];
 
-    const stockLimits = {
-        "Tibetan Traditional Carpet": 10,
-        "Potala Incense": 50
-    };
-    const gstProducts = {
-    "Potala Incense": {
-        hsn: "33074100",
-        gstRate: 5
-    },
+    const stockLimits = {};
+    const gstProducts = {};
 
-    "Himalayan Aroma - 10 Inch": {
-        hsn: "33074100",
-        gstRate: 5
-    },
+    Object.values(window.EVERSTMART_PRODUCTS).forEach(function (p) {
+        stockLimits[p.name] = p.stock;
 
-    "Himalayan Aroma - 6 Inch": {
-        hsn: "33074100",
-        gstRate: 5
-    },
-
-    "Ratna Incense 10 Inch": {
-        hsn: "33074100",
-        gstRate: 5
-    },
-
-    "Red Crystal": {
-        hsn: "33074100",
-        gstRate: 5
-    }
-};
+        if (p.gstRate) {
+            gstProducts[p.name] = {
+                hsn: p.hsn,
+                gstRate: p.gstRate
+            };
+        }
+    });
 
     function loadCart() {
 
@@ -460,18 +444,19 @@ function escapeAttribute(value) {
         return;
     }
 
-    const currentQuantity = cart.filter(function (product) {
-        return (
-            product.name === name &&
-            (product.pack || "single") === packKey
-        );
-    }).length;
+    const currentPieces = cart
+        .filter(function (product) {
+            return product.name === name;
+        })
+        .reduce(function (sum, product) {
+            return sum + (Number(product.packQuantity) || 1);
+        }, 0);
 
     const availableStock = stockLimits[name];
 
     if (
         availableStock !== undefined &&
-        currentQuantity >= availableStock
+        currentPieces + (Number(item.packQuantity) || 1) > availableStock
     ) {
         alert(
             "Only " +
