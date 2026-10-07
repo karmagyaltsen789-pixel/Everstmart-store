@@ -1,6 +1,7 @@
 /* Everstmart — shared product list.
    "collection" decides which Shop-by-Collection card shows the product:
    incense | home-decor | lifestyle | traditional
+   "featured: true" puts a product in the Featured Products row on the homepage.
    Edit prices, stock, packs and GST details HERE only.
    Used by index.html, product.html and cart.html. */
 window.EVERSTMART_PRODUCTS = {
@@ -12,6 +13,7 @@ window.EVERSTMART_PRODUCTS = {
         stock: 10,
         category: "Tibetan Collection",
         collection: "traditional",
+        featured: true,
         image: "Carpet.PNG",
         description:
         "A beautiful Tibetan-inspired traditional carpet featuring distinctive cultural patterns and Himalayan character. Designed to bring warmth, elegance and a timeless Tibetan aesthetic to your home or workspace. The set includes 1 carpet and 2 bolster cushions. Suitable for living rooms, bedrooms, meditation rooms and offices.",
@@ -53,6 +55,7 @@ window.EVERSTMART_PRODUCTS = {
 stock: 50,
 category: "Incense & Herbal Products",
         collection: "incense",
+        featured: true,
 packOptions: [
     { label: "1 pc", quantity: 1, price: 100 },
     { label: "5 pcs", quantity: 5, price: 300 },
@@ -104,6 +107,7 @@ images: [
         stock: 25,
         category: "Incense & Herbal Products",
         collection: "incense",
+        featured: true,
 
         packOptions: [
             { label: "1 pc", quantity: 1, price: 500 },
@@ -192,6 +196,7 @@ images: [
     stock: 10,
     category: "Incense & Herbal Products",
         collection: "incense",
+        featured: true,
 
     packOptions: [
         { label: "1 pc", quantity: 1, price: 1099 },
