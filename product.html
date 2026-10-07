@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Product - Everstmart</title>
+<meta name="description" content="Tibetan and Himalayan-inspired products from Everstmart.">
 
 <style>
 
@@ -342,6 +343,33 @@ const params = new URLSearchParams(window.location.search);
 const productId = params.get("id") || "carpet";
 
 const product = products[productId];
+
+
+/* Page title and description for search engines and browser tabs */
+if (product) {
+
+    document.title = product.name + " | Everstmart";
+
+    let metaDescription = document.querySelector('meta[name="description"]');
+
+    if (!metaDescription) {
+        metaDescription = document.createElement("meta");
+        metaDescription.setAttribute("name", "description");
+        document.head.appendChild(metaDescription);
+    }
+
+    let summary = String(product.description || "").replace(/\s+/g, " ").trim();
+
+    if (summary.length > 155) {
+        summary = summary.slice(0, 155).replace(/\s+\S*$/, "") + "...";
+    }
+
+    metaDescription.setAttribute(
+        "content",
+        product.name + " from Everstmart. " + summary
+    );
+}
+
 
 
 if (!product) {
