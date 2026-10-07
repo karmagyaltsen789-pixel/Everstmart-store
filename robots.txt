@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://everstmart.in/sitemap.xml
+Sitemap: https://www.everstmart.in/sitemap.xml

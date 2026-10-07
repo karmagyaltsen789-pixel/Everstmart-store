@@ -350,6 +350,19 @@ if (product) {
 
     document.title = product.name + " | Everstmart";
 
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+
+    if (!canonicalLink) {
+        canonicalLink = document.createElement("link");
+        canonicalLink.setAttribute("rel", "canonical");
+        document.head.appendChild(canonicalLink);
+    }
+
+    canonicalLink.setAttribute(
+        "href",
+        "https://www.everstmart.in/product.html?id=" + encodeURIComponent(productId)
+    );
+
     let metaDescription = document.querySelector('meta[name="description"]');
 
     if (!metaDescription) {
