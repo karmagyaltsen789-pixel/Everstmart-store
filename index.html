@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Everstmart | Tibetan & Himalayan Products</title>
+  <link rel="preload" as="image" href="hero.jpg">
   <meta name="description" content="Everstmart offers Tibetan and Himalayan-inspired products, traditional designs, home décor, incense, carpets and unique cultural collections.">
   <meta name="keywords" content="Tibetan products, Tibetan collection, Tibetan incense, Tibetan carpet, Himalayan products, traditional Tibetan products, Tibetan handicrafts">
   <script src="products.js"></script>
@@ -87,7 +88,7 @@ nav button {
 }
 
     .hero {
-    background: url("hero.PNG") center center / cover no-repeat;
+    background: url("hero.jpg") center center / cover no-repeat;
     color: white;
     min-height: 360px;
     padding: 70px 60px;
@@ -545,7 +546,7 @@ button:hover {
 .hero {
   background:
     linear-gradient(90deg, rgba(6,22,28,0.7) 0%, rgba(6,22,28,0.25) 40%, rgba(6,22,28,0) 60%),
-    url("hero.PNG") center center / cover no-repeat;
+    url("hero.jpg") center center / cover no-repeat;
   aspect-ratio: 8 / 3;
   min-height: 0;
   padding: 0 5.8vw;
@@ -593,27 +594,44 @@ button:hover {
 
 /* Mobile */
 @media (max-width: 768px) {
+  /* Phone: show the WHOLE picture on top, text underneath */
   .hero {
     aspect-ratio: auto;
-    min-height: 420px;
-    padding: 40px 24px;
-    background:
-      linear-gradient(90deg, rgba(6,22,28,0.65) 0%, rgba(6,22,28,0.35) 100%),
-      url("hero.PNG") 65% center / cover no-repeat;
+    min-height: 0;
+    padding: 0 0 34px;
+    background: #123a38;
+    justify-content: flex-start;
+  }
+
+  .hero::before {
+    content: "";
+    display: block;
+    align-self: stretch;
+    width: 100%;
+    aspect-ratio: 8 / 3;
+    margin-bottom: 24px;
+    background: url("hero.jpg") center center / cover no-repeat;
   }
 
   .hero h2 {
-    font-size: 38px;
-    margin-bottom: 16px;
+    font-size: 34px;
+    line-height: 1.12;
+    margin: 0 24px 12px;
   }
 
   .hero p {
-    font-size: 17px;
-    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 24px 22px;
+  }
+
+  .hero p br {
+    display: none;
   }
 
   .hero-btn {
     font-size: 15px;
+    margin: 0 24px;
   }
 
   #products {
