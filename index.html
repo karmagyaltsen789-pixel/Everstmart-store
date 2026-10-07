@@ -671,6 +671,75 @@ button:hover {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
+
+/* Collection filter bar */
+.collection-bar {
+  max-width: 1000px;
+  margin: 30px auto 0;
+  padding: 0 20px;
+  scroll-margin-top: 400px;
+}
+
+.collection-bar .bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: #faf8f2;
+  border: 1px solid #eadfc4;
+  border-radius: 12px;
+  padding: 14px 18px;
+}
+
+.collection-bar .bar-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  color: #173f3b;
+}
+
+.collection-bar .bar-clear {
+  width: auto;
+  margin: 0;
+  padding: 10px 18px;
+  font-size: 14px;
+  background: #173f3b;
+}
+
+.collection-empty {
+  max-width: 1000px;
+  margin: 24px auto 0;
+  padding: 0 20px;
+}
+
+.collection-empty .empty-inner {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  padding: 32px 24px;
+  text-align: center;
+  color: #555;
+  line-height: 1.6;
+}
+
+.collection-empty a {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 13px 26px;
+  background: #25d366;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.search-empty {
+  max-width: 1000px;
+  margin: 10px auto;
+  padding: 0 20px;
+  text-align: center;
+  color: #666;
+}
     </style>
 </head>
 
@@ -725,45 +794,45 @@ button:hover {
 
       <div class="collection-card">
         <div class="collection-image">
-  <img src="incense-collection.PNG" alt="Incense & Fragrance">
-</div>
+          <img src="collection-incense.jpg" alt="Incense &amp; Fragrance" loading="lazy">
+        </div>
         <div class="collection-content">
           <h3>Incense &amp; Fragrance</h3>
           <p>Traditional Tibetan incense and natural fragrances.</p>
-          <a href="#products" class="collection-btn">Shop Collection →</a>
+          <a href="#products" class="collection-btn" data-collection="incense">Shop Collection →</a>
         </div>
       </div>
 
       <div class="collection-card">
         <div class="collection-image">
-  <span class="collection-emoji">🏠</span>
-</div>
+          <img src="collection-home-decor.jpg" alt="Tibetan Home &amp; Décor" loading="lazy">
+        </div>
         <div class="collection-content">
           <h3>Tibetan Home &amp; Décor</h3>
           <p>Wall hangings, curtains, cushion covers, bowls and more.</p>
-          <a href="#products" class="collection-btn">Shop Collection →</a>
+          <a href="#products" class="collection-btn" data-collection="home-decor">Shop Collection →</a>
         </div>
       </div>
 
       <div class="collection-card">
         <div class="collection-image">
-  <span class="collection-emoji">🏔️</span>
-</div>
+          <img src="collection-lifestyle.jpg" alt="Tibetan &amp; Himalayan Lifestyle" loading="lazy">
+        </div>
         <div class="collection-content">
           <h3>Tibetan &amp; Himalayan Lifestyle</h3>
           <p>Bags, khatas, accessories and everyday essentials.</p>
-          <a href="#products" class="collection-btn">Shop Collection →</a>
+          <a href="#products" class="collection-btn" data-collection="lifestyle">Shop Collection →</a>
         </div>
       </div>
 
       <div class="collection-card">
         <div class="collection-image">
-  <span class="collection-emoji">🪷</span>
-</div>
+          <img src="collection-traditional.jpg" alt="Traditional Collection" loading="lazy">
+        </div>
         <div class="collection-content">
           <h3>Traditional Collection</h3>
           <p>Carpets, prayer flags, statues and traditional Tibetan items.</p>
-          <a href="#products" class="collection-btn">Shop Collection →</a>
+          <a href="#products" class="collection-btn" data-collection="traditional">Shop Collection →</a>
         </div>
       </div>
 
@@ -772,7 +841,9 @@ button:hover {
 </section>
 
 
-     <main id="products" class="products"></main>
+     <div id="collectionBar" class="collection-bar" hidden></div>
+<main id="products" class="products"></main>
+<div id="searchEmpty" class="search-empty" hidden>No products found. Try a different search.</div>
 
 <section id="about" class="about-section">
     <div class="about-container">
@@ -1002,12 +1073,26 @@ function getCardImage(product) {
   return product.image || "";
 }
 
+const COLLECTIONS = {
+  "incense": "Incense & Fragrance",
+  "home-decor": "Tibetan Home & Décor",
+  "lifestyle": "Tibetan & Himalayan Lifestyle",
+  "traditional": "Traditional Collection"
+};
+
+let activeCollection = "all";
+
 function renderProducts() {
   const container = document.getElementById("products");
   let html = "";
 
   getProductKeys().forEach(function (key) {
     const product = window.EVERSTMART_PRODUCTS[key];
+
+    if (activeCollection !== "all" && product.collection !== activeCollection) {
+      return;
+    }
+
     const hasPacks = product.packOptions && product.packOptions.length > 0;
     const soldOut = Number(product.stock) <= 0;
 
@@ -1047,6 +1132,60 @@ function renderProducts() {
   });
 
   container.innerHTML = html;
+
+  renderCollectionBar(html === "");
+}
+
+function renderCollectionBar(isEmpty) {
+  const bar = document.getElementById("collectionBar");
+
+  if (activeCollection === "all") {
+    bar.hidden = true;
+    bar.innerHTML = "";
+    return;
+  }
+
+  const title = COLLECTIONS[activeCollection] || "Collection";
+
+  bar.innerHTML =
+    '<div class="bar-inner">' +
+      '<span class="bar-title">' + escapeHTML(title) + "</span>" +
+      '<button type="button" class="bar-clear" onclick="showCollection(\'all\', true)">Show all products</button>' +
+    "</div>" +
+    (isEmpty
+      ? '<div class="collection-empty"><div class="empty-inner">' +
+        "New products for this collection are coming soon.<br>" +
+        "Looking for something specific? Message us and we will help you find it.<br>" +
+        '<a href="https://wa.me/918580804579" target="_blank" rel="noopener">Ask on WhatsApp</a>' +
+        "</div></div>"
+      : "");
+
+  bar.hidden = false;
+}
+
+function scrollToShop() {
+  const target = document.getElementById("collectionBar").hidden
+    ? document.getElementById("products")
+    : document.getElementById("collectionBar");
+
+  const header = document.querySelector("header");
+  const offset = header ? header.offsetHeight : 0;
+
+  window.scrollTo({
+    top: target.getBoundingClientRect().top + window.pageYOffset - offset - 12,
+    behavior: "smooth"
+  });
+}
+
+function showCollection(key, shouldScroll) {
+  activeCollection = key;
+  document.getElementById("productSearch").value = "";
+  renderProducts();
+  document.getElementById("searchEmpty").hidden = true;
+
+  if (shouldScroll) {
+    scrollToShop();
+  }
 }
 
 /* ---------- Selected pack for a card ---------- */
@@ -1143,16 +1282,46 @@ function buyCardNow(key) {
 function searchProducts() {
   const searchText = document.getElementById("productSearch").value.toLowerCase();
 
+  if (searchText && activeCollection !== "all") {
+    activeCollection = "all";
+    renderProducts();
+  }
+
+  let visible = 0;
+
   document.querySelectorAll(".product").forEach(function (card) {
     const name = card.querySelector("h3").textContent.toLowerCase();
-    card.style.display = name.includes(searchText) ? "" : "none";
+    const match = name.includes(searchText);
+    card.style.display = match ? "" : "none";
+
+    if (match) {
+      visible++;
+    }
   });
+
+  document.getElementById("searchEmpty").hidden = visible > 0;
 }
 
 /* ---------- Start ---------- */
 
 renderProducts();
 updateCartCount();
+
+document.querySelectorAll(".collection-btn").forEach(function (button) {
+  button.addEventListener("click", function (event) {
+    event.preventDefault();
+    showCollection(button.getAttribute("data-collection"), true);
+  });
+});
+
+/* "Shop" in the menu and the hero button show everything again */
+document.querySelectorAll('nav a[href="#products"], .hero-btn').forEach(function (link) {
+  link.addEventListener("click", function () {
+    if (activeCollection !== "all") {
+      showCollection("all", false);
+    }
+  });
+});
 
 window.addEventListener("pageshow", updateCartCount);
 </script>
