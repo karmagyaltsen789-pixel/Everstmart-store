@@ -6,7 +6,6 @@
   <title>Everstmart | Tibetan & Himalayan Products</title>
   <meta name="description" content="Everstmart offers Tibetan and Himalayan-inspired products, traditional designs, home décor, incense, carpets and unique cultural collections.">
   <meta name="keywords" content="Tibetan products, Tibetan collection, Tibetan incense, Tibetan carpet, Himalayan products, traditional Tibetan products, Tibetan handicrafts">
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script src="products.js"></script>
 
   <style>
@@ -623,6 +622,55 @@ button:hover {
 }
 
 
+
+/* Product cards: pack selector, toast */
+.pack-label {
+  display: block;
+  margin: 10px 0 6px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #444;
+}
+
+.pack-select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.stock-note {
+  color: #a33;
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%) translateY(20px);
+  background: #173f3b;
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-size: 15px;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 9999;
+  max-width: 90%;
+  text-align: center;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
     </style>
 </head>
 
@@ -724,143 +772,7 @@ button:hover {
 </section>
 
 
-     <main id="products" class="products"> 
-
-    <div class="product">
-      <img src="Carpet.PNG" alt="Tibetan Traditional Carpet">
-
-      <div class="product-content">
-        <h3>Tibetan Traditional Carpet</h3>
-        <div class="category">Tibetan Collection</div>
-        <div class="price">₹15,000</div>
-        <button onclick="window.location.href='product.html?id=carpet'">
-    View Details
-</button>
-
-        <button onclick="addToCart('Tibetan Traditional Carpet', 15000)">
-          Add to Cart
-        </button>
-        <button onclick="buyNow('Tibetan Traditional Carpet', 15000)">
-    Buy Now
-</button>
-      </div>
-    </div>
-
-    <div class="product">
-  <img src="Potala big.PNG" alt="Potala Incense">
-
-  <div class="product-content">
-    <h3>Potala Incense</h3>
-    <div class="category">Incense & Herbal Products</div>
-    <div class="price">₹100</div>
-
-    <button onclick="window.location.href='product.html?id=potala'">
-      View Details
-    </button>
-
-    <button onclick="addToCart('Potala Incense', 100)">
-      Add to Cart
-    </button>
-
-    <button onclick="buyNow('Potala Incense', 100)">
-      Buy Now
-    </button>
-  </div>
-</div>
-<div class="product">
-  <img src="Himalayan-Aroma-10-1.PNG" alt="Himalayan Aroma 10 Inch">
-
-  <div class="product-content">
-    <h3>Himalayan Aroma 10 Inch</h3>
-
-    <div class="category">Incense & Herbal Products</div>
-
-    <div class="price">₹500</div>
-
-    <button onclick="window.location.href='product.html?id=himalayanAroma'">
-      View Details
-    </button>
-
-    <button onclick="addToCart('Himalayan Aroma 10 Inch', 500)">
-      Add to Cart
-    </button>
-
-    <button onclick="buyNow('Himalayan Aroma 10 Inch', 500)">
-      Buy Now
-    </button>
-  </div>
-</div>
-       <div class="product">
-    <img src="himalayan-aroma-6-1.PNG" alt="Himalayan Aroma 6 Inch">
-
-    <div class="product-content">
-        <h3>Himalayan Aroma 6 Inch</h3>
-
-        <div class="category">Incense & Herbal Products</div>
-
-        <div class="price">₹349</div>
-
-        <button onclick="window.location.href='product.html?id=himalayanAroma6'">
-            View Details
-        </button>
-
-        <button onclick="addToCart('Himalayan Aroma 6 Inch', 349)">
-            Add to Cart
-        </button>
-
-        <button onclick="buyNow('Himalayan Aroma 6 Inch', 349)">
-            Buy Now
-        </button>
-  </div>
-  </div>
-
-  <div class="product">
-      <img src="ratna-incense-10-1.PNG" alt="Ratna Incense 10 Inch">
-
-      <div class="product-content">
-        <h3>Ratna Incense 10 Inch</h3>
-
-        <div class="category">Incense & Herbal Products</div>
-
-        <div class="price">₹250</div>
-
-        <button onclick="window.location.href='product.html?id=ratnaIncense10'">
-          View Details
-        </button>
-
-        <button onclick="addToCart('Ratna Incense 10 Inch', 250)">
-          Add to Cart
-        </button>
-
-        <button onclick="buyNow('Ratna Incense 10 Inch', 250)">
-          Buy Now
-        </button>
-      </div>
-    </div>
-        <div class="product">
-      <img src="redcrystal1.PNG" alt="Red Crystal Incense">
-
-      <div class="product-content">
-        <h3>Red Crystal Incense</h3>
-
-        <div class="category">Incense & Herbal Products</div>
-
-        <div class="price">₹1,099</div>
-
-        <button onclick="window.location.href='product.html?id=redCrystalIncense'">
-          View Details
-        </button>
-
-        <button onclick="addToCart('Red Crystal Incense', 1099)">
-          Add to Cart
-        </button>
-
-        <button onclick="buyNow('Red Crystal Incense', 1099)">
-          Buy Now
-        </button>
-      </div>
-    </div>
-  </main>
+     <main id="products" class="products"></main>
 
 <section id="about" class="about-section">
     <div class="about-container">
@@ -1003,765 +915,247 @@ button:hover {
 
 
   <script>
-let cart = JSON.parse(localStorage.getItem("everstmartCart")) || [];
-    const stockLimits = {};
+/* ---------- Cart helpers (same format as product.html) ---------- */
 
-    Object.values(window.EVERSTMART_PRODUCTS).forEach(function (p) {
-      stockLimits[p.name] = p.stock;
-    });
-
-    function searchProducts() {
-  const searchText = document.getElementById("productSearch").value.toLowerCase();
-  const products = document.querySelectorAll(".product");
-
-  products.forEach(product => {
-    const productName = product.querySelector("h3").textContent.toLowerCase();
-
-    if (productName.includes(searchText)) {
-      product.style.display = "";
-    } else {
-      product.style.display = "none";
-    }
-  });
-}
-
-
-  function addToCart(name, price) {
-
-  const currentQuantity = cart
-    .filter(item => item.name === name)
-    .reduce((sum, item) => sum + (Number(item.packQuantity) || 1), 0);
-
-  const availableStock = stockLimits[name];
-
-  if (
-    availableStock !== undefined &&
-    currentQuantity + 1 > availableStock
-  ) {
-    alert(
-      "Only " +
-      availableStock +
-      " available for " +
-      name +
-      "."
-    );
-    return;
+function getCart() {
+  try {
+    return JSON.parse(localStorage.getItem("everstmartCart")) || [];
+  } catch (error) {
+    return [];
   }
-
-  cart.push({
-    name: name,
-    price: price
-  });
-
-  localStorage.setItem(
-    "everstmartCart",
-    JSON.stringify(cart)
-  );
-
-  updateCart();
-  updateCartCount();
 }
 
-    function updateCartCount() {
+function saveCart(cart) {
+  localStorage.setItem("everstmartCart", JSON.stringify(cart));
+}
+
+function updateCartCount() {
   const cartCount = document.getElementById("cartCount");
 
   if (cartCount) {
-    cartCount.textContent = cart.length;
+    cartCount.textContent = getCart().length;
   }
 }
-    updateCartCount();
 
-    function buyNow(name, price) {
-  cart = [{ name, price }];
+function showToast(message) {
+  let toast = document.getElementById("toast");
 
-  localStorage.setItem(
-    "everstmartCart",
-    JSON.stringify(cart)
-  );
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.id = "toast";
+    toast.className = "toast";
+    document.body.appendChild(toast);
+  }
 
-  checkout();
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  clearTimeout(showToast.timer);
+
+  showToast.timer = setTimeout(function () {
+    toast.classList.remove("show");
+  }, 2200);
 }
 
-function updateCart() {
-  let total = cart.reduce((sum, item) => sum + item.price, 0);
-
-  let cartBox = document.getElementById("cartBox");
-
-  if (!cartBox) {
-    cartBox = document.createElement("div");
-    cartBox.id = "cartBox";
-    cartBox.style.cssText =
-      "position:fixed;bottom:20px;right:20px;background:white;padding:20px;border-radius:15px;box-shadow:0 5px 25px #999;z-index:9999;max-width:320px;font-family:Arial;";
-    document.body.appendChild(cartBox);
-  }
-
-  let groupedCart = {};
-
-cart.forEach((item) => {
-  if (!groupedCart[item.name]) {
-    groupedCart[item.name] = {
-      price: item.price,
-      quantity: 0
-    };
-  }
-  groupedCart[item.name].quantity++;
-});
-
-let items = Object.entries(groupedCart).map(([name, item]) => `
-  <div style="padding:12px 0;border-bottom:1px solid #ddd;">
-    <div style="font-weight:bold;margin-bottom:8px;">
-      ${name} — ₹${item.price.toLocaleString("en-IN")} × ${item.quantity} = ₹${(item.price * item.quantity).toLocaleString("en-IN")}
-    </div>
-
-    <div style="display:flex;align-items:center;gap:10px;">
-      <button onclick="decreaseQuantity('${name}')"
-        style="width:40px;height:35px;font-size:20px;">−</button>
-
-      <span style="font-size:18px;font-weight:bold;">
-        ${item.quantity}
-      </span>
-
-      <button onclick="increaseQuantity('${name}')"
-        style="width:40px;height:35px;font-size:20px;">+</button>
-    </div>
-  </div>
-`).join("");
-
-  cartBox.innerHTML = `
-    <h2>🛒 Your Cart</h2>
-    ${items || "<p>Your cart is empty.</p>"}
-    <h3>Total: ₹${total.toLocaleString("en-IN")}</h3>
-    <button onclick="checkout()" style="width:100%;padding:12px;background:#111;color:white;border:0;border-radius:8px;font-size:16px;">
-      Place Order
-    </button>
-  `;
+function escapeHTML(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 }
 
-function removeFromCart(index) {
-  cart.splice(index, 1);
-  updateCart();
+function formatPrice(amount) {
+  return "₹" + Number(amount).toLocaleString("en-IN");
 }
-    function increaseQuantity(name) {
 
-  const item = cart.find(item => item.name === name);
+/* ---------- Draw product cards from products.js ---------- */
 
-  if (!item) {
-    return;
-  }
+const PRODUCT_ORDER = [
+  "carpet",
+  "potala",
+  "himalayanAroma",
+  "himalayanAroma6",
+  "ratnaIncense10",
+  "redCrystalIncense"
+];
 
-  const availableStock = stockLimits[name];
+function getProductKeys() {
+  const all = Object.keys(window.EVERSTMART_PRODUCTS);
 
-  const currentQuantity = cart
-    .filter(cartItem => cartItem.name === name)
-    .reduce((sum, cartItem) => sum + (Number(cartItem.packQuantity) || 1), 0);
-
-  if (
-    availableStock !== undefined &&
-    currentQuantity + 1 > availableStock
-  ) {
-    alert(
-      "Only " +
-      availableStock +
-      " available for " +
-      name +
-      "."
-    );
-    return;
-  }
-
-  cart.push({
-    name: item.name,
-    price: item.price
+  const ordered = PRODUCT_ORDER.filter(function (key) {
+    return all.includes(key);
   });
 
-  localStorage.setItem(
-    "everstmartCart",
-    JSON.stringify(cart)
-  );
+  const extra = all.filter(function (key) {
+    return !ordered.includes(key);
+  });
 
-  updateCart();
-  updateCartCount();
+  return ordered.concat(extra);
 }
 
-function decreaseQuantity(name) {
-  const index = cart.findIndex(item => item.name === name);
-
-  if (index !== -1) {
-    cart.splice(index, 1);
+function getCardImage(product) {
+  if (product.images && product.images.length) {
+    return product.images[0];
   }
-  localStorage.setItem("everstmartCart", JSON.stringify(cart));
 
-  updateCart();
- updateCartCount();
+  return product.image || "";
 }
 
-function checkout() {
-  if (cart.length === 0) {
-    alert("Your cart is empty.");
-    return;
-  }
+function renderProducts() {
+  const container = document.getElementById("products");
+  let html = "";
 
-  let checkoutBox = document.createElement("div");
-  checkoutBox.id = "everstmartCheckoutBox";
+  getProductKeys().forEach(function (key) {
+    const product = window.EVERSTMART_PRODUCTS[key];
+    const hasPacks = product.packOptions && product.packOptions.length > 0;
+    const soldOut = Number(product.stock) <= 0;
 
-  checkoutBox.style.cssText = `
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.65);
-    z-index:9999;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-  `;
+    let packHTML = "";
 
-  checkoutBox.innerHTML = `
-    <div style="
-      background:white;
-      width:100%;
-      max-width:500px;
-      max-height:90vh;
-      overflow-y:auto;
-      border-radius:24px;
-      padding:28px 24px;
-      box-sizing:border-box;
-    ">
-
-      <h2 style="margin:0 0 8px;font-size:24px;text-align:center;">🛒 Everstmart Checkout</h2>
-
-      <p style="color:#666;">Please enter your delivery details.</p>
-
-      <label><b>Full Name</b></label>
-
-<input id="customerName" type="text"
-  placeholder="Enter your full name"
-  style="width:100%;padding:14px 16px;margin:8px 0 18px;
-  box-sizing:border-box;border:1px solid #ddd;border-radius:12px;
-  font-size:16px;outline:none;">
-
-<label><b>Phone Number</b></label>
-
-<input id="customerPhone" type="tel"
-  placeholder="Enter your phone number"
-  style="width:100%;padding:14px 16px;margin:8px 0 18px;
-  box-sizing:border-box;border:1px solid #ddd;border-radius:12px;
-  font-size:16px;outline:none;">
-
-      <label><b>Delivery Address</b></label>
-      <textarea id="customerAddress"
-        placeholder="Enter your complete delivery address"
-        rows="4"
-        style="width:100%;padding:14px 16px;margin:8px 0 18px;
-box-sizing:border-box;border:1px solid #ddd;border-radius:12px;font-size:16px;outline:none;resize:vertical;">
-</textarea>
-<label><b>PIN Code</b></label>
-
-<input id="customerPin" type="tel"
-  placeholder="Enter 6-digit PIN code"
-  required
-  pattern="[0-9]{6}"
-  maxlength="6"
-  inputmode="numeric"
-  style="width:100%;padding:14px 16px;margin:8px 0 18px;
-  box-sizing:border-box;border:1px solid #ddd;border-radius:12px;
-  font-size:16px;outline:none;">
-      <h3 style="margin:20px 0 10px;font-size:20px;">Order Summary</h3>
-
-      <div style="
-  background:#f8f8f8;
-  padding:16px;
-  border:1px solid #eee;
-  border-radius:14px;
-  margin-bottom:20px;
-">
-        ${Object.entries(
-  cart.reduce((grouped, item) => {
-    if (!grouped[item.name]) {
-      grouped[item.name] = {
-        price: item.price,
-        quantity: 0
-      };
+    if (hasPacks) {
+      packHTML =
+        '<label class="pack-label" for="pack-' + key + '">Select Pack</label>' +
+        '<select class="pack-select" id="pack-' + key + '" onchange="updateCardPrice(\'' + key + '\')">' +
+        product.packOptions.map(function (option) {
+          return (
+            '<option value="' + option.quantity + '">' +
+            escapeHTML(option.label) + " — " + formatPrice(option.price) +
+            "</option>"
+          );
+        }).join("") +
+        "</select>";
     }
 
-    grouped[item.name].quantity++;
-    return grouped;
-  }, {})
-).map(([name, item]) => `
-  <div style="padding:6px 0;">
-    ${name} × ${item.quantity} — ₹${(item.price * item.quantity).toLocaleString("en-IN")}
-  </div>
-`).join("")}
+    const buttonsHTML = soldOut
+      ? '<div class="stock-note">Out of stock</div>'
+      : '<button onclick="addCardToCart(\'' + key + '\')">Add to Cart</button>' +
+        '<button onclick="buyCardNow(\'' + key + '\')">Buy Now</button>';
 
-        <hr>
+    html +=
+      '<div class="product">' +
+        '<img src="' + escapeHTML(getCardImage(product)) + '" alt="' + escapeHTML(product.name) + '">' +
+        '<div class="product-content">' +
+          "<h3>" + escapeHTML(product.name) + "</h3>" +
+          '<div class="category">' + escapeHTML(product.category) + "</div>" +
+          '<div class="price" id="price-' + key + '">' + formatPrice(product.price) + "</div>" +
+          packHTML +
+          '<button onclick="window.location.href=\'product.html?id=' + key + '\'">View Details</button>' +
+          buttonsHTML +
+        "</div>" +
+      "</div>";
+  });
 
-        <b style="font-size:20px;display:block;text-align:right;">
-          Total: ₹${cart.reduce((sum, item) => sum + item.price, 0).toLocaleString("en-IN")}
-        </b>
-      </div>
-       <button onclick="payWithUPI()" style="
-  width:100%;
-  padding:15px;
-  background:#111;
-  color:white;
-  border:none;
-  border-radius:10px;
-  font-size:17px;
-  font-weight:bold;
-  margin-bottom:10px;
-">
-  💳 Pay with UPI
-</button>
-      <button id="whatsappOrderBtn" style="
-        width:100%;
-        padding:15px;
-        background:#25D366;
-        color:white;
-        border:none;
-        border-radius:10px;
-        font-size:17px;
-        font-weight:bold;
-        margin-bottom:10px;
-      ">
-        💬 Direct Enquiry on WhatsApp
-      </button>
+  container.innerHTML = html;
+}
 
-      <button id="closeCheckoutBtn" style="
-        width:100%;
-        padding:13px;
-        background:#eee;
-        color:#333;
-        border:none;
-        border-radius:10px;
-        font-size:16px;
-      ">
-        Cancel
-      </button>
+/* ---------- Selected pack for a card ---------- */
 
-    </div>
-  `;
+function getSelectedOption(key) {
+  const product = window.EVERSTMART_PRODUCTS[key];
 
-  document.body.appendChild(checkoutBox);
+  if (!product.packOptions || !product.packOptions.length) {
+    return { label: null, quantity: 1, price: product.price };
+  }
 
-  document.getElementById("closeCheckoutBtn").onclick = function() {
-    checkoutBox.remove();
+  const select = document.getElementById("pack-" + key);
+  const selectedQuantity = parseInt(select.value);
+
+  return (
+    product.packOptions.find(function (option) {
+      return option.quantity === selectedQuantity;
+    }) || null
+  );
+}
+
+function updateCardPrice(key) {
+  const option = getSelectedOption(key);
+
+  if (option) {
+    document.getElementById("price-" + key).textContent = formatPrice(option.price);
+  }
+}
+
+function buildCartItem(product, option) {
+  return {
+    id: product.id,
+    name: product.name,
+    price: option.price,
+    quantity: 1,
+    pack: option.label,
+    packQuantity: option.quantity
   };
-
-  document.getElementById("whatsappOrderBtn").onclick = function() {
-
-  let groupedOrder = {};
-
-  cart.forEach((item) => {
-    if (!groupedOrder[item.name]) {
-      groupedOrder[item.name] = {
-        quantity: 0
-      };
-    }
-
-    groupedOrder[item.name].quantity++;
-  });
-
-  let productDetails = Object.entries(groupedOrder)
-    .map(([name, item]) =>
-      `${name} × ${item.quantity}`
-    )
-    .join("\n");
-
-  let enquiryMessage =
-    "💬 EVERSTMART ENQUIRY\n\n" +
-    "📦 PRODUCT\n" +
-    productDetails +
-    "\n\n" +
-    "💬 Hi, I'm interested in this product and would like to make an enquiry.\n\n" +
-    "Thank you! 🙏";
-
-  let whatsappURL =
-    "https://wa.me/918580804579?text=" +
-    encodeURIComponent(enquiryMessage);
-
-  window.location.href = whatsappURL;
-};
-}
-    function buildOrderItems() {
-  const grouped = {};
-
-  cart.forEach(function (item) {
-    const key = item.name + "|" + (item.pack || "single");
-
-    if (!grouped[key]) {
-      grouped[key] = {
-        name: item.name,
-        pack: item.pack || null,
-        packQuantity: Number(item.packQuantity) || 1,
-        price: Number(item.price) || 0,
-        quantity: 0
-      };
-    }
-
-    grouped[key].quantity++;
-  });
-
-  return Object.values(grouped);
 }
 
-    async function payWithUPI() {
+/* ---------- Add to Cart / Buy Now ---------- */
 
-  if (cart.length === 0) {
-    alert("Your cart is empty.");
+function addCardToCart(key) {
+  const product = window.EVERSTMART_PRODUCTS[key];
+  const option = getSelectedOption(key);
+
+  if (!option) {
     return;
   }
 
-  // Get customer details
-  const customerName =
-    document.getElementById("customerName").value.trim();
+  const cart = getCart();
 
-  const customerPhone =
-    document.getElementById("customerPhone").value.trim();
+  const piecesInCart = cart
+    .filter(function (item) {
+      return item.name === product.name;
+    })
+    .reduce(function (sum, item) {
+      return sum + (Number(item.packQuantity) || 1);
+    }, 0);
 
-  const customerAddress =
-    document.getElementById("customerAddress").value.trim();
-
-  const customerPin =
-    document.getElementById("customerPin").value.trim();
-
-
-  // Validate customer details
-  if (!customerName) {
-    alert("Please enter your full name.");
+  if (piecesInCart + option.quantity > product.stock) {
+    alert("Only " + product.stock + " available for " + product.name + ".");
     return;
   }
 
-  if (!/^[6-9]\d{9}$/.test(customerPhone)) {
-    alert("Please enter a valid 10-digit Indian mobile number.");
-    return;
-  }
+  cart.push(buildCartItem(product, option));
+  saveCart(cart);
+  updateCartCount();
 
-  if (!customerAddress) {
-    alert("Please enter your delivery address.");
-    return;
-  }
-
-  if (!/^[1-9][0-9]{5}$/.test(customerPin)) {
-    alert("Please enter a valid 6-digit Indian PIN code.");
-    return;
-  }
-
-
-  // Calculate total
-  const total = cart.reduce(
-    (sum, item) => sum + item.price,
-    0
+  showToast(
+    (option.label ? option.label + " × " : "") + product.name + " added to cart."
   );
-
-
-  try {
-
-    // Create Razorpay order on the server
-    const response = await fetch("https://everstmart-store.vercel.app/api/razorpay", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        action: "create",
-        amount: total,
-        customer: {
-          name: customerName,
-          phone: customerPhone,
-          address: customerAddress,
-          pin: customerPin
-        },
-        items: buildOrderItems()
-      })
-    });
-
-
-    const orderData = await response.json();
-
-
-    if (!response.ok) {
-      const createError = new Error(
-        orderData.error || "Unable to create Razorpay order"
-      );
-      createError.userMessage = orderData.error;
-      throw createError;
-    }
-
-
-    // Razorpay Checkout
-    const options = {
-
-      key: orderData.key_id ||
-        "YOUR_RAZORPAY_KEY_ID",
-
-      amount: orderData.amount,
-
-      currency: orderData.currency,
-
-      name: "Everstmart",
-
-      description: "Tibetan Collection",
-
-      order_id: orderData.order_id,
-
-
-      prefill: {
-        name: customerName,
-        contact: customerPhone
-      },
-
-
-      notes: {
-        address: customerAddress,
-        pin: customerPin
-      },
-
-
-      theme: {
-        color: "#111111"
-      },
-
-
-      handler: async function(paymentResponse) {
-
-        try {
-
-          // Verify payment on server
-          const verifyResponse = await fetch(
-            "https://everstmart-store.vercel.app/api/razorpay",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json"
-              },
-              body: JSON.stringify({
-                action: "verify",
-                razorpay_order_id:
-                  paymentResponse.razorpay_order_id,
-                razorpay_payment_id:
-                  paymentResponse.razorpay_payment_id,
-                razorpay_signature:
-                  paymentResponse.razorpay_signature
-              })
-            }
-          );
-
-
-          const verifyData =
-            await verifyResponse.json();
-
-
-          if (
-            !verifyResponse.ok ||
-            !verifyData.success
-          ) {
-            alert(
-              "Payment was received, but verification failed. Please contact Everstmart."
-            );
-            return;
-          }
-
-
-          // Create Everstmart Order ID
-          const orderId =
-            "EM-" + Date.now();
-
-
-          const orderDate =
-            new Date().toLocaleDateString("en-IN");
-
-
-          const orderTime =
-            new Date().toLocaleTimeString(
-              "en-IN",
-              {
-                hour: "2-digit",
-                minute: "2-digit"
-              }
-            );
-
-
-          // Group products
-          let groupedOrder = {};
-
-
-          cart.forEach((item) => {
-
-            if (!groupedOrder[item.name]) {
-
-              groupedOrder[item.name] = {
-                price: item.price,
-                quantity: 0
-              };
-
-            }
-
-            groupedOrder[item.name].quantity++;
-
-          });
-
-
-          const orderItems =
-            Object.entries(groupedOrder)
-              .map(([name, item]) =>
-                `${name} × ${item.quantity} — ₹${(
-                  item.price * item.quantity
-                ).toLocaleString("en-IN")}`
-              )
-              .join("\n");
-
-
-          // Save successful order
-          const completedOrder = {
-
-            orderId: orderId,
-
-            date: orderDate,
-
-            time: orderTime,
-
-            name: customerName,
-
-            phone: customerPhone,
-
-            address: customerAddress,
-
-            pin: customerPin,
-
-            total: total,
-
-            paymentStatus: "Paid",
-
-            razorpayOrderId:
-              paymentResponse.razorpay_order_id,
-
-            razorpayPaymentId:
-              paymentResponse.razorpay_payment_id,
-
-            items: cart
-
-          };
-
-
-          localStorage.setItem(
-            "everstmartCompletedOrder",
-            JSON.stringify(completedOrder)
-          );
-
-
-          // WhatsApp order message
-          const orderDetails =
-
-            "🛍️ EVERSTMART ORDER\n\n" +
-
-            "🆔 Order ID: " +
-            orderId + "\n" +
-
-            "📅 Date: " +
-            orderDate + "\n" +
-
-            "🕐 Time: " +
-            orderTime + "\n\n" +
-
-            "👤 CUSTOMER DETAILS\n" +
-
-            "Name: " +
-            customerName + "\n" +
-
-            "Phone: " +
-            customerPhone + "\n" +
-
-            "Address: " +
-            customerAddress + "\n" +
-
-            "PIN Code: " +
-            customerPin + "\n\n" +
-
-            "📦 PRODUCTS\n" +
-
-            orderItems +
-
-            "\n\n💰 TOTAL PAID: ₹" +
-
-            total.toLocaleString("en-IN") +
-
-            "\n\n💳 PAYMENT ID: " +
-
-            paymentResponse.razorpay_payment_id +
-
-            "\n\n" +
-
-            "Thank you for shopping with Everstmart! 🙏";
-
-
-          const whatsappURL =
-
-            "https://wa.me/918580804579?text=" +
-
-            encodeURIComponent(orderDetails);
-
-
-          // Payment successful — WhatsApp order confirmation required
-alert(
-  "Payment successful! Please send the order message on WhatsApp to complete your order."
-);
-
-
-          // Open WhatsApp
-          window.location.href =
-            whatsappURL;
-
-
-        } catch (error) {
-
-          console.error(error);
-
-          alert(
-            "Payment verification could not be completed. Please contact Everstmart."
-          );
-
-        }
-
-      },
-
-
-      modal: {
-
-        ondismiss: function() {
-
-          console.log(
-            "Razorpay payment window closed."
-          );
-
-        }
-
-      }
-
-    };
-
-
-    const razorpay =
-      new Razorpay(options);
-
-
-    razorpay.open();
-
-
-  } catch (error) {
-
-    console.error(error);
-
-    alert(
-      error.userMessage ||
-      "Unable to start payment. Please try again."
-    );
-
-  }
-
 }
 
-    
+function buyCardNow(key) {
+  const product = window.EVERSTMART_PRODUCTS[key];
+  const option = getSelectedOption(key);
+
+  if (!option) {
+    return;
+  }
+
+  if (option.quantity > product.stock) {
+    alert("Only " + product.stock + " available for " + product.name + ".");
+    return;
+  }
+
+  saveCart([buildCartItem(product, option)]);
+  window.location.href = "cart.html";
+}
+
+/* ---------- Search ---------- */
+
+function searchProducts() {
+  const searchText = document.getElementById("productSearch").value.toLowerCase();
+
+  document.querySelectorAll(".product").forEach(function (card) {
+    const name = card.querySelector("h3").textContent.toLowerCase();
+    card.style.display = name.includes(searchText) ? "" : "none";
+  });
+}
+
+/* ---------- Start ---------- */
+
+renderProducts();
 updateCartCount();
-  </script>
+
+window.addEventListener("pageshow", updateCartCount);
+</script>
 
 </body>
 </html>
