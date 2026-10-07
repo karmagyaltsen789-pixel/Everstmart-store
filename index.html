@@ -295,6 +295,11 @@ button:hover {
   opacity: 0.85;
 }
 
+/* Short intro line under the hero on phones */
+.hero-strip {
+  display: none;
+}
+
 /* Mobile */
 @media (max-width: 700px) {
   .about-section {
@@ -594,38 +599,31 @@ button:hover {
 
 /* Mobile */
 @media (max-width: 768px) {
-  /* Phone: show the WHOLE picture on top, fading into the text below */
+  /* Phone: same look as iPad - text over the picture, scaled to fit */
   .hero {
-    aspect-ratio: auto;
-    min-height: 0;
-    padding: 0 0 30px;
-    background: #0f2a2e;
-    justify-content: flex-start;
-  }
-
-  .hero::before {
-    content: "";
-    display: block;
-    align-self: stretch;
-    width: 100%;
     aspect-ratio: 8 / 3;
-    margin-bottom: 4px;
+    min-height: 0;
+    padding: 0 6vw;
     background:
-      linear-gradient(to bottom, rgba(15,42,46,0) 65%, #0f2a2e 100%),
+      linear-gradient(90deg, rgba(6,22,28,0.78) 0%, rgba(6,22,28,0.45) 55%, rgba(6,22,28,0) 85%),
       url("hero.jpg") center center / cover no-repeat;
+    justify-content: center;
   }
 
   .hero h2 {
-    font-size: 34px;
-    line-height: 1.12;
-    margin: 0 24px 12px;
+    font-size: clamp(18px, 5.7vw, 36px);
+    line-height: 1.1;
+    margin: 0 0 2.2vw;
+    max-width: 62%;
   }
 
   .hero p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 0 24px 22px;
-    color: #f1ead8;
+    display: none;
+    font-size: clamp(10.5px, 3.1vw, 17px);
+    line-height: 1.35;
+    margin: 0 0 3vw;
+    max-width: 58%;
+    color: #fff;
   }
 
   .hero p br {
@@ -633,11 +631,43 @@ button:hover {
   }
 
   .hero-btn {
-    align-self: stretch;
-    margin: 0 24px;
-    padding: 15px 20px;
+    align-self: flex-start;
+    margin: 0;
+    padding: 2.6vw 5vw;
+    font-size: clamp(10px, 3vw, 15px);
     text-align: center;
-    font-size: 15px;
+  }
+
+  /* Phones: intro line sits in a slim strip under the picture */
+  .hero-strip {
+    display: block;
+    background: #0f2a2e;
+    color: #f1ead8;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: clamp(13px, 3.7vw, 16px);
+    line-height: 1.5;
+    text-align: center;
+    padding: 14px 6vw 16px;
+    border-top: 2px solid #c3942f;
+  }
+
+  /* Wider tablets (720px to 768px) have room for the paragraph too */
+  @media (min-width: 720px) {
+    .hero-strip {
+      display: none;
+    }
+
+    .hero p {
+      display: block;
+      font-size: 17px;
+      max-width: 52%;
+      margin-bottom: 20px;
+    }
+
+    .hero-btn {
+      padding: 14px 30px;
+      font-size: 15px;
+    }
   }
 
   #products {
@@ -804,6 +834,7 @@ button:hover {
     <p>Authentic Tibetan and Himalayan-inspired <br>products, traditional designs and <br>timeless collections.</p>
     <a href="#products" class="hero-btn">Shop Now</a>
 </section>
+<div class="hero-strip">Authentic Tibetan and Himalayan-inspired products, traditional designs and timeless collections.</div>
 <!-- Shop by Collection -->
 <section class="collections-section">
   <div class="collections-container">
