@@ -7,6 +7,17 @@
 
 <title>Product - Everstmart</title>
 <meta name="description" content="Tibetan and Himalayan-inspired products from Everstmart.">
+<meta property="og:title" content="Everstmart | Tibetan &amp; Himalayan Products">
+<meta property="og:description" content="Tibetan and Himalayan-inspired products from Everstmart.">
+<meta property="og:url" content="https://www.everstmart.in/">
+<meta property="og:site_name" content="Everstmart">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_IN">
+<meta property="og:image" content="https://www.everstmart.in/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.everstmart.in/og-image.jpg">
 
 <style>
 
@@ -349,6 +360,17 @@ const product = products[productId];
 if (product) {
 
     document.title = product.name + " | Everstmart";
+
+    /* Share-preview tags (updated for crawlers that run scripts) */
+    function setOg(prop, value) {
+        let el = document.querySelector('meta[property="' + prop + '"]');
+        if (!el) { el = document.createElement("meta"); el.setAttribute("property", prop); document.head.appendChild(el); }
+        el.setAttribute("content", value);
+    }
+    setOg("og:title", product.name + " | Everstmart");
+    setOg("og:url", "https://www.everstmart.in/product.html?id=" + encodeURIComponent(productId));
+    const firstImg = (product.images && product.images[0]) || product.image;
+    if (firstImg) setOg("og:image", "https://www.everstmart.in/" + encodeURI(firstImg));
 
     let canonicalLink = document.querySelector('link[rel="canonical"]');
 

@@ -14,7 +14,7 @@ window.EVERSTMART_PRODUCTS = {
         category: "Tibetan Collection",
         collection: "traditional",
         featured: true,
-        image: "Carpet.PNG",
+        image: "carpet.jpg",
         description:
         "A beautiful Tibetan-inspired traditional carpet featuring distinctive cultural patterns and Himalayan character. Designed to bring warmth, elegance and a timeless Tibetan aesthetic to your home or workspace. The set includes 1 carpet and 2 bolster cushions. Suitable for living rooms, bedrooms, meditation rooms and offices.",
 
@@ -66,8 +66,8 @@ packOptions: [
 ],
 wholesale: true,
 images: [
-    "Potala big.PNG",
-    "Potala-incense-2.PNG"
+    "potala-big.jpg",
+    "potala-incense-2.jpg"
 ],
         description:
         "Traditional Potala incense made with carefully selected natural ingredients and inspired by the rich incense traditions of Tibet and the Himalayas. Ideal for meditation, relaxation, prayer spaces and creating a peaceful atmosphere at home or work.",
@@ -117,9 +117,9 @@ images: [
         wholesale: true,
 
         images: [
-            "Himalayan-Aroma-10-1.PNG",
-            "Himalayan-Aroma-10-2.PNG",
-            "Himalayan-Aroma-10-3.PNG"
+            "himalayan-aroma-10-1.jpg",
+            "himalayan-aroma-10-2.jpg",
+            "himalayan-aroma-10-3.jpg"
         ],
 
         description:
@@ -161,8 +161,8 @@ images: [
     wholesale: true,
 
     images: [
-    "himalayan-aroma-6-1.PNG",
-    "himalayan-aroma-6-2.PNG"
+    "himalayan-aroma-6-1.jpg",
+    "himalayan-aroma-6-2.jpg"
 ],
 
     description:
@@ -206,8 +206,8 @@ images: [
     wholesale: true,
 
     images: [
-    "redcrystal1.PNG",
-    "redcrystal2.PNG"
+    "redcrystal1.jpg",
+    "redcrystal2.jpg"
 ],
 
     description:
@@ -248,9 +248,9 @@ images: [
         wholesale: true,
 
         images: [
-            "ratna-incense-10-1.PNG",
-            "ratna-incense-10-2.PNG",
-            "ratna-incense-10-3.PNG"
+            "ratna-incense-10-1.jpg",
+            "ratna-incense-10-2.jpg",
+            "ratna-incense-10-3.jpg"
         ],
 
         description:
