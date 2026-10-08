@@ -192,8 +192,9 @@ nav button {
 
 .product img {
     width: 100%;
+    aspect-ratio: 3 / 2;
     height: auto;
-    object-fit: contain;
+    object-fit: cover;
     display: block;
 }
 
@@ -751,7 +752,7 @@ button:hover {
 }
 
 .featured-card .featured-img {
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 2;
   background: #faf8f2;
   overflow: hidden;
 }
@@ -775,13 +776,14 @@ button:hover {
 .featured-card h3 {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 19px;
   color: #173f3b;
   line-height: 1.25;
   min-height: 2.5em;
+  font-size: clamp(16px, 1.9vw, 19px);
 }
 
 .featured-card .featured-price {
+  margin-top: auto;
   font-size: 17px;
   font-weight: bold;
   color: #222;
@@ -794,7 +796,6 @@ button:hover {
 }
 
 .featured-card .featured-link {
-  margin-top: auto;
   padding-top: 10px;
   color: #b18a3c;
   font-weight: bold;

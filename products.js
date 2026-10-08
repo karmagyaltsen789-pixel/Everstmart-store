@@ -14,7 +14,11 @@ window.EVERSTMART_PRODUCTS = {
         category: "Tibetan Collection",
         collection: "traditional",
         featured: true,
-        image: "carpet.jpg",
+        images: [
+            "carpet-set.jpg",
+            "carpet-living-room.jpg",
+            "carpet-closeup.jpg"
+        ],
         description:
         "A beautiful Tibetan-inspired traditional carpet featuring distinctive cultural patterns and Himalayan character. Designed to bring warmth, elegance and a timeless Tibetan aesthetic to your home or workspace. The set includes 1 carpet and 2 bolster cushions. Suitable for living rooms, bedrooms, meditation rooms and offices.",
 
@@ -66,8 +70,8 @@ packOptions: [
 ],
 wholesale: true,
 images: [
-    "potala-big.jpg",
-    "potala-incense-2.jpg"
+    "potala-single-box.jpg",
+    "potala-stack.jpg"
 ],
         description:
         "Traditional Potala incense made with carefully selected natural ingredients and inspired by the rich incense traditions of Tibet and the Himalayas. Ideal for meditation, relaxation, prayer spaces and creating a peaceful atmosphere at home or work.",
