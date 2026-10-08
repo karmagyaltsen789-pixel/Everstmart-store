@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V0XSN0YN7N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-V0XSN0YN7N');
+</script>
+<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Everstmart | Tibetan & Himalayan Products</title>
   <link rel="canonical" href="https://www.everstmart.in/">
@@ -745,12 +753,14 @@ button:hover {
 .featured-card .featured-img {
   aspect-ratio: 1 / 1;
   background: #faf8f2;
+  overflow: hidden;
 }
 
 .featured-card .featured-img img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
   display: block;
 }
 
@@ -768,6 +778,7 @@ button:hover {
   font-size: 19px;
   color: #173f3b;
   line-height: 1.25;
+  min-height: 2.5em;
 }
 
 .featured-card .featured-price {
