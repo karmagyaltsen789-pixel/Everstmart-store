@@ -965,7 +965,77 @@ button:hover {
   text-align: center;
   color: #666;
 }
-    </style>
+    
+/* ---- Polish: consistent green & gold theme ---- */
+.shop-heading {
+  text-align: center;
+  padding: 45px 20px 0;
+  scroll-margin-top: 180px;
+}
+.shop-heading h2 {
+  margin: 0;
+  color: #173f3b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 38px;
+}
+.product button {
+  background: #173f3b;
+  color: #fff;
+}
+.product button:last-of-type {
+  background: #b18a3c;
+}
+.product button:first-of-type {
+  background: #fff;
+  color: #173f3b;
+  border: 1.5px solid #173f3b;
+}
+.product button:only-of-type {
+  background: #fff;
+  color: #173f3b;
+}
+.product button:hover {
+  opacity: 0.88;
+}
+.about-container h2,
+.shipping-container h2,
+.contact-container h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #173f3b;
+  text-align: center;
+}
+.about-values h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #173f3b;
+}
+.about-btn {
+  background: #173f3b;
+}
+.shipping-section {
+  background: #faf8f2;
+}
+.shipping-container {
+  max-width: 1000px;
+}
+.shipping-grid > div {
+  background: #fff;
+  border: 1px solid #eee7d6;
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+.shipping-grid h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #173f3b;
+}
+@media (min-width: 701px) {
+  .shipping-section { padding: 55px 20px; }
+  .shipping-container h2 { font-size: 34px; margin-bottom: 30px; }
+  .shipping-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+}
+@media (max-width: 600px) {
+  .shop-heading h2 { font-size: 32px; }
+}
+</style>
 </head>
 
 <body>
@@ -1077,6 +1147,11 @@ button:hover {
   </div>
 </section>
 
+<div id="shopHeading" class="shop-heading">
+  <div class="featured-subtitle">Everything We Offer</div>
+  <h2>All Products</h2>
+</div>
+
      <div id="collectionBar" class="collection-bar" hidden></div>
 <main id="products" class="products"></main>
 <div id="searchEmpty" class="search-empty" hidden>No products found. Try a different search.</div>
@@ -1107,7 +1182,7 @@ button:hover {
         <div class="about-values">
 
             <div>
-                <h3>🏔️ Himalayan Inspiration</h3>
+                <h3>Himalayan Inspiration</h3>
                 <p>
                     Inspired by the culture, landscapes and traditions of
                     the Himalayas.
@@ -1115,7 +1190,7 @@ button:hover {
             </div>
 
             <div>
-                <h3>☸️ Tibetan Heritage</h3>
+                <h3>Tibetan Heritage</h3>
                 <p>
                     Celebrating the artistic heritage and timeless designs
                     of Tibet.
@@ -1123,7 +1198,7 @@ button:hover {
             </div>
 
             <div>
-                <h3>✨ Quality &amp; Design</h3>
+                <h3>Quality &amp; Design</h3>
                 <p>
                     Thoughtfully selected products combining character,
                     quality and style.
@@ -1141,26 +1216,26 @@ button:hover {
   <section class="shipping-section">
   <div class="shipping-container">
 
-    <h2>🚚 Delivery & Shipping</h2>
+    <h2>Delivery &amp; Shipping</h2>
 
     <div class="shipping-grid">
 
       <div>
-        <h3>🇮🇳 Free Shipping Across India</h3>
+        <h3>Free Shipping Across India</h3>
         <p>
           Enjoy free shipping on all Everstmart orders across India.
         </p>
       </div>
 
       <div>
-        <h3>📦 Order Processing</h3>
+        <h3>Order Processing</h3>
         <p>
           Orders are generally processed within 2–3 business days.
         </p>
       </div>
 
       <div>
-        <h3>🚚 Estimated Delivery</h3>
+        <h3>Estimated Delivery</h3>
         <p>
           Orders are generally delivered within 5–10 business days,
           depending on the delivery location.
@@ -1168,7 +1243,7 @@ button:hover {
       </div>
 
       <div>
-        <h3>📲 Order Updates</h3>
+        <h3>Order Updates</h3>
         <p>
           We'll provide order updates through WhatsApp after your order is placed.
         </p>
@@ -1401,7 +1476,7 @@ function renderCollectionBar(isEmpty) {
 
 function scrollToShop() {
   const target = document.getElementById("collectionBar").hidden
-    ? document.getElementById("products")
+    ? document.getElementById("shopHeading")
     : document.getElementById("collectionBar");
 
   const header = document.querySelector("header");
@@ -1593,11 +1668,10 @@ document.querySelectorAll(".collection-btn").forEach(function (button) {
 });
 
 /* "Shop" in the menu and the hero button show everything again */
-document.querySelectorAll('nav a[href="#products"], .hero-btn').forEach(function (link) {
-  link.addEventListener("click", function () {
-    if (activeCollection !== "all") {
-      showCollection("all", false);
-    }
+document.querySelectorAll('nav a[href="#products"], .hero-btn, .about-btn').forEach(function (link) {
+  link.addEventListener("click", function (event) {
+    event.preventDefault();
+    showCollection("all", true);
   });
 });
 
