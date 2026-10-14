@@ -1359,7 +1359,14 @@ const PRODUCT_ORDER = [
   "himalayanAroma",
   "himalayanAroma6",
   "ratnaIncense10",
-  "redCrystalIncense"
+  "redCrystalIncense",
+  "prayerFlagLarge",
+  "prayerFlagMedium",
+  "prayerFlagSmall90",
+  "prayerFlagSmall73",
+  "prayerFlagMini55",
+  "prayerFlagMini43",
+  "urdo"
 ];
 
 function getProductKeys() {
@@ -1411,15 +1418,18 @@ function renderProducts() {
 
     if (hasPacks) {
       packHTML =
-        '<label class="pack-label" for="pack-' + key + '">Select Pack</label>' +
+        '<label class="pack-label" for="pack-' + key + '">' + escapeHTML(product.optionTitle || "Select Pack") + '</label>' +
         '<select class="pack-select" id="pack-' + key + '" onchange="updateCardPrice(\'' + key + '\')">' +
-        product.packOptions.map(function (option) {
+        product.packOptions.map(function (option, index) {
           return (
-            '<option value="' + option.quantity + '">' +
+            '<option value="' + index + '">' +
             escapeHTML(option.label) + " — " + formatPrice(option.price) +
             "</option>"
           );
         }).join("") +
+        (product.wholesale
+          ? '<option value="wholesale">Wholesale / Bulk — WhatsApp</option>'
+          : "") +
         "</select>";
     }
 
@@ -1509,16 +1519,37 @@ function getSelectedOption(key) {
   }
 
   const select = document.getElementById("pack-" + key);
-  const selectedQuantity = parseInt(select.value);
-
-  return (
-    product.packOptions.find(function (option) {
-      return option.quantity === selectedQuantity;
-    }) || null
-  );
+  return product.packOptions[parseInt(select.value)] || null;
 }
 
+
+/* Wholesale: open WhatsApp with a ready-made message */
+function openWholesaleChat(productName) {
+  const url =
+    "https://wa.me/918580804579?text=" +
+    encodeURIComponent(
+      "Hi Everstmart, I am interested in wholesale / bulk pricing for " +
+      productName + ". Please share the details."
+    );
+  const win = window.open(url, "_blank");
+  if (!win) {
+    window.location.href = url;
+  }
+}
+
+const lastCardChoice = {};
+
 function updateCardPrice(key) {
+  const select = document.getElementById("pack-" + key);
+
+  if (select.value === "wholesale") {
+    select.value = lastCardChoice[key] || "0";
+    openWholesaleChat(window.EVERSTMART_PRODUCTS[key].name);
+    return;
+  }
+
+  lastCardChoice[key] = select.value;
+
   const option = getSelectedOption(key);
 
   if (option) {
@@ -1567,7 +1598,11 @@ function addCardToCart(key) {
   updateCartCount();
 
   showToast(
-    (option.label ? option.label + " × " : "") + product.name + " added to cart."
+    (option.label
+      ? (product.optionTitle
+          ? product.name + " (" + option.label + ")"
+          : option.label + " × " + product.name)
+      : product.name) + " added to cart."
   );
 }
 

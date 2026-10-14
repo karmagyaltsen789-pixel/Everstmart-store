@@ -278,4 +278,288 @@ images: [
             ]
         }
     },
+
+    prayerFlagLarge: {
+        id: "EM-FLAG-001",
+        name: "Prayer Flag Large (Green Tara)",
+        price: 119,
+        stock: 50,
+        category: "Prayer Flags",
+        collection: "traditional",
+        optionTitle: "Choose Quality",
+        packOptions: [
+            { label: "Standard", quantity: 1, price: 119 },
+            { label: "Premium", quantity: 1, price: 159 }
+        ],
+        wholesale: true,
+        images: [
+            "prayer-flag-large-1.jpg",
+            "prayer-flag-large-2.jpg",
+            "prayer-flag-large-3.jpg",
+            "prayer-flag-large-4.jpg"
+        ],
+        description:
+            "Large Tibetan prayer flags printed with Green Tara and traditional Tibetan prayers. One string of 10 cotton flags in the five traditional colours, made to be hung where the wind can carry their blessings. Choose Standard or Premium quality: Premium has better fabric and a sharper print.",
+        details: {
+            productDetails: [
+                ["Product Type", "Tibetan Prayer Flags (one string)"],
+                ["Flags per String", "10 flags in 5 traditional colours (blue, white, red, green, yellow), repeated twice"],
+                ["Flag Size", "Approx. 39 × 25 cm"],
+                ["Total Length", "Approx. 250 cm (2.5 m)"],
+                ["Available Qualities", "Standard and Premium (Premium has better fabric and sharper print)"],
+                ["Suitable For", "Homes, rooftops, balconies, prayer rooms, shops and vehicles"]
+            ],
+            careInstructions: [
+                "Hang in a clean, high place such as a rooftop, balcony, window, doorway or vehicle.",
+                "Avoid placing prayer flags on the floor or stepping over them.",
+                "Colours will gently fade outdoors with sun and wind; this is traditional and expected.",
+                "When replacing old flags, take them down respectfully."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    prayerFlagMedium: {
+        id: "EM-FLAG-002",
+        name: "Prayer Flag Medium (Wind Horse)",
+        price: 99,
+        stock: 50,
+        category: "Prayer Flags",
+        collection: "traditional",
+        optionTitle: "Choose Quality",
+        packOptions: [
+            { label: "Standard", quantity: 1, price: 99 },
+            { label: "Premium", quantity: 1, price: 120 }
+        ],
+        wholesale: true,
+        images: [
+            "prayer-flag-medium-1.jpg",
+            "prayer-flag-medium-2.jpg",
+            "prayer-flag-medium-3.jpg",
+            "prayer-flag-medium-4.jpg"
+        ],
+        description:
+            "Medium Tibetan prayer flags printed with the Wind Horse (Lungta) and traditional Tibetan prayers. One string of 10 cotton flags in the five traditional colours, with a loop at each end for easy hanging. Choose Standard or Premium quality: Premium has better fabric and a sharper print.",
+        details: {
+            productDetails: [
+                ["Product Type", "Tibetan Prayer Flags (one string)"],
+                ["Flags per String", "10 flags in 5 traditional colours (blue, white, red, green, yellow), repeated twice"],
+                ["Flag Size", "Approx. 23 × 19 cm"],
+                ["Total Length", "Approx. 237 cm (2.37 m)"],
+                ["Available Qualities", "Standard and Premium (Premium has better fabric and sharper print)"],
+                ["Suitable For", "Homes, rooftops, balconies, prayer rooms, shops and vehicles"]
+            ],
+            careInstructions: [
+                "Hang in a clean, high place such as a rooftop, balcony, window, doorway or vehicle.",
+                "Avoid placing prayer flags on the floor or stepping over them.",
+                "Colours will gently fade outdoors with sun and wind; this is traditional and expected.",
+                "When replacing old flags, take them down respectfully."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    prayerFlagSmall90: {
+        id: "EM-FLAG-003",
+        name: "Prayer Flag Small (Om Mani) 90 cm",
+        price: 100,
+        stock: 50,
+        category: "Prayer Flags",
+        collection: "traditional",
+        optionTitle: "Choose Option",
+        packOptions: [
+            { label: "1 string", quantity: 1, price: 100 }
+        ],
+        wholesale: true,
+        images: [
+            "om-mani-90-1.jpg",
+            "om-mani-90-2.jpg",
+            "om-mani-size-chart.jpg"
+        ],
+        description:
+            "Om Mani Padme Hum prayer flags, each flag printed with one syllable of the mantra in Tibetan script with its English name. One string of 10 flags in the five traditional colours. A great size for car windows, doorways, windows and small spaces.",
+        details: {
+            productDetails: [
+                ["Product Type", "Om Mani Padme Hum Prayer Flags (one string)"],
+                ["Flags per String", "10 flags in 5 colours (blue, white, red, green, yellow), repeated twice"],
+                ["Flag Size", "Approx. 12 × 9 cm"],
+                ["Total Length", "Approx. 90 cm"],
+                ["Suitable For", "Car windows, doorways, windows, shops and small spaces"]
+            ],
+            careInstructions: [
+                "Hang in a clean, high place such as a rooftop, balcony, window, doorway or vehicle.",
+                "Avoid placing prayer flags on the floor or stepping over them.",
+                "Colours will gently fade outdoors with sun and wind; this is traditional and expected.",
+                "When replacing old flags, take them down respectfully."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    prayerFlagSmall73: {
+        id: "EM-FLAG-004",
+        name: "Prayer Flag Small (Om Mani) 73 cm",
+        price: 85,
+        stock: 50,
+        category: "Prayer Flags",
+        collection: "traditional",
+        optionTitle: "Choose Option",
+        packOptions: [
+            { label: "1 string", quantity: 1, price: 85 }
+        ],
+        wholesale: true,
+        images: [
+            "om-mani-73-1.jpg",
+            "om-mani-73-2.jpg",
+            "om-mani-size-chart.jpg"
+        ],
+        description:
+            "Om Mani Padme Hum prayer flags, each flag printed with one syllable of the mantra in Tibetan script with its English name. One string of 10 flags in the five traditional colours. A handy size for bikes, cars, windows and desks.",
+        details: {
+            productDetails: [
+                ["Product Type", "Om Mani Padme Hum Prayer Flags (one string)"],
+                ["Flags per String", "10 flags in 5 colours (blue, white, red, green, yellow), repeated twice"],
+                ["Flag Size", "Approx. 10 × 7 cm"],
+                ["Total Length", "Approx. 73 cm"],
+                ["Suitable For", "Motorbikes, cars, windows, desks and small spaces"]
+            ],
+            careInstructions: [
+                "Hang in a clean, high place such as a rooftop, balcony, window, doorway or vehicle.",
+                "Avoid placing prayer flags on the floor or stepping over them.",
+                "Colours will gently fade outdoors with sun and wind; this is traditional and expected.",
+                "When replacing old flags, take them down respectfully."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    prayerFlagMini55: {
+        id: "EM-FLAG-005",
+        name: "Prayer Flag Mini (Om Mani) 55 cm",
+        price: 75,
+        stock: 50,
+        category: "Prayer Flags",
+        collection: "traditional",
+        optionTitle: "Choose Option",
+        packOptions: [
+            { label: "1 string", quantity: 1, price: 75 }
+        ],
+        wholesale: true,
+        images: [
+            "om-mani-55-1.jpg",
+            "om-mani-size-chart.jpg"
+        ],
+        description:
+            "Om Mani Padme Hum prayer flags, each flag printed with one syllable of the mantra in Tibetan script with its English name. One string of 10 flags in the five traditional colours. A mini size for car dashboards, mirrors, shelves and altars.",
+        details: {
+            productDetails: [
+                ["Product Type", "Om Mani Padme Hum Prayer Flags (one string)"],
+                ["Flags per String", "10 flags in 5 colours (blue, white, red, green, yellow), repeated twice"],
+                ["Flag Size", "Approx. 6.5 × 5 cm"],
+                ["Total Length", "Approx. 55 cm"],
+                ["Suitable For", "Car mirrors and dashboards, shelves, altars and desks"]
+            ],
+            careInstructions: [
+                "Hang in a clean, high place such as a rooftop, balcony, window, doorway or vehicle.",
+                "Avoid placing prayer flags on the floor or stepping over them.",
+                "Colours will gently fade outdoors with sun and wind; this is traditional and expected.",
+                "When replacing old flags, take them down respectfully."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    prayerFlagMini43: {
+        id: "EM-FLAG-006",
+        name: "Prayer Flag Mini (Om Mani) 43 cm",
+        price: 50,
+        stock: 50,
+        category: "Prayer Flags",
+        collection: "traditional",
+        optionTitle: "Choose Option",
+        packOptions: [
+            { label: "1 string", quantity: 1, price: 50 }
+        ],
+        wholesale: true,
+        images: [
+            "om-mani-43-1.jpg",
+            "om-mani-size-chart.jpg"
+        ],
+        description:
+            "Om Mani Padme Hum prayer flags, each flag printed with one syllable of the mantra in Tibetan script with its English name. One string of 10 flags in the five traditional colours. Our smallest size, perfect for car mirrors, shelves, altars and gifts.",
+        details: {
+            productDetails: [
+                ["Product Type", "Om Mani Padme Hum Prayer Flags (one string)"],
+                ["Flags per String", "10 flags in 5 colours (blue, white, red, green, yellow), repeated twice"],
+                ["Flag Size", "Approx. 5.5 × 3.8 cm"],
+                ["Total Length", "Approx. 43 cm"],
+                ["Suitable For", "Car mirrors, shelves, altars, desks and gifts"]
+            ],
+            careInstructions: [
+                "Hang in a clean, high place such as a rooftop, balcony, window, doorway or vehicle.",
+                "Avoid placing prayer flags on the floor or stepping over them.",
+                "Colours will gently fade outdoors with sun and wind; this is traditional and expected.",
+                "When replacing old flags, take them down respectfully."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    urdo: {
+        id: "EM-TRAD-001",
+        name: "Handwoven Tibetan Urdo (Yak Herder's Sling)",
+        price: 1500,
+        stock: 10,
+        category: "Tibetan Collection",
+        collection: "traditional",
+        wholesale: false,
+        images: [
+            "urdo-1.jpg",
+            "urdo-2.jpg"
+        ],
+        description:
+            "A handwoven Tibetan urdo, the traditional sling carried by herders on the high Himalayan grasslands to guide their yaks and sheep. Woven by hand in bold black-and-white patterns, it is a striking piece of nomadic heritage to display at home or give as a meaningful gift.",
+        details: {
+            productDetails: [
+                ["Product Type", "Traditional Tibetan Urdo (Yak Herder's Sling)"],
+                ["Making", "Handwoven"],
+                ["Design", "Traditional black-and-white woven patterns"],
+                ["Suitable For", "Display, collection and gifting"]
+            ],
+            careInstructions: [
+                "Store in a dry place away from moisture.",
+                "Clean gently by hand; do not machine wash.",
+                "Keep out of reach of children."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
 };

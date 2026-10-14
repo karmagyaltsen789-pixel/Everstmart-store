@@ -293,7 +293,7 @@ header p {
 
     <div id="packSelectorBox" style="display:none;">
 
-    <h3>Choose Pack</h3>
+    <h3 id="packTitle">Choose Pack</h3>
 
     <select id="packSelect" onchange="selectPack()" style="
         width:100%;
@@ -316,7 +316,7 @@ header p {
         display:none;
     ">
         <strong>Wholesale Available</strong><br>
-        Contact us for wholesale pricing.
+        <a href="#" onclick="openWholesaleChat(product.name); return false;" style="color:#1a7f37;font-weight:600;">Chat on WhatsApp for bulk pricing →</a>
     </div>
 
 </div>
@@ -548,6 +548,22 @@ detailsBox.innerHTML = `
 }
 
 let selectedPackPrice = product ? product.price : 0;
+let lastPackIndex = "0";
+
+/* Wholesale: open WhatsApp with a ready-made message */
+function openWholesaleChat(productName) {
+    const url =
+        "https://wa.me/918580804579?text=" +
+        encodeURIComponent(
+            "Hi Everstmart, I am interested in wholesale / bulk pricing for " +
+            productName + ". Please share the details."
+        );
+    const win = window.open(url, "_blank");
+    if (!win) {
+        window.location.href = url;
+    }
+}
+
 
 
 /* Pack Selector */
@@ -565,21 +581,32 @@ function setupPackSelector() {
 
     if (!product.packOptions) {
 
-        packSelectorBox.style.display = "none";
+        /* No options: still show the wholesale note if this product has one */
+        if (product.wholesale) {
+            packSelectorBox.style.display = "block";
+            document.getElementById("packTitle").style.display = "none";
+            packSelect.style.display = "none";
+            wholesaleBox.style.display = "block";
+        } else {
+            packSelectorBox.style.display = "none";
+        }
 
         return;
     }
 
     packSelectorBox.style.display = "block";
 
+    document.getElementById("packTitle").textContent =
+        product.optionTitle || "Choose Pack";
+
     packSelect.innerHTML = "";
 
-    product.packOptions.forEach(option => {
+    product.packOptions.forEach((option, index) => {
 
         const optionElement =
             document.createElement("option");
 
-        optionElement.value = option.quantity;
+        optionElement.value = index;
 
         optionElement.textContent =
             option.label +
@@ -589,6 +616,19 @@ function setupPackSelector() {
         packSelect.appendChild(optionElement);
 
     });
+
+    if (product.wholesale) {
+
+        const wholesaleOption =
+            document.createElement("option");
+
+        wholesaleOption.value = "wholesale";
+
+        wholesaleOption.textContent =
+            "Wholesale / Bulk order — chat on WhatsApp";
+
+        packSelect.appendChild(wholesaleOption);
+    }
 
     if (product.wholesale) {
         wholesaleBox.style.display = "block";
@@ -609,14 +649,16 @@ function selectPack() {
     const packSelect =
         document.getElementById("packSelect");
 
-    const selectedQuantity =
-        parseInt(packSelect.value);
+    if (packSelect.value === "wholesale") {
+        packSelect.value = lastPackIndex;
+        openWholesaleChat(product.name);
+        return;
+    }
+
+    lastPackIndex = packSelect.value;
 
     const selectedOption =
-        product.packOptions.find(
-            option =>
-                option.quantity === selectedQuantity
-        );
+        product.packOptions[parseInt(packSelect.value)];
 
     if (!selectedOption) {
         return;
@@ -653,14 +695,8 @@ function addProductToCart() {
         const packSelect =
             document.getElementById("packSelect");
 
-        const selectedQuantity =
-            parseInt(packSelect.value);
-
         const selectedOption =
-            product.packOptions.find(
-                option =>
-                    option.quantity === selectedQuantity
-            );
+            product.packOptions[parseInt(packSelect.value)];
 
         if (!selectedOption) {
             return;
@@ -733,9 +769,9 @@ function addProductToCart() {
     if (product.packOptions) {
 
         alert(
-            itemPack +
-            " × " +
-            product.name +
+            (product.optionTitle
+                ? product.name + " (" + itemPack + ")"
+                : itemPack + " × " + product.name) +
             " added to cart."
         );
 
@@ -770,14 +806,8 @@ function buyProductNow() {
         const packSelect =
             document.getElementById("packSelect");
 
-        const selectedQuantity =
-            parseInt(packSelect.value);
-
         const selectedOption =
-            product.packOptions.find(
-                option =>
-                    option.quantity === selectedQuantity
-            );
+            product.packOptions[parseInt(packSelect.value)];
 
         if (!selectedOption) {
             return;
