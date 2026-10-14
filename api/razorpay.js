@@ -118,6 +118,94 @@ const CATALOG = {
         "price": 1149
       }
     ]
+  },
+  "Prayer Flag Large (Green Tara)": {
+    "id": "EM-FLAG-001",
+    "price": 119,
+    "stock": 50,
+    "packs": [
+      {
+        "label": "Standard",
+        "quantity": 1,
+        "price": 119
+      },
+      {
+        "label": "Premium",
+        "quantity": 1,
+        "price": 159
+      }
+    ]
+  },
+  "Prayer Flag Medium (Wind Horse)": {
+    "id": "EM-FLAG-002",
+    "price": 99,
+    "stock": 50,
+    "packs": [
+      {
+        "label": "Standard",
+        "quantity": 1,
+        "price": 99
+      },
+      {
+        "label": "Premium",
+        "quantity": 1,
+        "price": 120
+      }
+    ]
+  },
+  "Prayer Flag Small (Om Mani) 90 cm": {
+    "id": "EM-FLAG-003",
+    "price": 100,
+    "stock": 50,
+    "packs": [
+      {
+        "label": "1 string",
+        "quantity": 1,
+        "price": 100
+      }
+    ]
+  },
+  "Prayer Flag Small (Om Mani) 73 cm": {
+    "id": "EM-FLAG-004",
+    "price": 85,
+    "stock": 50,
+    "packs": [
+      {
+        "label": "1 string",
+        "quantity": 1,
+        "price": 85
+      }
+    ]
+  },
+  "Prayer Flag Mini (Om Mani) 55 cm": {
+    "id": "EM-FLAG-005",
+    "price": 75,
+    "stock": 50,
+    "packs": [
+      {
+        "label": "1 string",
+        "quantity": 1,
+        "price": 75
+      }
+    ]
+  },
+  "Prayer Flag Mini (Om Mani) 43 cm": {
+    "id": "EM-FLAG-006",
+    "price": 50,
+    "stock": 50,
+    "packs": [
+      {
+        "label": "1 string",
+        "quantity": 1,
+        "price": 50
+      }
+    ]
+  },
+  "Handwoven Tibetan Urdo (Yak Herder's Sling)": {
+    "id": "EM-TRAD-001",
+    "price": 1500,
+    "stock": 10,
+    "packs": []
   }
 };
 
