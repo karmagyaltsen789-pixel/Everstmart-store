@@ -330,6 +330,7 @@ images: [
         stock: 50,
         category: "Prayer Flags",
         collection: "traditional",
+        featured: true,
         optionTitle: "Choose Quality",
         packOptions: [
             { label: "Standard", quantity: 1, price: 99 },
@@ -374,6 +375,7 @@ images: [
         stock: 50,
         category: "Prayer Flags",
         collection: "traditional",
+        featured: true,
         optionTitle: "Choose Option",
         packOptions: [
             { label: "1 string", quantity: 1, price: 100 }
