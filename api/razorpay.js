@@ -206,6 +206,54 @@ const CATALOG = {
     "price": 1500,
     "stock": 10,
     "packs": []
+  },
+  "Tibetan Embroidered Varsity Jacket – Maroon": {
+    "id": "EM-APPAREL-001",
+    "price": 4999,
+    "stock": 3,
+    "packs": [
+      {
+        "label": "Size L",
+        "quantity": 1,
+        "price": 4999
+      }
+    ]
+  },
+  "Tibetan Script Varsity Jacket – Black & Maroon": {
+    "id": "EM-APPAREL-002",
+    "price": 4999,
+    "stock": 3,
+    "packs": [
+      {
+        "label": "Size L",
+        "quantity": 1,
+        "price": 4999
+      }
+    ]
+  },
+  "Tibetan Letters Varsity Jacket – Black": {
+    "id": "EM-APPAREL-003",
+    "price": 4999,
+    "stock": 3,
+    "packs": [
+      {
+        "label": "Size L",
+        "quantity": 1,
+        "price": 4999
+      }
+    ]
+  },
+  "Wind Horse Varsity Jacket – Black": {
+    "id": "EM-APPAREL-004",
+    "price": 4999,
+    "stock": 3,
+    "packs": [
+      {
+        "label": "Size L",
+        "quantity": 1,
+        "price": 4999
+      }
+    ]
   }
 };
 
