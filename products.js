@@ -111,7 +111,6 @@ images: [
         stock: 25,
         category: "Incense & Herbal Products",
         collection: "incense",
-        featured: true,
 
         packOptions: [
             { label: "1 pc", quantity: 1, price: 500 },
@@ -572,6 +571,7 @@ images: [
         stock: 3,
         category: "Clothing",
         collection: "lifestyle",
+        featured: true,
         optionTitle: "Choose Size",
         packOptions: [
             { label: "Size M", quantity: 1, price: 4999, available: false },

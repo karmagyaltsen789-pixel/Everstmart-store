@@ -1685,7 +1685,11 @@ function renderFeatured() {
 
   grid.innerHTML = keys.map(function (key) {
     const product = window.EVERSTMART_PRODUCTS[key];
-    const hasPacks = product.packOptions && product.packOptions.length > 1;
+    /* Show "From" only when the options really have different prices */
+    const optionPrices = (product.packOptions || [])
+      .filter(function (o) { return o.available !== false; })
+      .map(function (o) { return o.price; });
+    const hasPacks = new Set(optionPrices).size > 1;
 
     return (
       '<a class="featured-card" href="product.html?id=' + encodeURIComponent(key) + '">' +
