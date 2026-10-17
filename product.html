@@ -608,10 +608,17 @@ function setupPackSelector() {
 
         optionElement.value = index;
 
-        optionElement.textContent =
-            option.label +
-            " — ₹" +
-            option.price.toLocaleString("en-IN");
+        if (option.available === false) {
+            /* Shown so customers know it exists, but cannot be chosen */
+            optionElement.disabled = true;
+            optionElement.textContent =
+                option.label + " — Not available for now";
+        } else {
+            optionElement.textContent =
+                option.label +
+                " — ₹" +
+                option.price.toLocaleString("en-IN");
+        }
 
         packSelect.appendChild(optionElement);
 
@@ -633,6 +640,13 @@ function setupPackSelector() {
     if (product.wholesale) {
         wholesaleBox.style.display = "block";
     }
+
+    /* Start on the first option that can be bought */
+    const firstAvailable = product.packOptions.findIndex(
+        option => option.available !== false
+    );
+    packSelect.value = String(Math.max(firstAvailable, 0));
+    lastPackIndex = packSelect.value;
 
     selectPack();
 }

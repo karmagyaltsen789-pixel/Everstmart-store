@@ -564,4 +564,187 @@ images: [
             ]
         }
     },
+
+    varsityJacket: {
+        id: "EM-APPAREL-001",
+        name: "Tibetan Embroidered Varsity Jacket – Maroon",
+        price: 4999,
+        stock: 3,
+        category: "Clothing",
+        collection: "lifestyle",
+        optionTitle: "Choose Size",
+        packOptions: [
+            { label: "Size M", quantity: 1, price: 4999, available: false },
+            { label: "Size L", quantity: 1, price: 4999 },
+            { label: "Size XL", quantity: 1, price: 4999, available: false }
+        ],
+        wholesale: false,
+        images: [
+            "jacket-1.jpg",
+            "jacket-2.jpg",
+            "jacket-3.jpg",
+            "jacket-4.jpg"
+        ],
+        description:
+            "A maroon varsity jacket that brings Tibetan heritage into modern streetwear. The front carries Tibetan script embroidery with a signature-style logo over an endless knot, and the back features a large embroidered crest built around the endless knot. Finished with snap buttons, striped ribbed collar, cuffs and hem, and grey arrow details on the pockets. Currently available in size L only; only 3 pieces in this batch.",
+        details: {
+            productDetails: [
+                ["Product Type", "Varsity / Bomber Jacket"],
+                ["Colour", "Maroon with grey and red stripes"],
+                ["Front", "Tibetan script embroidery with signature-style logo over an endless knot"],
+                ["Back", "Large embroidered endless knot crest"],
+                ["Details", "Snap buttons, striped ribbed collar, cuffs and hem, arrow pocket trims"],
+                ["Available Size", "L (M and XL not available for now)"]
+            ],
+            careInstructions: [
+                "Dry clean recommended to protect the embroidery.",
+                "Do not bleach.",
+                "Iron on low heat from the inside; do not iron over the embroidery.",
+                "Hang on a wide hanger to keep the shoulders in shape."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    varsityJacketMaroonSleeve: {
+        id: "EM-APPAREL-002",
+        name: "Tibetan Script Varsity Jacket – Black & Maroon",
+        price: 4999,
+        stock: 3,
+        category: "Clothing",
+        collection: "lifestyle",
+        optionTitle: "Choose Size",
+        packOptions: [
+            { label: "Size M", quantity: 1, price: 4999, available: false },
+            { label: "Size L", quantity: 1, price: 4999 },
+            { label: "Size XL", quantity: 1, price: 4999, available: false }
+        ],
+        wholesale: false,
+        images: [
+            "jacket-maroon-sleeve-1.jpg",
+            "jacket-maroon-sleeve-2.jpg",
+            "jacket-maroon-sleeve-3.jpg",
+            "jacket-maroon-sleeve-4.jpg"
+        ],
+        description:
+            "A classic varsity jacket in black with maroon leather-look sleeves, finished with Tibetan touches. The chest carries embroidered script logos framed by red ornamental motifs, and the back shows two lines of flowing Tibetan calligraphy in red and white. Snap buttons, striped ribbed collar, cuffs and hem. Currently available in size L only; only 3 pieces in this batch.",
+        details: {
+            productDetails: [
+                ["Product Type", "Varsity Jacket"],
+                ["Colour", "Black body with maroon sleeves"],
+                ["Sleeves", "Maroon leather-look"],
+                ["Front", "Embroidered script logos with red ornamental motifs"],
+                ["Back", "Two lines of Tibetan calligraphy embroidery"],
+                ["Details", "Snap buttons, striped ribbed collar, cuffs and hem"],
+                ["Available Size", "L (M and XL not available for now)"]
+            ],
+            careInstructions: [
+                "Dry clean recommended to protect the embroidery and patches.",
+                "Do not bleach.",
+                "Iron on low heat from the inside; do not iron over embroidery, patches or leather.",
+                "Hang on a wide hanger to keep the shoulders in shape."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    varsityJacketLetters: {
+        id: "EM-APPAREL-003",
+        name: "Tibetan Letters Varsity Jacket – Black",
+        price: 4999,
+        stock: 3,
+        category: "Clothing",
+        collection: "lifestyle",
+        optionTitle: "Choose Size",
+        packOptions: [
+            { label: "Size M", quantity: 1, price: 4999, available: false },
+            { label: "Size L", quantity: 1, price: 4999 },
+            { label: "Size XL", quantity: 1, price: 4999, available: false }
+        ],
+        wholesale: false,
+        images: [
+            "jacket-letters-1.jpg",
+            "jacket-letters-2.jpg",
+            "jacket-letters-3.jpg",
+            "jacket-letters-4.jpg"
+        ],
+        description:
+            "An all-black varsity jacket with black leather-look sleeves that celebrates the Tibetan alphabet. The front has a large grey Tibetan letter with pink textured script across the chest, and the back is scattered with colourful embroidered Tibetan letters. Snap buttons and ribbed collar, cuffs and hem. Currently available in size L only; only 3 pieces in this batch.",
+        details: {
+            productDetails: [
+                ["Product Type", "Varsity Jacket"],
+                ["Colour", "Black"],
+                ["Sleeves", "Black leather-look"],
+                ["Front", "Large grey Tibetan letter patch with pink textured script"],
+                ["Back", "Colourful embroidered Tibetan alphabet letters"],
+                ["Details", "Snap buttons, ribbed collar, cuffs and hem"],
+                ["Available Size", "L (M and XL not available for now)"]
+            ],
+            careInstructions: [
+                "Dry clean recommended to protect the embroidery and patches.",
+                "Do not bleach.",
+                "Iron on low heat from the inside; do not iron over embroidery, patches or leather.",
+                "Hang on a wide hanger to keep the shoulders in shape."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    varsityJacketWindHorse: {
+        id: "EM-APPAREL-004",
+        name: "Wind Horse Varsity Jacket – Black",
+        price: 4999,
+        stock: 3,
+        category: "Clothing",
+        collection: "lifestyle",
+        optionTitle: "Choose Size",
+        packOptions: [
+            { label: "Size M", quantity: 1, price: 4999, available: false },
+            { label: "Size L", quantity: 1, price: 4999 },
+            { label: "Size XL", quantity: 1, price: 4999, available: false }
+        ],
+        wholesale: false,
+        images: [
+            "jacket-windhorse-1.jpg",
+            "jacket-windhorse-2.jpg",
+            "jacket-windhorse-3.jpg",
+            "jacket-windhorse-4.jpg"
+        ],
+        description:
+            "A black varsity jacket built around the Wind Horse (Lungta), the Tibetan symbol of good fortune. The back features a large embroidered Wind Horse surrounded by flames with a line of Tibetan script, the front has large grey Tibetan letter patches and a horse emblem, and one sleeve carries a column of endless knots. Gold snap buttons and ribbed collar, cuffs and hem. Currently available in size L only; only 3 pieces in this batch.",
+        details: {
+            productDetails: [
+                ["Product Type", "Varsity Jacket"],
+                ["Colour", "Black with grey embroidery"],
+                ["Front", "Large grey Tibetan letter patches and Wind Horse emblem"],
+                ["Back", "Large embroidered Wind Horse with flames and Tibetan script"],
+                ["Sleeves", "Endless knot embroidery on one sleeve, script panel on the other"],
+                ["Details", "Gold snap buttons, ribbed collar, cuffs and hem"],
+                ["Available Size", "L (M and XL not available for now)"]
+            ],
+            careInstructions: [
+                "Dry clean recommended to protect the embroidery and patches.",
+                "Do not bleach.",
+                "Iron on low heat from the inside; do not iron over embroidery, patches or leather.",
+                "Hang on a wide hanger to keep the shoulders in shape."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
 };

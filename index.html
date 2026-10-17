@@ -1366,7 +1366,11 @@ const PRODUCT_ORDER = [
   "prayerFlagSmall73",
   "prayerFlagMini55",
   "prayerFlagMini43",
-  "urdo"
+  "urdo",
+  "varsityJacket",
+  "varsityJacketMaroonSleeve",
+  "varsityJacketLetters",
+  "varsityJacketWindHorse"
 ];
 
 function getProductKeys() {
@@ -1421,8 +1425,16 @@ function renderProducts() {
         '<label class="pack-label" for="pack-' + key + '">' + escapeHTML(product.optionTitle || "Select Pack") + '</label>' +
         '<select class="pack-select" id="pack-' + key + '" onchange="updateCardPrice(\'' + key + '\')">' +
         product.packOptions.map(function (option, index) {
+          if (option.available === false) {
+            return (
+              '<option value="' + index + '" disabled>' +
+              escapeHTML(option.label) + " — Not available for now" +
+              "</option>"
+            );
+          }
           return (
-            '<option value="' + index + '">' +
+            '<option value="' + index + '"' +
+            (index === firstAvailableIndex(product) ? " selected" : "") + ">" +
             escapeHTML(option.label) + " — " + formatPrice(option.price) +
             "</option>"
           );
@@ -1539,11 +1551,19 @@ function openWholesaleChat(productName) {
 
 const lastCardChoice = {};
 
+function firstAvailableIndex(product) {
+  const i = (product.packOptions || []).findIndex(function (option) {
+    return option.available !== false;
+  });
+  return Math.max(i, 0);
+}
+
 function updateCardPrice(key) {
   const select = document.getElementById("pack-" + key);
 
   if (select.value === "wholesale") {
-    select.value = lastCardChoice[key] || "0";
+    select.value = lastCardChoice[key] ||
+      String(firstAvailableIndex(window.EVERSTMART_PRODUCTS[key]));
     openWholesaleChat(window.EVERSTMART_PRODUCTS[key].name);
     return;
   }
