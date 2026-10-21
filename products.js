@@ -9,7 +9,7 @@ window.EVERSTMART_PRODUCTS = {
         carpet: {
     id: "EM-CARPET-001",
     name: "Tibetan Traditional Carpet",
-        price: 15000,
+        price: 25000,
         stock: 10,
         category: "Tibetan Collection",
         collection: "traditional",
@@ -5259,5 +5259,378 @@ images: [
                 "🚚 Estimated delivery: 5–10 business days"
             ]
         }
-    }
+    },
+
+    carpetSetMandala: {
+        id: "EM-CARPET-002",
+        name: "Tibetan Carpet Seating Set – Mandala",
+        price: 99999,
+        stock: 2,
+        category: "Tibetan Carpets",
+        collection: "traditional",
+        optionTitle: "Choose Set",
+        packOptions: [
+            { label: "2 Carpets + 4 Backrests", quantity: 1, price: 99999 },
+            { label: "2 Carpets only (no backrests)", quantity: 1, price: 61999 }
+        ],
+        wholesale: false,
+        images: [
+            "carpet-mandala-1.jpg",
+            "carpet-mandala-2.jpg",
+            "carpet-mandala-3.jpg",
+            "carpet-mandala-4.jpg",
+            "carpet-mandala-5.jpg"
+        ],
+        description:
+            "A complete Tibetan floor seating set in 150-knot wool: two 3 × 6 ft carpets and four matching backrests (also available as the two carpets only, without backrests). The design features a golden field with a large lotus mandala at the centre, scattered auspicious flower motifs and a bold rainbow border of stepped clouds. Lay the carpets side by side along a wall with the backrests behind for a traditional Tibetan sitting area in a living room, prayer room, meditation space or reception.",
+        details: {
+            productDetails: [
+                ["Set Includes", "2 carpets + 4 backrests (₹99,999) or 2 carpets only (₹61,999)"],
+                ["Carpet Size", "3 × 6 ft each"],
+                ["Material", "Wool"],
+                ["Knot Count", "150 knots per square inch"],
+                ["Design", "Mandala"],
+                ["Suitable For", "Living rooms, prayer and meditation rooms, offices and receptions"]
+            ],
+            careInstructions: [
+                "Vacuum gently or shake out regularly to remove dust.",
+                "Blot spills straight away with a clean, dry cloth; do not rub.",
+                "Do not machine wash or soak in water.",
+                "Professional rug cleaning is recommended for deep cleaning.",
+                "Rotate the carpets occasionally so they wear evenly.",
+                "Keep out of strong direct sunlight for long periods to protect the colours."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    carpetSetDragon: {
+        id: "EM-CARPET-003",
+        name: "Tibetan Carpet Seating Set – Dragon",
+        price: 99999,
+        stock: 2,
+        category: "Tibetan Carpets",
+        collection: "traditional",
+        optionTitle: "Choose Set",
+        packOptions: [
+            { label: "2 Carpets + 4 Backrests", quantity: 1, price: 99999 },
+            { label: "2 Carpets only (no backrests)", quantity: 1, price: 61999 }
+        ],
+        wholesale: false,
+        images: [
+            "carpet-dragon-1.jpg",
+            "carpet-dragon-2.jpg",
+            "carpet-dragon-3.jpg",
+            "carpet-dragon-4.jpg",
+            "carpet-dragon-5.jpg"
+        ],
+        description:
+            "A complete Tibetan floor seating set in 150-knot wool: two 3 × 6 ft carpets and four matching backrests (also available as the two carpets only, without backrests). The design features a rich golden field with coiling dragons, swirling blue clouds and colourful cloud-and-wave borders at each end. Lay the carpets side by side along a wall with the backrests behind for a traditional Tibetan sitting area in a living room, prayer room, meditation space or reception.",
+        details: {
+            productDetails: [
+                ["Set Includes", "2 carpets + 4 backrests (₹99,999) or 2 carpets only (₹61,999)"],
+                ["Carpet Size", "3 × 6 ft each"],
+                ["Material", "Wool"],
+                ["Knot Count", "150 knots per square inch"],
+                ["Design", "Dragon"],
+                ["Suitable For", "Living rooms, prayer and meditation rooms, offices and receptions"]
+            ],
+            careInstructions: [
+                "Vacuum gently or shake out regularly to remove dust.",
+                "Blot spills straight away with a clean, dry cloth; do not rub.",
+                "Do not machine wash or soak in water.",
+                "Professional rug cleaning is recommended for deep cleaning.",
+                "Rotate the carpets occasionally so they wear evenly.",
+                "Keep out of strong direct sunlight for long periods to protect the colours."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    carpetSetCrane: {
+        id: "EM-CARPET-004",
+        name: "Tibetan Carpet Seating Set – Crane",
+        price: 99999,
+        stock: 2,
+        category: "Tibetan Carpets",
+        collection: "traditional",
+        optionTitle: "Choose Set",
+        packOptions: [
+            { label: "2 Carpets + 4 Backrests", quantity: 1, price: 99999 },
+            { label: "2 Carpets only (no backrests)", quantity: 1, price: 61999 }
+        ],
+        wholesale: false,
+        images: [
+            "carpet-crane-1.jpg",
+            "carpet-crane-2.jpg",
+            "carpet-crane-3.jpg",
+            "carpet-crane-4.jpg",
+            "carpet-crane-5.jpg"
+        ],
+        description:
+            "A complete Tibetan floor seating set in 150-knot wool: two 3 × 6 ft carpets and four matching backrests (also available as the two carpets only, without backrests). The design features a golden field with three medallions of paired cranes, auspicious symbols and a deep blue border with a red-and-gold key pattern. Lay the carpets side by side along a wall with the backrests behind for a traditional Tibetan sitting area in a living room, prayer room, meditation space or reception.",
+        details: {
+            productDetails: [
+                ["Set Includes", "2 carpets + 4 backrests (₹99,999) or 2 carpets only (₹61,999)"],
+                ["Carpet Size", "3 × 6 ft each"],
+                ["Material", "Wool"],
+                ["Knot Count", "150 knots per square inch"],
+                ["Design", "Crane"],
+                ["Suitable For", "Living rooms, prayer and meditation rooms, offices and receptions"]
+            ],
+            careInstructions: [
+                "Vacuum gently or shake out regularly to remove dust.",
+                "Blot spills straight away with a clean, dry cloth; do not rub.",
+                "Do not machine wash or soak in water.",
+                "Professional rug cleaning is recommended for deep cleaning.",
+                "Rotate the carpets occasionally so they wear evenly.",
+                "Keep out of strong direct sunlight for long periods to protect the colours."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    carpetSetMaroonLotus: {
+        id: "EM-CARPET-005",
+        name: "Tibetan Carpet Seating Set – Maroon Lotus",
+        price: 99999,
+        stock: 2,
+        category: "Tibetan Carpets",
+        collection: "traditional",
+        optionTitle: "Choose Set",
+        packOptions: [
+            { label: "2 Carpets + 4 Backrests", quantity: 1, price: 99999 },
+            { label: "2 Carpets only (no backrests)", quantity: 1, price: 61999 }
+        ],
+        wholesale: false,
+        images: [
+            "carpet-maroon-1.jpg",
+            "carpet-maroon-2.jpg",
+            "carpet-maroon-3.jpg",
+            "carpet-maroon-4.jpg"
+        ],
+        description:
+            "A complete Tibetan floor seating set in 150-knot wool: two 3 × 6 ft carpets and four matching backrests (also available as the two carpets only, without backrests). The design features large green lotus medallions on a maroon, orange and gold geometric ground, framed by a blue key-pattern border. Lay the carpets side by side along a wall with the backrests behind for a traditional Tibetan sitting area in a living room, prayer room, meditation space or reception.",
+        details: {
+            productDetails: [
+                ["Set Includes", "2 carpets + 4 backrests (₹99,999) or 2 carpets only (₹61,999)"],
+                ["Carpet Size", "3 × 6 ft each"],
+                ["Material", "Wool"],
+                ["Knot Count", "150 knots per square inch"],
+                ["Design", "Maroon Lotus"],
+                ["Suitable For", "Living rooms, prayer and meditation rooms, offices and receptions"]
+            ],
+            careInstructions: [
+                "Vacuum gently or shake out regularly to remove dust.",
+                "Blot spills straight away with a clean, dry cloth; do not rub.",
+                "Do not machine wash or soak in water.",
+                "Professional rug cleaning is recommended for deep cleaning.",
+                "Rotate the carpets occasionally so they wear evenly.",
+                "Keep out of strong direct sunlight for long periods to protect the colours."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    carpetSetSymbols: {
+        id: "EM-CARPET-006",
+        name: "Tibetan Carpet Seating Set – Auspicious Symbols",
+        price: 99999,
+        stock: 2,
+        category: "Tibetan Carpets",
+        collection: "traditional",
+        optionTitle: "Choose Set",
+        packOptions: [
+            { label: "2 Carpets + 4 Backrests", quantity: 1, price: 99999 },
+            { label: "2 Carpets only (no backrests)", quantity: 1, price: 61999 }
+        ],
+        wholesale: false,
+        images: [
+            "carpet-symbols-1.jpg",
+            "carpet-symbols-2.jpg",
+            "carpet-symbols-3.jpg",
+            "carpet-symbols-4.jpg",
+            "carpet-symbols-5.jpg"
+        ],
+        description:
+            "A complete Tibetan floor seating set in 150-knot wool: two 3 × 6 ft carpets and four matching backrests (also available as the two carpets only, without backrests). The design features a light gold field with lotus flowers, blossoming branches and auspicious symbols, framed by rolling hills, clouds and rainbow stripes. Lay the carpets side by side along a wall with the backrests behind for a traditional Tibetan sitting area in a living room, prayer room, meditation space or reception.",
+        details: {
+            productDetails: [
+                ["Set Includes", "2 carpets + 4 backrests (₹99,999) or 2 carpets only (₹61,999)"],
+                ["Carpet Size", "3 × 6 ft each"],
+                ["Material", "Wool"],
+                ["Knot Count", "150 knots per square inch"],
+                ["Design", "Auspicious Symbols"],
+                ["Suitable For", "Living rooms, prayer and meditation rooms, offices and receptions"]
+            ],
+            careInstructions: [
+                "Vacuum gently or shake out regularly to remove dust.",
+                "Blot spills straight away with a clean, dry cloth; do not rub.",
+                "Do not machine wash or soak in water.",
+                "Professional rug cleaning is recommended for deep cleaning.",
+                "Rotate the carpets occasionally so they wear evenly.",
+                "Keep out of strong direct sunlight for long periods to protect the colours."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    carpetSetPhoenixGold: {
+        id: "EM-CARPET-007",
+        name: "Tibetan Carpet Seating Set – Dragon & Phoenix – Blue Border",
+        price: 99999,
+        stock: 2,
+        category: "Tibetan Carpets",
+        collection: "traditional",
+        optionTitle: "Choose Set",
+        packOptions: [
+            { label: "2 Carpets + 4 Backrests", quantity: 1, price: 99999 },
+            { label: "2 Carpets only (no backrests)", quantity: 1, price: 61999 }
+        ],
+        wholesale: false,
+        images: [
+            "carpet-phoenix-gold-1.jpg",
+            "carpet-phoenix-gold-2.jpg",
+            "carpet-phoenix-gold-3.jpg",
+            "carpet-phoenix-gold-4.jpg"
+        ],
+        description:
+            "A complete Tibetan floor seating set in 150-knot wool: two 3 × 6 ft carpets and four matching backrests (also available as the two carpets only, without backrests). The design features blue dragons and phoenixes flying across a bright golden field, framed by a gold-and-blue key-pattern border. Lay the carpets side by side along a wall with the backrests behind for a traditional Tibetan sitting area in a living room, prayer room, meditation space or reception.",
+        details: {
+            productDetails: [
+                ["Set Includes", "2 carpets + 4 backrests (₹99,999) or 2 carpets only (₹61,999)"],
+                ["Carpet Size", "3 × 6 ft each"],
+                ["Material", "Wool"],
+                ["Knot Count", "150 knots per square inch"],
+                ["Design", "Dragon & Phoenix – Blue Border"],
+                ["Suitable For", "Living rooms, prayer and meditation rooms, offices and receptions"]
+            ],
+            careInstructions: [
+                "Vacuum gently or shake out regularly to remove dust.",
+                "Blot spills straight away with a clean, dry cloth; do not rub.",
+                "Do not machine wash or soak in water.",
+                "Professional rug cleaning is recommended for deep cleaning.",
+                "Rotate the carpets occasionally so they wear evenly.",
+                "Keep out of strong direct sunlight for long periods to protect the colours."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    carpetSetPhoenixCloud: {
+        id: "EM-CARPET-008",
+        name: "Tibetan Carpet Seating Set – Dragon & Phoenix – Rainbow Clouds",
+        price: 99999,
+        stock: 2,
+        category: "Tibetan Carpets",
+        collection: "traditional",
+        optionTitle: "Choose Set",
+        packOptions: [
+            { label: "2 Carpets + 4 Backrests", quantity: 1, price: 99999 },
+            { label: "2 Carpets only (no backrests)", quantity: 1, price: 61999 }
+        ],
+        wholesale: false,
+        images: [
+            "carpet-phoenix-cloud-1.jpg",
+            "carpet-phoenix-cloud-2.jpg",
+            "carpet-phoenix-cloud-3.jpg",
+            "carpet-phoenix-cloud-4.jpg",
+            "carpet-phoenix-cloud-5.jpg"
+        ],
+        description:
+            "A complete Tibetan floor seating set in 150-knot wool: two 3 × 6 ft carpets and four matching backrests (also available as the two carpets only, without backrests). The design features a blue dragon chasing the flaming jewel opposite a phoenix on a soft beige field, with rainbow cloud-and-wave borders. Lay the carpets side by side along a wall with the backrests behind for a traditional Tibetan sitting area in a living room, prayer room, meditation space or reception.",
+        details: {
+            productDetails: [
+                ["Set Includes", "2 carpets + 4 backrests (₹99,999) or 2 carpets only (₹61,999)"],
+                ["Carpet Size", "3 × 6 ft each"],
+                ["Material", "Wool"],
+                ["Knot Count", "150 knots per square inch"],
+                ["Design", "Dragon & Phoenix – Rainbow Clouds"],
+                ["Suitable For", "Living rooms, prayer and meditation rooms, offices and receptions"]
+            ],
+            careInstructions: [
+                "Vacuum gently or shake out regularly to remove dust.",
+                "Blot spills straight away with a clean, dry cloth; do not rub.",
+                "Do not machine wash or soak in water.",
+                "Professional rug cleaning is recommended for deep cleaning.",
+                "Rotate the carpets occasionally so they wear evenly.",
+                "Keep out of strong direct sunlight for long periods to protect the colours."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    carpetSetPhoenixOlive: {
+        id: "EM-CARPET-009",
+        name: "Tibetan Carpet Seating Set – Dragon & Phoenix – Olive",
+        price: 99999,
+        stock: 2,
+        category: "Tibetan Carpets",
+        collection: "traditional",
+        optionTitle: "Choose Set",
+        packOptions: [
+            { label: "2 Carpets + 4 Backrests", quantity: 1, price: 99999 },
+            { label: "2 Carpets only (no backrests)", quantity: 1, price: 61999 }
+        ],
+        wholesale: false,
+        images: [
+            "carpet-phoenix-olive-1.jpg",
+            "carpet-phoenix-olive-2.jpg",
+            "carpet-phoenix-olive-3.jpg",
+            "carpet-phoenix-olive-4.jpg"
+        ],
+        description:
+            "A complete Tibetan floor seating set in 150-knot wool: two 3 × 6 ft carpets and four matching backrests (also available as the two carpets only, without backrests). The design features blue dragons and colourful phoenixes on an olive-gold field, framed by a gold-and-blue key-pattern border. Lay the carpets side by side along a wall with the backrests behind for a traditional Tibetan sitting area in a living room, prayer room, meditation space or reception.",
+        details: {
+            productDetails: [
+                ["Set Includes", "2 carpets + 4 backrests (₹99,999) or 2 carpets only (₹61,999)"],
+                ["Carpet Size", "3 × 6 ft each"],
+                ["Material", "Wool"],
+                ["Knot Count", "150 knots per square inch"],
+                ["Design", "Dragon & Phoenix – Olive"],
+                ["Suitable For", "Living rooms, prayer and meditation rooms, offices and receptions"]
+            ],
+            careInstructions: [
+                "Vacuum gently or shake out regularly to remove dust.",
+                "Blot spills straight away with a clean, dry cloth; do not rub.",
+                "Do not machine wash or soak in water.",
+                "Professional rug cleaning is recommended for deep cleaning.",
+                "Rotate the carpets occasionally so they wear evenly.",
+                "Keep out of strong direct sunlight for long periods to protect the colours."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
 };
