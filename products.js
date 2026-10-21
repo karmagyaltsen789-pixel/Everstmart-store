@@ -4013,9 +4013,11 @@ images: [
         ],
         "wholesale": true,
         "images": [
-            "mtk-photo-coming-soon.jpg"
+            "mtk-sorig-daily-glow-cream-jar-1.jpg",
+            "mtk-sorig-daily-glow-cream-jar-2.jpg",
+            "mtk-sorig-daily-glow-cream-back.jpg"
         ],
-        "description": "A daily face cream from Men-Tsee-Khang's SORIG range for soft, glowing skin.",
+        "description": "Formulated in accordance with the Tibetan Science of Healing for the brightening and lightening of skin, keeping it smooth, soft and supple. It also helps protect skin from the harmful effects of sun rays and dust pollutants, and regular use can reduce wrinkles and fade fine lines.",
         "details": {
             "productDetails": [
                 [
@@ -4025,12 +4027,20 @@ images: [
                 [
                     "Size",
                     "40 g"
+                ],
+                [
+                    "Ingredients",
+                    "Safflower, ginger, bindii, shatavari, sweet flag, cetyl alcohol, beeswax, aloe vera gel, lemon oil, glyceryl monostearate and aqua"
+                ],
+                [
+                    "How to Use",
+                    "Apply a small amount to clean face and neck daily."
                 ]
             ],
             "careInstructions": [
-                "Store in a cool, dry place away from direct sunlight.",
+                "Store in a cool, dry place.",
                 "Keep out of reach of children.",
-                "Please consult a doctor or qualified Sowa Rigpa practitioner before use, especially if you are pregnant, nursing, taking other medicines or giving it to a child."
+                "For external use only."
             ],
             "shipping": [
                 "🚚 Free Shipping across India",
@@ -4058,9 +4068,10 @@ images: [
         ],
         "wholesale": true,
         "images": [
-            "mtk-photo-coming-soon.jpg"
+            "mtk-sorig-daily-glow-cream-tube-1.jpg",
+            "mtk-sorig-daily-glow-cream-back.jpg"
         ],
-        "description": "A daily face cream from Men-Tsee-Khang's SORIG range for soft, glowing skin.",
+        "description": "Formulated in accordance with the Tibetan Science of Healing for the brightening and lightening of skin, keeping it smooth, soft and supple. It also helps protect skin from the harmful effects of sun rays and dust pollutants, and regular use can reduce wrinkles and fade fine lines.",
         "details": {
             "productDetails": [
                 [
@@ -4070,12 +4081,20 @@ images: [
                 [
                     "Size",
                     "50 g"
+                ],
+                [
+                    "Ingredients",
+                    "Safflower, ginger, bindii, shatavari, olive oil, sweet flag, cetyl alcohol, beeswax, aloe vera gel, lemon oil, glyceryl monostearate, ylang ylang oil and aqua"
+                ],
+                [
+                    "How to Use",
+                    "Apply a small amount to clean face and neck daily."
                 ]
             ],
             "careInstructions": [
-                "Store in a cool, dry place away from direct sunlight.",
+                "Store in a cool, dry place.",
                 "Keep out of reach of children.",
-                "Please consult a doctor or qualified Sowa Rigpa practitioner before use, especially if you are pregnant, nursing, taking other medicines or giving it to a child."
+                "For external use only."
             ],
             "shipping": [
                 "🚚 Free Shipping across India",
@@ -4503,9 +4522,9 @@ images: [
         ],
         "wholesale": true,
         "images": [
-            "mtk-photo-coming-soon.jpg"
+            "mtk-sorig-oogchoe-ngapa-ear-drops-1.jpg"
         ],
-        "description": "Traditional Sowa Rigpa ear drops from Men-Tsee-Khang. 8 ml.",
+        "description": "SORIG ear drops made to a recipe from the traditional Tibetan Science of Well-being, which has a history of more than 2,500 years. Used to help combat deafness, improve hearing and relieve ear ringing.",
         "details": {
             "productDetails": [
                 [
@@ -4515,12 +4534,21 @@ images: [
                 [
                     "Size",
                     "8 ml"
+                ],
+                [
+                    "Ingredients",
+                    "Sprague incarvillea 50% and radish 50%"
+                ],
+                [
+                    "How to Use",
+                    "Squeeze the bottle to release 1–2 drops into the ear. Keep the drops in by keeping the head tilted or placing cotton in the ear. Adults and children 2 years and over: 1–2 drops, or as directed by a doctor."
                 ]
             ],
             "careInstructions": [
-                "Store in a cool, dry place away from direct sunlight.",
-                "Keep out of reach of children.",
-                "Please consult a doctor or qualified Sowa Rigpa practitioner before use, especially if you are pregnant, nursing, taking other medicines or giving it to a child."
+                "For external use only.",
+                "Stop use and ask a doctor if symptoms do not improve in 7 days.",
+                "Store in a cool, dark and dry place.",
+                "Keep out of reach of children."
             ],
             "shipping": [
                 "🚚 Free Shipping across India",
@@ -5103,9 +5131,9 @@ images: [
         ],
         "wholesale": true,
         "images": [
-            "mtk-photo-coming-soon.jpg"
+            "mtk-pill-crusher-1.jpg"
         ],
-        "description": "Pill crusher for grinding Sowa Rigpa herbal pills into powder before taking.",
+        "description": "A food-grade pill crusher from Men-Tsee-Khang for grinding Sowa Rigpa herbal pills into powder before taking. Put the pill inside, then twist the two halves; the metal grinding plates inside crush it evenly.",
         "details": {
             "productDetails": [
                 [
@@ -5115,10 +5143,14 @@ images: [
                 [
                     "Size",
                     "1 piece"
+                ],
+                [
+                    "Material",
+                    "Food-grade plastic body with metal grinding plates"
                 ]
             ],
             "careInstructions": [
-                "Keep clean and dry after use.",
+                "Wash and dry after use.",
                 "Keep out of reach of children."
             ],
             "shipping": [
