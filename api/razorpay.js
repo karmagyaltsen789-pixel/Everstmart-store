@@ -291,7 +291,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Everyday Tea (Raab-Ga-Yangzin)": {
+  "SORIG Raab-Ga-Yangzin Tea-Everyday Tea": {
     "id": "EM-MTK-004",
     "price": 248,
     "stock": 10,
@@ -303,7 +303,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Everyday Tea Pouch (Raab-Ga-Yangzin)": {
+  "SORIG Raab-Ga-Yangzin Tea-Tea Pouch": {
     "id": "EM-MTK-005",
     "price": 186,
     "stock": 10,
@@ -327,7 +327,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Trak-Shey Herbal Tea": {
+  "SORIG Trak-Shey Tea-Hypertension Regulating Tea": {
     "id": "EM-MTK-007",
     "price": 248,
     "stock": 10,
@@ -339,7 +339,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Za-Khu-Chee-Nyii Herbal Tea": {
+  "SORIG Za-Khu-Chee-Nyii Tea-Diabetes Care Tea": {
     "id": "EM-MTK-008",
     "price": 248,
     "stock": 10,
@@ -351,7 +351,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Oogmi-Daewae Menja Herbal Tea": {
+  "SORIG Oogmi-Daewae-Menja-Respiratory Care Tea": {
     "id": "EM-MTK-009",
     "price": 171,
     "stock": 10,
@@ -363,7 +363,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Shang-Druum Menja Herbal Tea": {
+  "SORIG Shang-Druum-Menja-Piles Relief Tea": {
     "id": "EM-MTK-010",
     "price": 147,
     "stock": 10,
@@ -375,7 +375,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Druum-Bue Menja Herbal Tea": {
+  "SORIG Druum-Bue-Menja-Arthritis Relief Tea": {
     "id": "EM-MTK-011",
     "price": 147,
     "stock": 10,
@@ -387,7 +387,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Tobkay Menja Tonic Tea": {
+  "SORIG Tobkay-Menja-Tonic Tea": {
     "id": "EM-MTK-012",
     "price": 178,
     "stock": 10,
@@ -399,7 +399,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Nyiing-Nae Menja Herbal Tea": {
+  "SORIG Nyiing-Nae-Menja-Heart Care Tea": {
     "id": "EM-MTK-013",
     "price": 178,
     "stock": 10,
@@ -411,7 +411,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Loong-Tsab Menja Women's Wellness Tea": {
+  "SORIG Loong-Tsab-Menja-Women Wellness Tea": {
     "id": "EM-MTK-014",
     "price": 186,
     "stock": 10,
@@ -423,7 +423,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Miggi-Nuepa Sowae Menja Herbal Tea": {
+  "SORIG Miggi-Nuepa Sowae Menja-Eye Care Tea": {
     "id": "EM-MTK-015",
     "price": 147,
     "stock": 10,
@@ -435,7 +435,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Gonae-Selwae Menja Herbal Tea": {
+  "SORIG Gonae-Selwae Menja-Headache Relief Tea": {
     "id": "EM-MTK-016",
     "price": 147,
     "stock": 10,
@@ -447,7 +447,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Lung Soothing Tea": {
+  "SORIG Lung Soothing Tea-For Lung Inflammation Relief": {
     "id": "EM-MTK-017",
     "price": 155,
     "stock": 10,
@@ -459,7 +459,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Tobmeen Chudue Gyatso Health Tonic 60 g": {
+  "SORIG Tobmeen Chudue Gyatso (Health Tonic)": {
     "id": "EM-MTK-018",
     "price": 837,
     "stock": 10,
@@ -471,7 +471,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Tobmeen Chudue Gyatso Health Tonic (20 Sachets)": {
+  "SORIG Tobmeen Chudue Gyatso (Health Tonic-20 Sachets)": {
     "id": "EM-MTK-019",
     "price": 558,
     "stock": 10,
@@ -495,7 +495,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Kaem-Meen Dashun": {
+  "SORIG Kaem-Meen Dashun-Slimming Supplement": {
     "id": "EM-MTK-021",
     "price": 279,
     "stock": 10,
@@ -507,7 +507,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Gaay-Pa Sowae Chulen": {
+  "SORIG Gaay-Pa-Sowae-Chulen-Elixir of Rejuvenation": {
     "id": "EM-MTK-022",
     "price": 310,
     "stock": 10,
@@ -519,7 +519,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Chongchen Chulen": {
+  "SORIG Chongchen Chulen-Vitality Supplement": {
     "id": "EM-MTK-023",
     "price": 295,
     "stock": 10,
@@ -531,7 +531,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Lhophel Dhutse": {
+  "SORIG Lhophel Dhutse-Sharpens Intelligence": {
     "id": "EM-MTK-024",
     "price": 233,
     "stock": 10,
@@ -543,7 +543,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Tsephel Dhutse": {
+  "SORIG Tsephel Dhutse-Boost the Life Span": {
     "id": "EM-MTK-025",
     "price": 233,
     "stock": 10,
@@ -555,7 +555,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Kaem-Meen Shonnu": {
+  "SORIG Kaem-Meen Shonnu-For Slimness": {
     "id": "EM-MTK-026",
     "price": 279,
     "stock": 10,
@@ -603,7 +603,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Trulthang Herbal Decoction": {
+  "SORIG Trulthang (Cold & Flu Relief)": {
     "id": "EM-MTK-030",
     "price": 149,
     "stock": 10,
@@ -615,7 +615,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Dawoe Chinchud Chenmo": {
+  "SORIG Dawoe Chinchud Chenmo-For Healthy Liver": {
     "id": "EM-MTK-031",
     "price": 465,
     "stock": 10,
@@ -627,7 +627,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Goyu Dhunjor": {
+  "SORIG Goyu Dhunjor-For Healthy Kidney": {
     "id": "EM-MTK-032",
     "price": 465,
     "stock": 10,
@@ -651,7 +651,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Sangthel Nyernga": {
+  "SORIG Sangthel Nyernga-For Healthy Lungs": {
     "id": "EM-MTK-034",
     "price": 481,
     "stock": 10,
@@ -663,7 +663,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Sheche Drukpa": {
+  "SORIG Sheche Drukpa-Normalize Bowel Function": {
     "id": "EM-MTK-035",
     "price": 341,
     "stock": 10,
@@ -675,7 +675,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Laetrae Ngathang": {
+  "SORIG Laetrae Ngathang-Supports Muscle, Vascular & Joint Pain": {
     "id": "EM-MTK-036",
     "price": 465,
     "stock": 10,
@@ -687,7 +687,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Men-Na Spice Blend": {
+  "SORIG Men-Na-Spice": {
     "id": "EM-MTK-037",
     "price": 155,
     "stock": 10,
@@ -699,7 +699,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Shasoe Paekar Beauty Cream (Tube)": {
+  "SORIG Shasoe-Paekar-Beauty Cream (Tube)": {
     "id": "EM-MTK-038",
     "price": 202,
     "stock": 10,
@@ -711,7 +711,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Shasoe Paekar Beauty Cream (Jar)": {
+  "SORIG Shasoe-Paekar-Beauty Cream (Jar)": {
     "id": "EM-MTK-039",
     "price": 202,
     "stock": 10,
@@ -723,7 +723,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Nyerdak Gamoli Anti-Wrinkle Cream (Tube)": {
+  "SORIG Nyerdak Gamoli-Anti-Wrinkle (Tube)": {
     "id": "EM-MTK-040",
     "price": 217,
     "stock": 10,
@@ -735,7 +735,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Nyerdak Gamoli Anti-Wrinkle Cream (Jar)": {
+  "SORIG Nyerdak Gamoli-Anti-Wrinkle (Jar)": {
     "id": "EM-MTK-041",
     "price": 233,
     "stock": 10,
@@ -747,7 +747,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Pak-Juk Da-Ma-Ra Herbal Cream (Jar)": {
+  "SORIG Pak-Juk-Da-Ma-Ra (Anti-Vitiligo)": {
     "id": "EM-MTK-042",
     "price": 202,
     "stock": 10,
@@ -759,7 +759,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Pak-Juk Da-Ma-Ra Herbal Cream (Tube)": {
+  "SORIG Pak-Juk-Da-Ma-Ra (Anti-Vitiligo) Tube": {
     "id": "EM-MTK-043",
     "price": 186,
     "stock": 10,
@@ -771,7 +771,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Mah-Maen Rabjor Soothing Balm": {
+  "SORIG Mah-Maen Rabjor (Soothing Balm)": {
     "id": "EM-MTK-044",
     "price": 109,
     "stock": 10,
@@ -783,7 +783,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Juk-Nuum Agar Dhethear Massage Oil 75 ml": {
+  "SORIG Juk-Nuum-Agar-Dhethear-Massage Oil 75ml": {
     "id": "EM-MTK-045",
     "price": 202,
     "stock": 10,
@@ -795,7 +795,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Juk-Nuum Agar Dhethear Massage Oil 150 ml": {
+  "SORIG Juk-Nuum-Agar-Dhethear-Massage Oil 150ml": {
     "id": "EM-MTK-046",
     "price": 357,
     "stock": 10,
@@ -807,7 +807,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Jeepae Juknuum Baby Massage Oil": {
+  "SORIG Jeepae Juknuum-Baby Massage Oil": {
     "id": "EM-MTK-047",
     "price": 186,
     "stock": 10,
@@ -819,7 +819,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Juk-Nuum Tikta Dhethear Cooling Massage Oil": {
+  "SORIG Juk-Nuum-Tikta-Dhethear-Cooling Massage Oil": {
     "id": "EM-MTK-048",
     "price": 171,
     "stock": 10,
@@ -831,7 +831,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Druum-Bue Juknuum Massage Oil": {
+  "SORIG Druum-Bue-Juknuum-Arthritis Oil": {
     "id": "EM-MTK-049",
     "price": 217,
     "stock": 10,
@@ -843,7 +843,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Saab-Gaay Herbal Cream": {
+  "SORIG Saab-Gaay-For Skin Irritation": {
     "id": "EM-MTK-050",
     "price": 202,
     "stock": 10,
@@ -855,7 +855,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Tsa-Juk Herbal Cream": {
+  "SORIG Tsa-Juk-For Nerve Disorder": {
     "id": "EM-MTK-051",
     "price": 217,
     "stock": 10,
@@ -867,7 +867,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Shang-Druum Jukpa Herbal Cream (Jar)": {
+  "SORIG Shang Druum-Jukpa (Piles Cream)": {
     "id": "EM-MTK-052",
     "price": 202,
     "stock": 10,
@@ -879,7 +879,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Shang-Druum Jukpa Herbal Cream (Tube)": {
+  "SORIG Shang Druum-Jukpa (Piles Cream) Tube": {
     "id": "EM-MTK-053",
     "price": 186,
     "stock": 10,
@@ -891,7 +891,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Aru Balm": {
+  "SORIG Aru-Yacham-Dashun (Aru Balm)": {
     "id": "EM-MTK-054",
     "price": 124,
     "stock": 10,
@@ -903,7 +903,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Ta-Nuum Hair Oil": {
+  "SORIG Ta-Nuum-Hair Oil": {
     "id": "EM-MTK-055",
     "price": 279,
     "stock": 10,
@@ -915,7 +915,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Ta-Chu Daegu Herbal Shampoo 100 ml": {
+  "SORIG Ta-Chu-Daegu-Shampoo 100ml": {
     "id": "EM-MTK-056",
     "price": 186,
     "stock": 10,
@@ -927,7 +927,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Ta-Chu Daegu Herbal Shampoo 300 ml": {
+  "SORIG Ta-Chu-Daegu-Shampoo 300ml": {
     "id": "EM-MTK-057",
     "price": 434,
     "stock": 10,
@@ -939,7 +939,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Anti-Dandruff Shampoo": {
+  "SORIG Anti Dandruff Shampoo": {
     "id": "EM-MTK-058",
     "price": 434,
     "stock": 10,
@@ -951,7 +951,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Tajuk Dawoe Hair Cream (Jar)": {
+  "SORIG Tajuk Dawoe-Smooth & Silky Hair": {
     "id": "EM-MTK-059",
     "price": 217,
     "stock": 10,
@@ -963,7 +963,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Tajuk Dawoe Hair Cream (Tube)": {
+  "SORIG Tajuk Dawoe-Smooth & Silky Hair (Tube)": {
     "id": "EM-MTK-060",
     "price": 202,
     "stock": 10,
@@ -975,7 +975,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Loong-Juk Body Lotion": {
+  "SORIG Loong-Juk-Loong Lotion": {
     "id": "EM-MTK-061",
     "price": 171,
     "stock": 10,
@@ -987,7 +987,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Trie-Juk Cooling Body Lotion": {
+  "SORIG Trie-Juk-Tripa Lotion": {
     "id": "EM-MTK-062",
     "price": 171,
     "stock": 10,
@@ -999,7 +999,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Bae-Juk Warming Body Lotion": {
+  "SORIG Bae-Juk-Baekan Lotion": {
     "id": "EM-MTK-063",
     "price": 155,
     "stock": 10,
@@ -1011,7 +1011,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Daily Glow Cream (Jar)": {
+  "SORIG Daily Glow Cream Jar": {
     "id": "EM-MTK-064",
     "price": 163,
     "stock": 10,
@@ -1023,7 +1023,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Daily Glow Cream (Tube)": {
+  "SORIG Daily Glow Cream Tube": {
     "id": "EM-MTK-065",
     "price": 132,
     "stock": 10,
@@ -1047,7 +1047,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Zathi Duknuum Compress Oil": {
+  "SORIG Zathi-Duknuum": {
     "id": "EM-MTK-067",
     "price": 171,
     "stock": 10,
@@ -1059,7 +1059,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Zathi Dukpa Heat Compress": {
+  "SORIG Zathi-Dukpa": {
     "id": "EM-MTK-068",
     "price": 186,
     "stock": 10,
@@ -1071,7 +1071,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Dhutse Ngalum Herbal Bath": {
+  "SORIG DHUTSE-NGALUM-Medicinal Bath Therapy": {
     "id": "EM-MTK-069",
     "price": 388,
     "stock": 10,
@@ -1107,7 +1107,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Ching Lum Wet Dressing Pack": {
+  "SORIG Ching Lum-Wet Dressing Therapy": {
     "id": "EM-MTK-072",
     "price": 248,
     "stock": 10,
@@ -1119,7 +1119,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG So-Nuum Dhunpa Dental Soother": {
+  "SORIG So-Nuum Dhunpa-Dental Soother": {
     "id": "EM-MTK-073",
     "price": 62,
     "stock": 10,
@@ -1131,7 +1131,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Oogchoe Ngapa Ear Drops": {
+  "SORIG Oogchoe Ngapa-Ear Drops": {
     "id": "EM-MTK-074",
     "price": 62,
     "stock": 10,
@@ -1143,7 +1143,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Tibetan Incense Big": {
+  "SORIG Tibetan Incense big": {
     "id": "EM-MTK-075",
     "price": 163,
     "stock": 10,
@@ -1155,7 +1155,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Tibetan Incense Medium": {
+  "SORIG Tibetan Incense medium": {
     "id": "EM-MTK-076",
     "price": 115,
     "stock": 10,
@@ -1167,7 +1167,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Tibetan Incense Small": {
+  "SORIG Tibetan Incense small": {
     "id": "EM-MTK-077",
     "price": 59,
     "stock": 10,
@@ -1179,7 +1179,7 @@ const CATALOG = {
       }
     ]
   },
-  "Tibetan SORIG Stress Incense": {
+  "Tibetan Sorig Stress Incense": {
     "id": "EM-MTK-078",
     "price": 124,
     "stock": 10,
@@ -1191,7 +1191,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Mensang Incense Powder": {
+  "SORIG Mensang (Incense Powder)": {
     "id": "EM-MTK-079",
     "price": 65,
     "stock": 10,
@@ -1227,7 +1227,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Menchey Ritual Powder": {
+  "SORIG Menchey": {
     "id": "EM-MTK-082",
     "price": 109,
     "stock": 10,
@@ -1239,7 +1239,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Bumzae Nyernga Ritual Powder": {
+  "SORIG Bumzae Nyernga": {
     "id": "EM-MTK-083",
     "price": 147,
     "stock": 10,
@@ -1251,7 +1251,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Sango Druk Smoke Offering Powder": {
+  "SORIG Sango Druk Powder": {
     "id": "EM-MTK-084",
     "price": 202,
     "stock": 10,
@@ -1263,7 +1263,7 @@ const CATALOG = {
       }
     ]
   },
-  "SORIG Lumen (Luzae Chema) Naga Offering Powder": {
+  "SORIG Lumen/Luzae Chema": {
     "id": "EM-MTK-085",
     "price": 118,
     "stock": 10,
