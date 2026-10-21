@@ -4537,7 +4537,7 @@ images: [
         "price": 163,
         "stock": 10,
         "category": "Incense & Herbal Products",
-        "collection": "incense",
+        "collection": ["incense", "herbal"],
         "optionTitle": "Size",
         "packOptions": [
             {
@@ -4590,7 +4590,7 @@ images: [
         "price": 115,
         "stock": 10,
         "category": "Incense & Herbal Products",
-        "collection": "incense",
+        "collection": ["incense", "herbal"],
         "optionTitle": "Size",
         "packOptions": [
             {
@@ -4643,7 +4643,7 @@ images: [
         "price": 59,
         "stock": 10,
         "category": "Incense & Herbal Products",
-        "collection": "incense",
+        "collection": ["incense", "herbal"],
         "optionTitle": "Size",
         "packOptions": [
             {
@@ -4696,7 +4696,7 @@ images: [
         "price": 124,
         "stock": 10,
         "category": "Incense & Herbal Products",
-        "collection": "incense",
+        "collection": ["incense", "herbal"],
         "optionTitle": "Size",
         "packOptions": [
             {
@@ -4749,7 +4749,7 @@ images: [
         "price": 65,
         "stock": 10,
         "category": "Incense & Herbal Products",
-        "collection": "incense",
+        "collection": ["incense", "herbal"],
         "optionTitle": "Size",
         "packOptions": [
             {
@@ -4798,7 +4798,7 @@ images: [
         "price": 186,
         "stock": 10,
         "category": "Incense & Herbal Products",
-        "collection": "incense",
+        "collection": ["incense", "herbal"],
         "optionTitle": "Size",
         "packOptions": [
             {
@@ -4851,7 +4851,7 @@ images: [
         "price": 109,
         "stock": 10,
         "category": "Incense & Herbal Products",
-        "collection": "incense",
+        "collection": ["incense", "herbal"],
         "optionTitle": "Size",
         "packOptions": [
             {
@@ -4904,7 +4904,7 @@ images: [
         "price": 109,
         "stock": 10,
         "category": "Incense & Herbal Products",
-        "collection": "incense",
+        "collection": ["incense", "herbal"],
         "optionTitle": "Size",
         "packOptions": [
             {
@@ -4957,7 +4957,7 @@ images: [
         "price": 147,
         "stock": 10,
         "category": "Incense & Herbal Products",
-        "collection": "incense",
+        "collection": ["incense", "herbal"],
         "optionTitle": "Size",
         "packOptions": [
             {
@@ -5002,7 +5002,7 @@ images: [
         "price": 202,
         "stock": 10,
         "category": "Incense & Herbal Products",
-        "collection": "incense",
+        "collection": ["incense", "herbal"],
         "optionTitle": "Size",
         "packOptions": [
             {
@@ -5047,7 +5047,7 @@ images: [
         "price": 118,
         "stock": 10,
         "category": "Incense & Herbal Products",
-        "collection": "incense",
+        "collection": ["incense", "herbal"],
         "optionTitle": "Size",
         "packOptions": [
             {

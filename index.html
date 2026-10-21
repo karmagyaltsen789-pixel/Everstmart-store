@@ -481,9 +481,14 @@ button:hover {
 }
 
 .collections-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 18px;
+}
+
+.collections-grid .collection-card {
+  flex: 0 1 calc((100% - 36px) / 3);
 }
 
 .collection-card {
@@ -550,8 +555,8 @@ button:hover {
 }
 
 @media (max-width: 900px) {
-  .collections-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .collections-grid .collection-card {
+    flex-basis: calc((100% - 18px) / 2);
   }
 }
 
@@ -564,8 +569,8 @@ button:hover {
     font-size: 32px;
   }
 
-  .collections-grid {
-    grid-template-columns: 1fr;
+  .collections-grid .collection-card {
+    flex-basis: 100%;
   }
 }
 /* Hero redesign */
@@ -1132,6 +1137,17 @@ button:hover {
         </div>
       </div>
 
+      <div class="collection-card">
+        <div class="collection-image">
+          <img src="collection-herbal.jpg" alt="Tibetan Herbal Wellness" loading="lazy">
+        </div>
+        <div class="collection-content">
+          <h3>Tibetan Herbal Wellness</h3>
+          <p>Men-Tsee-Khang herbal teas, supplements, creams and oils.</p>
+          <a href="#products" class="collection-btn" data-collection="herbal">Shop Collection →</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1399,7 +1415,8 @@ const COLLECTIONS = {
   "incense": "Incense & Fragrance",
   "home-decor": "Tibetan Home & Décor",
   "lifestyle": "Tibetan & Himalayan Lifestyle",
-  "traditional": "Traditional Collection"
+  "traditional": "Traditional Collection",
+  "herbal": "Tibetan Herbal Wellness"
 };
 
 let activeCollection = "all";
@@ -1411,7 +1428,8 @@ function renderProducts() {
   getProductKeys().forEach(function (key) {
     const product = window.EVERSTMART_PRODUCTS[key];
 
-    if (activeCollection !== "all" && product.collection !== activeCollection) {
+    /* "collection" can be one name or a list, e.g. ["incense", "herbal"] */
+    if (activeCollection !== "all" && [].concat(product.collection).indexOf(activeCollection) === -1) {
       return;
     }
 
