@@ -10,7 +10,7 @@ import crypto from "crypto";
 const CATALOG = {
   "Tibetan Traditional Carpet": {
     "id": "EM-CARPET-001",
-    "price": 15000,
+    "price": 25000,
     "stock": 10,
     "packs": []
   },
@@ -1320,6 +1320,142 @@ const CATALOG = {
         "label": "1 set",
         "quantity": 1,
         "price": 1550
+      }
+    ]
+  },
+  "Tibetan Carpet Seating Set – Mandala": {
+    "id": "EM-CARPET-002",
+    "price": 99999,
+    "stock": 2,
+    "packs": [
+      {
+        "label": "2 Carpets + 4 Backrests",
+        "quantity": 1,
+        "price": 99999
+      },
+      {
+        "label": "2 Carpets only (no backrests)",
+        "quantity": 1,
+        "price": 61999
+      }
+    ]
+  },
+  "Tibetan Carpet Seating Set – Dragon": {
+    "id": "EM-CARPET-003",
+    "price": 99999,
+    "stock": 2,
+    "packs": [
+      {
+        "label": "2 Carpets + 4 Backrests",
+        "quantity": 1,
+        "price": 99999
+      },
+      {
+        "label": "2 Carpets only (no backrests)",
+        "quantity": 1,
+        "price": 61999
+      }
+    ]
+  },
+  "Tibetan Carpet Seating Set – Crane": {
+    "id": "EM-CARPET-004",
+    "price": 99999,
+    "stock": 2,
+    "packs": [
+      {
+        "label": "2 Carpets + 4 Backrests",
+        "quantity": 1,
+        "price": 99999
+      },
+      {
+        "label": "2 Carpets only (no backrests)",
+        "quantity": 1,
+        "price": 61999
+      }
+    ]
+  },
+  "Tibetan Carpet Seating Set – Maroon Lotus": {
+    "id": "EM-CARPET-005",
+    "price": 99999,
+    "stock": 2,
+    "packs": [
+      {
+        "label": "2 Carpets + 4 Backrests",
+        "quantity": 1,
+        "price": 99999
+      },
+      {
+        "label": "2 Carpets only (no backrests)",
+        "quantity": 1,
+        "price": 61999
+      }
+    ]
+  },
+  "Tibetan Carpet Seating Set – Auspicious Symbols": {
+    "id": "EM-CARPET-006",
+    "price": 99999,
+    "stock": 2,
+    "packs": [
+      {
+        "label": "2 Carpets + 4 Backrests",
+        "quantity": 1,
+        "price": 99999
+      },
+      {
+        "label": "2 Carpets only (no backrests)",
+        "quantity": 1,
+        "price": 61999
+      }
+    ]
+  },
+  "Tibetan Carpet Seating Set – Dragon & Phoenix – Blue Border": {
+    "id": "EM-CARPET-007",
+    "price": 99999,
+    "stock": 2,
+    "packs": [
+      {
+        "label": "2 Carpets + 4 Backrests",
+        "quantity": 1,
+        "price": 99999
+      },
+      {
+        "label": "2 Carpets only (no backrests)",
+        "quantity": 1,
+        "price": 61999
+      }
+    ]
+  },
+  "Tibetan Carpet Seating Set – Dragon & Phoenix – Rainbow Clouds": {
+    "id": "EM-CARPET-008",
+    "price": 99999,
+    "stock": 2,
+    "packs": [
+      {
+        "label": "2 Carpets + 4 Backrests",
+        "quantity": 1,
+        "price": 99999
+      },
+      {
+        "label": "2 Carpets only (no backrests)",
+        "quantity": 1,
+        "price": 61999
+      }
+    ]
+  },
+  "Tibetan Carpet Seating Set – Dragon & Phoenix – Olive": {
+    "id": "EM-CARPET-009",
+    "price": 99999,
+    "stock": 2,
+    "packs": [
+      {
+        "label": "2 Carpets + 4 Backrests",
+        "quantity": 1,
+        "price": 99999
+      },
+      {
+        "label": "2 Carpets only (no backrests)",
+        "quantity": 1,
+        "price": 61999
       }
     ]
   }
