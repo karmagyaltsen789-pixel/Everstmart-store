@@ -1058,6 +1058,8 @@ button:hover {
         id="productSearch"
         placeholder="🔍 Search products..."
         oninput="searchProducts()"
+        onkeydown="if (event.key === 'Enter') { event.preventDefault(); searchProducts(true); this.blur(); }"
+        enterkeyhint="search"
     >
 </div>
 
@@ -1671,8 +1673,12 @@ function buyCardNow(key) {
 
 /* ---------- Search ---------- */
 
-function searchProducts() {
-  const searchText = document.getElementById("productSearch").value.toLowerCase();
+let searchScrollTimer = null;
+
+function searchProducts(scrollNow) {
+  /* ignore extra spaces and capital letters */
+  const searchText = document.getElementById("productSearch").value
+    .toLowerCase().replace(/\s+/g, " ").trim();
 
   if (searchText && activeCollection !== "all") {
     activeCollection = "all";
@@ -1682,8 +1688,11 @@ function searchProducts() {
   let visible = 0;
 
   document.querySelectorAll(".product").forEach(function (card) {
+    /* search the product name and its category */
     const name = card.querySelector("h3").textContent.toLowerCase();
-    const match = name.includes(searchText);
+    const categoryEl = card.querySelector(".category");
+    const category = categoryEl ? categoryEl.textContent.toLowerCase() : "";
+    const match = (name + " " + category).includes(searchText);
     card.style.display = match ? "" : "none";
 
     if (match) {
@@ -1692,6 +1701,34 @@ function searchProducts() {
   });
 
   document.getElementById("searchEmpty").hidden = visible > 0;
+
+  /* Results are further down the page, so bring them into view:
+     straight away on Enter, or after a short pause while typing */
+  clearTimeout(searchScrollTimer);
+  if (searchText) {
+    searchScrollTimer = setTimeout(scrollToSearchResults, scrollNow ? 0 : 700);
+  }
+}
+
+function scrollToSearchResults() {
+  const firstMatch = Array.prototype.find.call(
+    document.querySelectorAll(".product"),
+    function (card) { return card.style.display !== "none"; }
+  );
+  const target = firstMatch
+    ? document.getElementById("shopHeading")
+    : document.getElementById("searchEmpty");
+  const header = document.querySelector("header");
+  const offset = header ? header.offsetHeight : 0;
+  const top = target.getBoundingClientRect().top;
+
+  /* only scroll if the results are not already on screen */
+  if (top < offset || top > window.innerHeight * 0.6) {
+    window.scrollTo({
+      top: top + window.pageYOffset - offset - 12,
+      behavior: "smooth"
+    });
+  }
 }
 
 /* ---------- Featured Products row ---------- */
