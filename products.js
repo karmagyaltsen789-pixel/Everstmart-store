@@ -13,7 +13,6 @@ window.EVERSTMART_PRODUCTS = {
         stock: 10,
         category: "Tibetan Collection",
         collection: "traditional",
-        featured: true,
         images: [
             "carpet-set.jpg",
             "carpet-living-room.jpg",
@@ -329,7 +328,6 @@ images: [
         stock: 50,
         category: "Prayer Flags",
         collection: "traditional",
-        featured: true,
         optionTitle: "Choose Quality",
         packOptions: [
             { label: "Standard", quantity: 1, price: 99 },
@@ -3072,6 +3070,7 @@ images: [
         "stock": 10,
         "category": "Men-Tsee-Khang Skin, Hair & Body Care",
         "collection": "herbal",
+        "featured": true,
         "optionTitle": "Size",
         "packOptions": [
             {
@@ -5347,6 +5346,7 @@ images: [
         stock: 2,
         category: "Tibetan Carpets",
         collection: "traditional",
+        featured: true,
         optionTitle: "Choose Set",
         packOptions: [
             { label: "2 Carpets + 4 Backrests", quantity: 1, price: 99999 },
