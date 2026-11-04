@@ -5782,4 +5782,205 @@ images: [
             ]
         }
     },
+
+    dalaiLamaScrollSmall: {
+        id: "EM-DECOR-004",
+        name: "Dalai Lama Quote Velvet Scroll – Small",
+        price: 79,
+        stock: 10,
+        category: "Wall Hangings",
+        collection: "home-decor",
+        optionTitle: "Choose Message & Colour",
+        packOptions: [
+            { label: "Never Give Up – Green", quantity: 1, price: 79 },
+            { label: "Never Give Up – Saffron Yellow", quantity: 1, price: 79 },
+            { label: "Never Give Up – Orange", quantity: 1, price: 79 },
+            { label: "Never Give Up – Purple", quantity: 1, price: 79 },
+            { label: "Never Give Up – Rust Brown", quantity: 1, price: 79 },
+            { label: "Never Give Up – Sky Blue", quantity: 1, price: 79 },
+            { label: "Never Give Up – Dark Green", quantity: 1, price: 79 },
+            { label: "Never Give Up – Maroon", quantity: 1, price: 79 },
+            { label: "Never Give Up – White", quantity: 1, price: 79 },
+            { label: "The Paradox of Our Age – Green", quantity: 1, price: 79 },
+            { label: "The Paradox of Our Age – Saffron Yellow", quantity: 1, price: 79 },
+            { label: "The Paradox of Our Age – Orange", quantity: 1, price: 79 },
+            { label: "The Paradox of Our Age – Purple", quantity: 1, price: 79 },
+            { label: "The Paradox of Our Age – Rust Brown", quantity: 1, price: 79 },
+            { label: "The Paradox of Our Age – Sky Blue", quantity: 1, price: 79 },
+            { label: "The Paradox of Our Age – Dark Green", quantity: 1, price: 79 },
+            { label: "The Paradox of Our Age – Maroon", quantity: 1, price: 79 },
+            { label: "The Paradox of Our Age – White", quantity: 1, price: 79 },
+            { label: "The True Meaning of Life – Green", quantity: 1, price: 79 },
+            { label: "The True Meaning of Life – Saffron Yellow", quantity: 1, price: 79 },
+            { label: "The True Meaning of Life – Orange", quantity: 1, price: 79 },
+            { label: "The True Meaning of Life – Purple", quantity: 1, price: 79 },
+            { label: "The True Meaning of Life – Rust Brown", quantity: 1, price: 79 },
+            { label: "The True Meaning of Life – Sky Blue", quantity: 1, price: 79 },
+            { label: "The True Meaning of Life – Dark Green", quantity: 1, price: 79 },
+            { label: "The True Meaning of Life – Maroon", quantity: 1, price: 79 },
+            { label: "The True Meaning of Life – White", quantity: 1, price: 79 },
+            { label: "A Precious Human Life – Green", quantity: 1, price: 79 },
+            { label: "A Precious Human Life – Saffron Yellow", quantity: 1, price: 79 },
+            { label: "A Precious Human Life – Orange", quantity: 1, price: 79 },
+            { label: "A Precious Human Life – Purple", quantity: 1, price: 79 },
+            { label: "A Precious Human Life – Rust Brown", quantity: 1, price: 79 },
+            { label: "A Precious Human Life – Sky Blue", quantity: 1, price: 79 },
+            { label: "A Precious Human Life – Dark Green", quantity: 1, price: 79 },
+            { label: "A Precious Human Life – Maroon", quantity: 1, price: 79 },
+            { label: "A Precious Human Life – White", quantity: 1, price: 79 },
+            { label: "Compassion – Green", quantity: 1, price: 79 },
+            { label: "Compassion – Saffron Yellow", quantity: 1, price: 79 },
+            { label: "Compassion – Orange", quantity: 1, price: 79 },
+            { label: "Compassion – Purple", quantity: 1, price: 79 },
+            { label: "Compassion – Rust Brown", quantity: 1, price: 79 },
+            { label: "Compassion – Sky Blue", quantity: 1, price: 79 },
+            { label: "Compassion – Dark Green", quantity: 1, price: 79 },
+            { label: "Compassion – Maroon", quantity: 1, price: 79 },
+            { label: "Compassion – White", quantity: 1, price: 79 }
+        ],
+        wholesale: true,
+        images: [
+            "scroll-small-1.jpg",
+            "scroll-small-2.jpg",
+            "scroll-small-3.jpg",
+            "scroll-small-4.jpg"
+        ],
+        description:
+            "A small Tibetan velvet wall scroll printed with a message from His Holiness the 14th Dalai Lama, with a gold Tibetan endless-knot border, light wooden rollers and a braided five-colour hanging cord with a wooden bead. It suits a desk wall, a study or a meditation corner, and makes a thoughtful small gift. Choose from five messages (Never Give Up, The Paradox of Our Age, The True Meaning of Life, A Precious Human Life, Compassion), each available in nine colours.",
+        details: {
+            productDetails: [
+                ["Size", "27.3 × 9.5 cm (approx. 10.7 × 3.7 inches)"],
+                ["Material", "Velvet fabric with printed message"],
+                ["Messages", "Never Give Up, The Paradox of Our Age, The True Meaning of Life, A Precious Human Life, Compassion"],
+                ["Colours", "Green, Saffron Yellow, Orange, Purple, Rust Brown, Sky Blue, Dark Green, Maroon, White"],
+                ["Finish", "Gold Tibetan border, wooden rollers, braided five-colour hanging cord with wooden bead"],
+                ["Suitable For", "Desks, studies, meditation corners and gifting"]
+            ],
+            careInstructions: [
+                "Dust gently with a soft dry cloth or brush.",
+                "Spot clean only with a slightly damp cloth; do not machine wash or soak.",
+                "Keep away from long periods of strong direct sunlight to protect the colours.",
+                "Roll loosely around the rod for storage; do not fold."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    dalaiLamaScrollLarge: {
+        id: "EM-DECOR-005",
+        name: "Dalai Lama Quote Framed Scroll – Large",
+        price: 119,
+        stock: 10,
+        category: "Wall Hangings",
+        collection: "home-decor",
+        optionTitle: "Choose Message & Colour",
+        packOptions: [
+            { label: "Never Give Up – Red", quantity: 1, price: 119 },
+            { label: "Never Give Up – Maroon", quantity: 1, price: 119 },
+            { label: "Never Give Up – Navy Blue", quantity: 1, price: 119 },
+            { label: "Never Give Up – Light Purple", quantity: 1, price: 119 },
+            { label: "Never Give Up – Yellow", quantity: 1, price: 119 },
+            { label: "The Paradox of Our Age – Red", quantity: 1, price: 119 },
+            { label: "The Paradox of Our Age – Maroon", quantity: 1, price: 119 },
+            { label: "The Paradox of Our Age – Navy Blue", quantity: 1, price: 119 },
+            { label: "The Paradox of Our Age – Light Purple", quantity: 1, price: 119 },
+            { label: "The Paradox of Our Age – Yellow", quantity: 1, price: 119 },
+            { label: "The True Meaning of Life – Red", quantity: 1, price: 119 },
+            { label: "The True Meaning of Life – Maroon", quantity: 1, price: 119 },
+            { label: "The True Meaning of Life – Navy Blue", quantity: 1, price: 119 },
+            { label: "The True Meaning of Life – Light Purple", quantity: 1, price: 119 },
+            { label: "The True Meaning of Life – Yellow", quantity: 1, price: 119 },
+            { label: "A Precious Human Life – Red", quantity: 1, price: 119 },
+            { label: "A Precious Human Life – Maroon", quantity: 1, price: 119 },
+            { label: "A Precious Human Life – Navy Blue", quantity: 1, price: 119 },
+            { label: "A Precious Human Life – Light Purple", quantity: 1, price: 119 },
+            { label: "A Precious Human Life – Yellow", quantity: 1, price: 119 },
+            { label: "Compassion – Red", quantity: 1, price: 119 },
+            { label: "Compassion – Maroon", quantity: 1, price: 119 },
+            { label: "Compassion – Navy Blue", quantity: 1, price: 119 },
+            { label: "Compassion – Light Purple", quantity: 1, price: 119 },
+            { label: "Compassion – Yellow", quantity: 1, price: 119 }
+        ],
+        wholesale: true,
+        images: [
+            "scroll-large-1.jpg",
+            "scroll-large-2.jpg"
+        ],
+        description:
+            "A Tibetan wall scroll with a message from His Holiness the 14th Dalai Lama printed on a coloured panel, set in a black fabric frame with ornate gold Tibetan endless-knot corner designs. It has light wooden rods top and bottom and a braided five-colour hanging cord. Choose from five messages (Never Give Up, The Paradox of Our Age, The True Meaning of Life, A Precious Human Life, Compassion), each available in five colours.",
+        details: {
+            productDetails: [
+                ["Size", "14.3 × 8.3 inches (approx. 36.3 × 21.1 cm)"],
+                ["Messages", "Never Give Up, The Paradox of Our Age, The True Meaning of Life, A Precious Human Life, Compassion"],
+                ["Colours", "Red, Maroon, Navy Blue, Light Purple, Yellow"],
+                ["Finish", "Black fabric frame, gold Tibetan corner designs, wooden rods, braided five-colour hanging cord"],
+                ["Suitable For", "Homes, offices, studies, meditation spaces and gifting"]
+            ],
+            careInstructions: [
+                "Dust gently with a soft dry cloth or brush.",
+                "Spot clean only with a slightly damp cloth; do not machine wash or soak.",
+                "Keep away from long periods of strong direct sunlight to protect the colours.",
+                "Roll loosely around the rod for storage; do not fold."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    buddhaWisdomScroll: {
+        id: "EM-DECOR-006",
+        name: "Buddha Wisdom Quote Scroll",
+        price: 99,
+        stock: 10,
+        category: "Wall Hangings",
+        collection: "home-decor",
+        optionTitle: "Choose Design",
+        packOptions: [
+            { label: "Blue – All That We Are", quantity: 1, price: 99 },
+            { label: "Yellow – Smile", quantity: 1, price: 99 },
+            { label: "Navy – Thousands of Candles", quantity: 1, price: 99 },
+            { label: "Olive Brown – Hate Is Never Conquered by Hate", quantity: 1, price: 99 },
+            { label: "Rust Red – All Conditioned Things Are Impermanent", quantity: 1, price: 99 },
+            { label: "Green – There Is No Fear", quantity: 1, price: 99 },
+            { label: "Dark Green – One Moment Can Change a Day", quantity: 1, price: 99 },
+            { label: "Sky Blue – The Mind Is Like Water", quantity: 1, price: 99 },
+            { label: "Cream – Love Yourself", quantity: 1, price: 99 }
+        ],
+        wholesale: true,
+        images: [
+            "buddha-scroll-1.jpg",
+            "buddha-scroll-2.jpg",
+            "buddha-scroll-3.jpg"
+        ],
+        description:
+            "A Tibetan canvas wall scroll with a teaching of the Buddha, the mantra Om Mani Padme Hum in Tibetan script, the eight auspicious symbols and a Himalayan stupa landscape, finished with a colourful Tibetan border and a wooden rod. Nine designs, each with its own quote and colour, so you can pick the message that speaks to you.",
+        details: {
+            productDetails: [
+                ["Size", "14.5 × 8.3 inches (approx. 36.8 × 21.1 cm)"],
+                ["Material", "Printed canvas with fabric border"],
+                ["Designs", "9 designs, each with its own quote and colour (see the last photo)"],
+                ["Features", "Om Mani Padme Hum, eight auspicious symbols, Himalayan stupa landscape"],
+                ["Finish", "Colourful Tibetan border, wooden rod, fabric hanging loop"],
+                ["Suitable For", "Homes, offices, meditation spaces, shrine rooms and gifting"]
+            ],
+            careInstructions: [
+                "Dust gently with a soft dry cloth or brush.",
+                "Spot clean only with a slightly damp cloth; do not machine wash or soak.",
+                "Keep away from long periods of strong direct sunlight to protect the colours.",
+                "Roll loosely around the rod for storage; do not fold."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
 };
