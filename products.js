@@ -649,9 +649,7 @@ images: [
         collection: "home-decor",
         wholesale: true,
         images: [
-            "quote-hanging-paradox-1.jpg",
-            "quote-hanging-paradox-2.jpg",
-            "quote-hanging-paradox-3.jpg"
+"quote-hanging-paradox-3.jpg"
         ],
         description:
             "A Tibetan wall hanging with The Paradox of Our Age, a quote from His Holiness the 14th Dalai Lama, printed on a cream canvas panel above two silk pockets embroidered with auspicious Buddhist symbols. The pockets hold letters, cards, keys or small keepsakes, so the piece works as decoration and as storage. It has a yellow and gold brocade border, a brass-capped hanging rod and a five-colour fringe in the prayer flag colours. Price is for one hanging; it is also available in The True Meaning of Life design.",
