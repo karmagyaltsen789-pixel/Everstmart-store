@@ -207,6 +207,24 @@ const CATALOG = {
     "stock": 10,
     "packs": []
   },
+  "Embroidered Eight Auspicious Symbols Pocket Wall Hanging (Set of 2)": {
+    "id": "EM-DECOR-001",
+    "price": 769,
+    "stock": 10,
+    "packs": []
+  },
+  "Dalai Lama Quote Pocket Wall Hanging – The True Meaning of Life": {
+    "id": "EM-DECOR-002",
+    "price": 499,
+    "stock": 10,
+    "packs": []
+  },
+  "Dalai Lama Quote Pocket Wall Hanging – The Paradox of Our Age": {
+    "id": "EM-DECOR-003",
+    "price": 499,
+    "stock": 10,
+    "packs": []
+  },
   "Tibetan Embroidered Varsity Jacket – Maroon": {
     "id": "EM-APPAREL-001",
     "price": 4999,
@@ -1458,84 +1476,6 @@ const CATALOG = {
         "price": 61999
       }
     ]
-  },
-  "Tibetan Door Curtain – Navy & White": {
-    "id": "EM-DECOR-001",
-    "price": 799,
-    "stock": 10,
-    "packs": []
-  },
-  "Tibetan Door Curtain – Green & White": {
-    "id": "EM-DECOR-002",
-    "price": 799,
-    "stock": 10,
-    "packs": []
-  },
-  "Tibetan Door Curtain – Royal Blue & White": {
-    "id": "EM-DECOR-003",
-    "price": 799,
-    "stock": 10,
-    "packs": []
-  },
-  "Tibetan Door Curtain – Maroon & Saffron": {
-    "id": "EM-DECOR-004",
-    "price": 799,
-    "stock": 10,
-    "packs": []
-  },
-  "Tibetan Door Curtain – White & Royal Blue": {
-    "id": "EM-DECOR-005",
-    "price": 799,
-    "stock": 10,
-    "packs": []
-  },
-  "Tibetan Door Curtain – Turquoise & White": {
-    "id": "EM-DECOR-006",
-    "price": 799,
-    "stock": 10,
-    "packs": []
-  },
-  "Tibetan Door Curtain – Orange & White": {
-    "id": "EM-DECOR-007",
-    "price": 799,
-    "stock": 10,
-    "packs": []
-  },
-  "Tibetan Door Curtain – Mustard & Maroon": {
-    "id": "EM-DECOR-008",
-    "price": 899,
-    "stock": 10,
-    "packs": []
-  },
-  "Tibetan Meditation Mattress (Den) with Carry Bag": {
-    "id": "EM-TRAD-002",
-    "price": 349,
-    "stock": 10,
-    "packs": []
-  },
-  "Tibetan Lama Bag (Monk Bag) – Yellow, Precious Parasol": {
-    "id": "EM-BAG-001",
-    "price": 599,
-    "stock": 10,
-    "packs": []
-  },
-  "Tibetan Lama Bag (Monk Bag) – Maroon, Double Vajra": {
-    "id": "EM-BAG-002",
-    "price": 599,
-    "stock": 10,
-    "packs": []
-  },
-  "Tibetan Double Vajra Tote Bag – Black": {
-    "id": "EM-BAG-003",
-    "price": 599,
-    "stock": 10,
-    "packs": []
-  },
-  "Tibet Yak Embroidered Tote Bag – Green": {
-    "id": "EM-BAG-004",
-    "price": 599,
-    "stock": 10,
-    "packs": []
   }
 };
 
