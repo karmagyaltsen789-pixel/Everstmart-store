@@ -1892,6 +1892,96 @@ const CATALOG = {
         "price": 99
       }
     ]
+  },
+  "Blue Cotton Paper Pocket Journal": {
+    "id": "EM-JOURNAL-001",
+    "price": 89,
+    "stock": 9,
+    "packs": []
+  },
+  "Purple Cotton Paper Pocket Journal": {
+    "id": "EM-JOURNAL-002",
+    "price": 99,
+    "stock": 9,
+    "packs": []
+  },
+  "Om Leather Pocket Journal": {
+    "id": "EM-JOURNAL-003",
+    "price": 89,
+    "stock": 9,
+    "packs": []
+  },
+  "Elephant Leather Journal": {
+    "id": "EM-JOURNAL-004",
+    "price": 169,
+    "stock": 9,
+    "packs": []
+  },
+  "Bodhi Leaf Journal – Orange": {
+    "id": "EM-JOURNAL-005",
+    "price": 99,
+    "stock": 9,
+    "packs": []
+  },
+  "Bodhi Leaf Pocket Journal – Purple": {
+    "id": "EM-JOURNAL-006",
+    "price": 89,
+    "stock": 9,
+    "packs": []
+  },
+  "Maroon Brocade Journal – Cord Tie": {
+    "id": "EM-JOURNAL-007",
+    "price": 169,
+    "stock": 9,
+    "packs": []
+  },
+  "Maroon Brocade Journal – Metal Clasp": {
+    "id": "EM-JOURNAL-008",
+    "price": 149,
+    "stock": 9,
+    "packs": []
+  },
+  "Chakra (Dharma Wheel) Journal": {
+    "id": "EM-JOURNAL-009",
+    "price": 189,
+    "stock": 9,
+    "packs": []
+  },
+  "Painted Elephant Journal (Landscape)": {
+    "id": "EM-JOURNAL-010",
+    "price": 129,
+    "stock": 9,
+    "packs": []
+  },
+  "Silver Brocade Journal – Button Closure": {
+    "id": "EM-JOURNAL-011",
+    "price": 99,
+    "stock": 9,
+    "packs": []
+  },
+  "Green Brocade Journal": {
+    "id": "EM-JOURNAL-012",
+    "price": 149,
+    "stock": 9,
+    "packs": []
+  },
+  "Kalasa (Treasure Vase) Journal": {
+    "id": "EM-JOURNAL-013",
+    "price": 99,
+    "stock": 9,
+    "packs": []
+  },
+  "Himalayan Woven Stripe Journal": {
+    "id": "EM-JOURNAL-014",
+    "price": 169,
+    "stock": 9,
+    "packs": []
+  },
+  "Buddha Quote Journal": {
+    "id": "EM-JOURNAL-015",
+    "price": 199,
+    "stock": 9,
+    "packs": []
   }
 };
 
