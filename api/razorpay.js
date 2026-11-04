@@ -1476,6 +1476,422 @@ const CATALOG = {
         "price": 61999
       }
     ]
+  },
+  "Dalai Lama Quote Velvet Scroll – Small": {
+    "id": "EM-DECOR-004",
+    "price": 79,
+    "stock": 10,
+    "packs": [
+      {
+        "label": "Never Give Up – Green",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "Never Give Up – Saffron Yellow",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "Never Give Up – Orange",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "Never Give Up – Purple",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "Never Give Up – Rust Brown",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "Never Give Up – Sky Blue",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "Never Give Up – Dark Green",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "Never Give Up – Maroon",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "Never Give Up – White",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "The Paradox of Our Age – Green",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "The Paradox of Our Age – Saffron Yellow",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "The Paradox of Our Age – Orange",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "The Paradox of Our Age – Purple",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "The Paradox of Our Age – Rust Brown",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "The Paradox of Our Age – Sky Blue",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "The Paradox of Our Age – Dark Green",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "The Paradox of Our Age – Maroon",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "The Paradox of Our Age – White",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "The True Meaning of Life – Green",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "The True Meaning of Life – Saffron Yellow",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "The True Meaning of Life – Orange",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "The True Meaning of Life – Purple",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "The True Meaning of Life – Rust Brown",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "The True Meaning of Life – Sky Blue",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "The True Meaning of Life – Dark Green",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "The True Meaning of Life – Maroon",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "The True Meaning of Life – White",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "A Precious Human Life – Green",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "A Precious Human Life – Saffron Yellow",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "A Precious Human Life – Orange",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "A Precious Human Life – Purple",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "A Precious Human Life – Rust Brown",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "A Precious Human Life – Sky Blue",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "A Precious Human Life – Dark Green",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "A Precious Human Life – Maroon",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "A Precious Human Life – White",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "Compassion – Green",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "Compassion – Saffron Yellow",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "Compassion – Orange",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "Compassion – Purple",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "Compassion – Rust Brown",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "Compassion – Sky Blue",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "Compassion – Dark Green",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "Compassion – Maroon",
+        "quantity": 1,
+        "price": 79
+      },
+      {
+        "label": "Compassion – White",
+        "quantity": 1,
+        "price": 79
+      }
+    ]
+  },
+  "Dalai Lama Quote Framed Scroll – Large": {
+    "id": "EM-DECOR-005",
+    "price": 119,
+    "stock": 10,
+    "packs": [
+      {
+        "label": "Never Give Up – Red",
+        "quantity": 1,
+        "price": 119
+      },
+      {
+        "label": "Never Give Up – Maroon",
+        "quantity": 1,
+        "price": 119
+      },
+      {
+        "label": "Never Give Up – Navy Blue",
+        "quantity": 1,
+        "price": 119
+      },
+      {
+        "label": "Never Give Up – Light Purple",
+        "quantity": 1,
+        "price": 119
+      },
+      {
+        "label": "Never Give Up – Yellow",
+        "quantity": 1,
+        "price": 119
+      },
+      {
+        "label": "The Paradox of Our Age – Red",
+        "quantity": 1,
+        "price": 119
+      },
+      {
+        "label": "The Paradox of Our Age – Maroon",
+        "quantity": 1,
+        "price": 119
+      },
+      {
+        "label": "The Paradox of Our Age – Navy Blue",
+        "quantity": 1,
+        "price": 119
+      },
+      {
+        "label": "The Paradox of Our Age – Light Purple",
+        "quantity": 1,
+        "price": 119
+      },
+      {
+        "label": "The Paradox of Our Age – Yellow",
+        "quantity": 1,
+        "price": 119
+      },
+      {
+        "label": "The True Meaning of Life – Red",
+        "quantity": 1,
+        "price": 119
+      },
+      {
+        "label": "The True Meaning of Life – Maroon",
+        "quantity": 1,
+        "price": 119
+      },
+      {
+        "label": "The True Meaning of Life – Navy Blue",
+        "quantity": 1,
+        "price": 119
+      },
+      {
+        "label": "The True Meaning of Life – Light Purple",
+        "quantity": 1,
+        "price": 119
+      },
+      {
+        "label": "The True Meaning of Life – Yellow",
+        "quantity": 1,
+        "price": 119
+      },
+      {
+        "label": "A Precious Human Life – Red",
+        "quantity": 1,
+        "price": 119
+      },
+      {
+        "label": "A Precious Human Life – Maroon",
+        "quantity": 1,
+        "price": 119
+      },
+      {
+        "label": "A Precious Human Life – Navy Blue",
+        "quantity": 1,
+        "price": 119
+      },
+      {
+        "label": "A Precious Human Life – Light Purple",
+        "quantity": 1,
+        "price": 119
+      },
+      {
+        "label": "A Precious Human Life – Yellow",
+        "quantity": 1,
+        "price": 119
+      },
+      {
+        "label": "Compassion – Red",
+        "quantity": 1,
+        "price": 119
+      },
+      {
+        "label": "Compassion – Maroon",
+        "quantity": 1,
+        "price": 119
+      },
+      {
+        "label": "Compassion – Navy Blue",
+        "quantity": 1,
+        "price": 119
+      },
+      {
+        "label": "Compassion – Light Purple",
+        "quantity": 1,
+        "price": 119
+      },
+      {
+        "label": "Compassion – Yellow",
+        "quantity": 1,
+        "price": 119
+      }
+    ]
+  },
+  "Buddha Wisdom Quote Scroll": {
+    "id": "EM-DECOR-006",
+    "price": 99,
+    "stock": 10,
+    "packs": [
+      {
+        "label": "Blue – All That We Are",
+        "quantity": 1,
+        "price": 99
+      },
+      {
+        "label": "Yellow – Smile",
+        "quantity": 1,
+        "price": 99
+      },
+      {
+        "label": "Navy – Thousands of Candles",
+        "quantity": 1,
+        "price": 99
+      },
+      {
+        "label": "Olive Brown – Hate Is Never Conquered by Hate",
+        "quantity": 1,
+        "price": 99
+      },
+      {
+        "label": "Rust Red – All Conditioned Things Are Impermanent",
+        "quantity": 1,
+        "price": 99
+      },
+      {
+        "label": "Green – There Is No Fear",
+        "quantity": 1,
+        "price": 99
+      },
+      {
+        "label": "Dark Green – One Moment Can Change a Day",
+        "quantity": 1,
+        "price": 99
+      },
+      {
+        "label": "Sky Blue – The Mind Is Like Water",
+        "quantity": 1,
+        "price": 99
+      },
+      {
+        "label": "Cream – Love Yourself",
+        "quantity": 1,
+        "price": 99
+      }
+    ]
   }
 };
 
