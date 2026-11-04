@@ -5983,4 +5983,579 @@ images: [
             ]
         }
     },
+
+    journalBlueCotton: {
+        id: "EM-JOURNAL-001",
+        name: "Blue Cotton Paper Pocket Journal",
+        price: 89,
+        stock: 9,
+        category: "Handmade Journals",
+        collection: "lifestyle",
+        wholesale: true,
+        images: [
+            "journal-blue-cotton-1.jpg",
+            "journal-blue-cotton-2.jpg",
+            "journal-blue-cotton-3.jpg"
+        ],
+        description:
+            "A tiny pocket journal with a shimmering blue handmade-paper cover, a fold-over flap, a bamboo toggle and a colourful braided cord. Small enough for a shirt pocket or travel bag, it is perfect for notes, mantras, travel jottings or as a small gift. The pages are 100% cotton handmade paper, tree-free and handmade by Tibetan refugee artisans in India; small flecks and fibres are natural marks of handmade paper, so every journal is unique.",
+        details: {
+            productDetails: [
+                ["Size", "A7 · 7.5 × 10 cm (approx. 3 × 4 in)"],
+                ["Paper", "100% cotton handmade paper (tree-free)"],
+                ["Cover", "Shimmering crinkle-textured blue handmade paper, hard cover with fold-over flap"],
+                ["Closure", "Bamboo toggle with a braided five-colour cord and wooden bead"],
+                ["Binding", "Hand-sewn"],
+                ["Made By", "Handmade by Tibetan refugee artisans, Made in India"],
+                ["Suitable For", "Journaling, sketching, travel notes, prayers and mantras, and gifting"]
+            ],
+            careInstructions: [
+                "Keep dry and away from moisture.",
+                "Works well with pencil, ballpoint and gel pens; test fountain pens and markers first, as handmade paper can feather.",
+                "Wipe the cover gently with a soft dry cloth; do not wash.",
+                "Slight variations in colour and texture are natural in handmade products."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    journalPurpleCotton: {
+        id: "EM-JOURNAL-002",
+        name: "Purple Cotton Paper Pocket Journal",
+        price: 99,
+        stock: 9,
+        category: "Handmade Journals",
+        collection: "lifestyle",
+        wholesale: true,
+        images: [
+            "journal-purple-cotton-1.jpg",
+            "journal-purple-cotton-2.jpg",
+            "journal-purple-cotton-3.jpg"
+        ],
+        description:
+            "A small journal with a shimmering violet handmade-paper cover, a fold-over flap and a bamboo toggle laced with a colourful braided cord. A handy size for daily notes, sketches, prayers or gifting. The pages are 100% cotton handmade paper, tree-free and handmade by Tibetan refugee artisans in India; small flecks and fibres are natural marks of handmade paper, so every journal is unique.",
+        details: {
+            productDetails: [
+                ["Size", "B7 · 9.5 × 12.5 cm (approx. 3.75 × 5 in)"],
+                ["Paper", "100% cotton handmade paper (tree-free)"],
+                ["Cover", "Shimmering crinkle-textured purple handmade paper, hard cover with fold-over flap"],
+                ["Closure", "Bamboo toggle with a braided five-colour cord laced through the flap and a wooden bead"],
+                ["Binding", "Hand-sewn"],
+                ["Made By", "Handmade by Tibetan refugee artisans, Made in India"],
+                ["Suitable For", "Journaling, sketching, travel notes, prayers and mantras, and gifting"]
+            ],
+            careInstructions: [
+                "Keep dry and away from moisture.",
+                "Works well with pencil, ballpoint and gel pens; test fountain pens and markers first, as handmade paper can feather.",
+                "Wipe the cover gently with a soft dry cloth; do not wash.",
+                "Slight variations in colour and texture are natural in handmade products."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    journalOmLeather: {
+        id: "EM-JOURNAL-003",
+        name: "Om Leather Pocket Journal",
+        price: 89,
+        stock: 9,
+        category: "Handmade Journals",
+        collection: "lifestyle",
+        wholesale: true,
+        images: [
+            "journal-om-leather-1.jpg",
+            "journal-om-leather-2.jpg",
+            "journal-om-leather-3.jpg"
+        ],
+        description:
+            "A pocket journal bound in brown leather, embossed with the sacred Om symbol on the front and a floral pattern on the back, closed with a leather button and wrap cord. A meaningful companion for mantras, gratitude notes and daily reflections. The pages are 100% cotton handmade paper, tree-free and handmade by Tibetan refugee artisans in India; small flecks and fibres are natural marks of handmade paper, so every journal is unique.",
+        details: {
+            productDetails: [
+                ["Size", "A7 · 7.4 × 10.5 cm (approx. 2.9 × 4.1 in)"],
+                ["Paper", "100% cotton handmade paper (tree-free)"],
+                ["Cover", "Brown leather embossed with Om on the front and a floral pattern on the back"],
+                ["Closure", "Leather button with wrap-around cord"],
+                ["Binding", "Hand-sewn"],
+                ["Made By", "Handmade by Tibetan refugee artisans, Made in India"],
+                ["Suitable For", "Journaling, sketching, travel notes, prayers and mantras, and gifting"]
+            ],
+            careInstructions: [
+                "Keep dry and away from moisture.",
+                "Works well with pencil, ballpoint and gel pens; test fountain pens and markers first, as handmade paper can feather.",
+                "Wipe the cover gently with a soft dry cloth; do not wash.",
+                "Slight variations in colour and texture are natural in handmade products."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    journalElephantLeather: {
+        id: "EM-JOURNAL-004",
+        name: "Elephant Leather Journal",
+        price: 169,
+        stock: 9,
+        category: "Handmade Journals",
+        collection: "lifestyle",
+        wholesale: true,
+        images: [
+            "journal-elephant-leather-1.jpg",
+            "journal-elephant-leather-2.jpg",
+            "journal-elephant-leather-3.jpg"
+        ],
+        description:
+            "A large journal in natural leather, embossed with a majestic elephant on the front and a traditional pattern on the back, with a button and cord closure. A generous size for journaling, sketching, travel diaries or a special gift. The pages are 100% cotton handmade paper, tree-free and handmade by Tibetan refugee artisans in India; small flecks and fibres are natural marks of handmade paper, so every journal is unique.",
+        details: {
+            productDetails: [
+                ["Size", "A5 · 15 × 22.5 cm (approx. 5.9 × 8.9 in)"],
+                ["Paper", "100% cotton handmade paper (tree-free)"],
+                ["Cover", "Leather embossed with an elephant on the front and a traditional pattern on the back"],
+                ["Closure", "Leather button with wrap-around cord"],
+                ["Binding", "Hand-sewn"],
+                ["Made By", "Handmade by Tibetan refugee artisans, Made in India"],
+                ["Suitable For", "Journaling, sketching, travel notes, prayers and mantras, and gifting"]
+            ],
+            careInstructions: [
+                "Keep dry and away from moisture.",
+                "Works well with pencil, ballpoint and gel pens; test fountain pens and markers first, as handmade paper can feather.",
+                "Wipe the cover gently with a soft dry cloth; do not wash.",
+                "Slight variations in colour and texture are natural in handmade products."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    journalBodhiLeafOrange: {
+        id: "EM-JOURNAL-005",
+        name: "Bodhi Leaf Journal – Orange",
+        price: 99,
+        stock: 9,
+        category: "Handmade Journals",
+        collection: "lifestyle",
+        wholesale: true,
+        images: [
+            "journal-bodhi-leaf-orange-1.jpg",
+            "journal-bodhi-leaf-orange-2.jpg"
+        ],
+        description:
+            "A real pressed bodhi leaf, the tree under which the Buddha attained enlightenment, set on a warm orange crinkled handmade-paper cover and tied with a colourful braided cord. A peaceful journal for reflections, prayers and gifting. The pages are 100% cotton handmade paper, tree-free and handmade by Tibetan refugee artisans in India; small flecks and fibres are natural marks of handmade paper, so every journal is unique.",
+        details: {
+            productDetails: [
+                ["Size", "B7 · 9 × 13 cm (approx. 3.5 × 5.1 in)"],
+                ["Paper", "100% cotton handmade paper (tree-free)"],
+                ["Cover", "Crinkled orange handmade paper with a real pressed bodhi (peepal) leaf on the front"],
+                ["Closure", "Braided five-colour wrap cord"],
+                ["Binding", "Hand-sewn"],
+                ["Made By", "Handmade by Tibetan refugee artisans, Made in India"],
+                ["Suitable For", "Journaling, sketching, travel notes, prayers and mantras, and gifting"]
+            ],
+            careInstructions: [
+                "Keep dry and away from moisture.",
+                "Works well with pencil, ballpoint and gel pens; test fountain pens and markers first, as handmade paper can feather.",
+                "Wipe the cover gently with a soft dry cloth; do not wash.",
+                "Slight variations in colour and texture are natural in handmade products."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    journalBodhiLeafPurple: {
+        id: "EM-JOURNAL-006",
+        name: "Bodhi Leaf Pocket Journal – Purple",
+        price: 89,
+        stock: 9,
+        category: "Handmade Journals",
+        collection: "lifestyle",
+        wholesale: true,
+        images: [
+            "journal-bodhi-leaf-purple-1.jpg",
+            "journal-bodhi-leaf-purple-2.jpg"
+        ],
+        description:
+            "A pocket journal with a real pressed bodhi leaf on a shimmering purple crinkled handmade-paper cover, tied with a braided five-colour cord. Small, light and meaningful, ideal for mantras, notes and gifts. The pages are 100% cotton handmade paper, tree-free and handmade by Tibetan refugee artisans in India; small flecks and fibres are natural marks of handmade paper, so every journal is unique.",
+        details: {
+            productDetails: [
+                ["Size", "A7 · 7 × 10 cm (approx. 2.75 × 4 in)"],
+                ["Paper", "100% cotton handmade paper (tree-free)"],
+                ["Cover", "Crinkled purple handmade paper with a real pressed bodhi (peepal) leaf on the front"],
+                ["Closure", "Braided five-colour wrap cord"],
+                ["Binding", "Hand-sewn"],
+                ["Made By", "Handmade by Tibetan refugee artisans, Made in India"],
+                ["Suitable For", "Journaling, sketching, travel notes, prayers and mantras, and gifting"]
+            ],
+            careInstructions: [
+                "Keep dry and away from moisture.",
+                "Works well with pencil, ballpoint and gel pens; test fountain pens and markers first, as handmade paper can feather.",
+                "Wipe the cover gently with a soft dry cloth; do not wash.",
+                "Slight variations in colour and texture are natural in handmade products."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    journalBrocadeMaroonCord: {
+        id: "EM-JOURNAL-007",
+        name: "Maroon Brocade Journal – Cord Tie",
+        price: 169,
+        stock: 9,
+        category: "Handmade Journals",
+        collection: "lifestyle",
+        wholesale: true,
+        images: [
+            "journal-brocade-maroon-cord-1.jpg",
+            "journal-brocade-maroon-cord-2.jpg"
+        ],
+        description:
+            "A large journal wrapped in rich maroon brocade woven with a gold-green floral pattern, with a fold-over flap and black cord tie. Elegant enough for gifting and roomy enough for journaling, planning and sketching. The pages are 100% cotton handmade paper, tree-free and handmade by Tibetan refugee artisans in India; small flecks and fibres are natural marks of handmade paper, so every journal is unique.",
+        details: {
+            productDetails: [
+                ["Size", "A5 · 16 × 21 cm (approx. 6.3 × 8.3 in)"],
+                ["Paper", "100% cotton handmade paper (tree-free)"],
+                ["Cover", "Maroon brocade fabric woven with a gold-green floral pattern, with fold-over flap"],
+                ["Closure", "Black cord tie"],
+                ["Binding", "Hand-sewn"],
+                ["Made By", "Handmade by Tibetan refugee artisans, Made in India"],
+                ["Suitable For", "Journaling, sketching, travel notes, prayers and mantras, and gifting"]
+            ],
+            careInstructions: [
+                "Keep dry and away from moisture.",
+                "Works well with pencil, ballpoint and gel pens; test fountain pens and markers first, as handmade paper can feather.",
+                "Wipe the cover gently with a soft dry cloth; do not wash.",
+                "Slight variations in colour and texture are natural in handmade products."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    journalBrocadeMaroonClasp: {
+        id: "EM-JOURNAL-008",
+        name: "Maroon Brocade Journal – Metal Clasp",
+        price: 149,
+        stock: 9,
+        category: "Handmade Journals",
+        collection: "lifestyle",
+        wholesale: true,
+        images: [
+            "journal-brocade-maroon-clasp-1.jpg",
+            "journal-brocade-maroon-clasp-2.jpg"
+        ],
+        description:
+            "A brocade-covered journal in deep maroon with a gold-green floral weave, closed with an antique-finish metal clasp on a fold-over flap. A classic, gift-ready journal for writing and keepsakes. The pages are 100% cotton handmade paper, tree-free and handmade by Tibetan refugee artisans in India; small flecks and fibres are natural marks of handmade paper, so every journal is unique.",
+        details: {
+            productDetails: [
+                ["Size", "B6 · 14 × 18 cm (approx. 5.5 × 7.1 in)"],
+                ["Paper", "100% cotton handmade paper (tree-free)"],
+                ["Cover", "Maroon brocade fabric woven with a gold-green floral pattern, with fold-over flap"],
+                ["Closure", "Antique-finish metal clasp"],
+                ["Binding", "Hand-sewn"],
+                ["Made By", "Handmade by Tibetan refugee artisans, Made in India"],
+                ["Suitable For", "Journaling, sketching, travel notes, prayers and mantras, and gifting"]
+            ],
+            careInstructions: [
+                "Keep dry and away from moisture.",
+                "Works well with pencil, ballpoint and gel pens; test fountain pens and markers first, as handmade paper can feather.",
+                "Wipe the cover gently with a soft dry cloth; do not wash.",
+                "Slight variations in colour and texture are natural in handmade products."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    journalChakra: {
+        id: "EM-JOURNAL-009",
+        name: "Chakra (Dharma Wheel) Journal",
+        price: 189,
+        stock: 9,
+        category: "Handmade Journals",
+        collection: "lifestyle",
+        wholesale: true,
+        images: [
+            "journal-chakra-1.jpg",
+            "journal-chakra-2.jpg"
+        ],
+        description:
+            "A tall journal featuring the Dharma Wheel (Chakra), one of the Eight Auspicious Symbols of Tibetan Buddhism, printed in gold and brown within traditional Tibetan borders, tied with a braided five-colour cord. A meaningful journal for study notes, reflections and gifting. The pages are 100% cotton handmade paper, tree-free and handmade by Tibetan refugee artisans in India; small flecks and fibres are natural marks of handmade paper, so every journal is unique.",
+        details: {
+            productDetails: [
+                ["Size", "A5 tall · 14 × 24 cm (approx. 5.5 × 9.4 in)"],
+                ["Paper", "100% cotton handmade paper (tree-free)"],
+                ["Cover", "Light blue printed handmade paper with the Dharma Wheel in gold and traditional Tibetan borders; patterned back"],
+                ["Closure", "Braided five-colour wrap cord"],
+                ["Binding", "Hand-sewn"],
+                ["Made By", "Handmade by Tibetan refugee artisans, Made in India"],
+                ["Suitable For", "Journaling, sketching, travel notes, prayers and mantras, and gifting"]
+            ],
+            careInstructions: [
+                "Keep dry and away from moisture.",
+                "Works well with pencil, ballpoint and gel pens; test fountain pens and markers first, as handmade paper can feather.",
+                "Wipe the cover gently with a soft dry cloth; do not wash.",
+                "Slight variations in colour and texture are natural in handmade products."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    journalPaintedElephant: {
+        id: "EM-JOURNAL-010",
+        name: "Painted Elephant Journal (Landscape)",
+        price: 129,
+        stock: 9,
+        category: "Handmade Journals",
+        collection: "lifestyle",
+        wholesale: true,
+        images: [
+            "journal-painted-elephant-1.jpg",
+            "journal-painted-elephant-2.jpg",
+            "journal-painted-elephant-3.jpg"
+        ],
+        description:
+            "A landscape-format journal with a hand-painted royal elephant in gold, green and grey on a peach cover with a decorative blue border, tied with a braided five-colour cord. Opens sideways, great for sketching, travel notes and gifting. The pages are 100% cotton handmade paper, tree-free and handmade by Tibetan refugee artisans in India; small flecks and fibres are natural marks of handmade paper, so every journal is unique.",
+        details: {
+            productDetails: [
+                ["Size", "A6 landscape · 16.5 × 11 cm (approx. 6.5 × 4.3 in)"],
+                ["Paper", "100% cotton handmade paper (tree-free)"],
+                ["Cover", "Hand-painted royal elephant with gold details and a blue border on peach handmade paper"],
+                ["Closure", "Braided five-colour wrap cord"],
+                ["Binding", "Hand-sewn"],
+                ["Made By", "Handmade by Tibetan refugee artisans, Made in India"],
+                ["Suitable For", "Journaling, sketching, travel notes, prayers and mantras, and gifting"]
+            ],
+            careInstructions: [
+                "Keep dry and away from moisture.",
+                "Works well with pencil, ballpoint and gel pens; test fountain pens and markers first, as handmade paper can feather.",
+                "Wipe the cover gently with a soft dry cloth; do not wash.",
+                "Slight variations in colour and texture are natural in handmade products."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    journalBrocadeSilver: {
+        id: "EM-JOURNAL-011",
+        name: "Silver Brocade Journal – Button Closure",
+        price: 99,
+        stock: 9,
+        category: "Handmade Journals",
+        collection: "lifestyle",
+        wholesale: true,
+        images: [
+            "journal-brocade-silver-1.jpg",
+            "journal-brocade-silver-2.jpg"
+        ],
+        description:
+            "A small journal covered in silver brocade with black dots and a gold and orange floral design, finished with a fold-over flap and wooden button closure. Compact, stylish and ready to gift. The pages are 100% cotton handmade paper, tree-free and handmade by Tibetan refugee artisans in India; small flecks and fibres are natural marks of handmade paper, so every journal is unique.",
+        details: {
+            productDetails: [
+                ["Size", "B7 · 9.5 × 12.5 cm (approx. 3.75 × 5 in)"],
+                ["Paper", "100% cotton handmade paper (tree-free)"],
+                ["Cover", "Silver brocade with black polka dots and a gold and orange floral design, with fold-over flap"],
+                ["Closure", "Wooden button with elastic cord loop"],
+                ["Binding", "Hand-sewn"],
+                ["Made By", "Handmade by Tibetan refugee artisans, Made in India"],
+                ["Suitable For", "Journaling, sketching, travel notes, prayers and mantras, and gifting"]
+            ],
+            careInstructions: [
+                "Keep dry and away from moisture.",
+                "Works well with pencil, ballpoint and gel pens; test fountain pens and markers first, as handmade paper can feather.",
+                "Wipe the cover gently with a soft dry cloth; do not wash.",
+                "Slight variations in colour and texture are natural in handmade products."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    journalBrocadeGreen: {
+        id: "EM-JOURNAL-012",
+        name: "Green Brocade Journal",
+        price: 149,
+        stock: 9,
+        category: "Handmade Journals",
+        collection: "lifestyle",
+        wholesale: true,
+        images: [
+            "journal-brocade-green-1.jpg",
+            "journal-brocade-green-2.jpg"
+        ],
+        description:
+            "An olive-green brocade journal with black dots and cream and orange floral circles, with a fold-over flap and black cord tie. A comfortable medium size for journaling, planning and gifting. The pages are 100% cotton handmade paper, tree-free and handmade by Tibetan refugee artisans in India; small flecks and fibres are natural marks of handmade paper, so every journal is unique.",
+        details: {
+            productDetails: [
+                ["Size", "B6 · 13.5 × 18 cm (approx. 5.3 × 7.1 in)"],
+                ["Paper", "100% cotton handmade paper (tree-free)"],
+                ["Cover", "Olive green brocade with black polka dots and a cream and orange floral design, with fold-over flap"],
+                ["Closure", "Black cord tie"],
+                ["Binding", "Hand-sewn"],
+                ["Made By", "Handmade by Tibetan refugee artisans, Made in India"],
+                ["Suitable For", "Journaling, sketching, travel notes, prayers and mantras, and gifting"]
+            ],
+            careInstructions: [
+                "Keep dry and away from moisture.",
+                "Works well with pencil, ballpoint and gel pens; test fountain pens and markers first, as handmade paper can feather.",
+                "Wipe the cover gently with a soft dry cloth; do not wash.",
+                "Slight variations in colour and texture are natural in handmade products."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    journalKalasa: {
+        id: "EM-JOURNAL-013",
+        name: "Kalasa (Treasure Vase) Journal",
+        price: 99,
+        stock: 9,
+        category: "Handmade Journals",
+        collection: "lifestyle",
+        wholesale: true,
+        images: [
+            "journal-kalasa-1.jpg",
+            "journal-kalasa-2.jpg"
+        ],
+        description:
+            "A small journal featuring the Kalasa (Treasure Vase), one of the Eight Auspicious Symbols of Tibetan Buddhism and a symbol of abundance, printed in blue and gold within traditional Tibetan borders and tied with a braided five-colour cord. The pages are 100% cotton handmade paper, tree-free and handmade by Tibetan refugee artisans in India; small flecks and fibres are natural marks of handmade paper, so every journal is unique.",
+        details: {
+            productDetails: [
+                ["Size", "B7 · 9 × 13 cm (approx. 3.5 × 5.1 in)"],
+                ["Paper", "100% cotton handmade paper (tree-free)"],
+                ["Cover", "Rose-red printed handmade paper with the Treasure Vase in blue and gold and traditional Tibetan borders; patterned back"],
+                ["Closure", "Braided five-colour wrap cord"],
+                ["Binding", "Hand-sewn"],
+                ["Made By", "Handmade by Tibetan refugee artisans, Made in India"],
+                ["Suitable For", "Journaling, sketching, travel notes, prayers and mantras, and gifting"]
+            ],
+            careInstructions: [
+                "Keep dry and away from moisture.",
+                "Works well with pencil, ballpoint and gel pens; test fountain pens and markers first, as handmade paper can feather.",
+                "Wipe the cover gently with a soft dry cloth; do not wash.",
+                "Slight variations in colour and texture are natural in handmade products."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    journalWovenStripe: {
+        id: "EM-JOURNAL-014",
+        name: "Himalayan Woven Stripe Journal",
+        price: 169,
+        stock: 9,
+        category: "Handmade Journals",
+        collection: "lifestyle",
+        wholesale: true,
+        images: [
+            "journal-woven-stripe-1.jpg",
+            "journal-woven-stripe-2.jpg"
+        ],
+        description:
+            "A large journal wrapped in vibrant Himalayan woven fabric with bands of traditional motifs in red, blue, gold and pink, with a fold-over flap and black cord tie. Bright, durable and full of mountain character. The pages are 100% cotton handmade paper, tree-free and handmade by Tibetan refugee artisans in India; small flecks and fibres are natural marks of handmade paper, so every journal is unique.",
+        details: {
+            productDetails: [
+                ["Size", "A5 · 16.5 × 21.5 cm (approx. 6.5 × 8.5 in)"],
+                ["Paper", "100% cotton handmade paper (tree-free)"],
+                ["Cover", "Colourful Himalayan woven fabric with traditional motifs, with fold-over flap"],
+                ["Closure", "Black cord tie"],
+                ["Binding", "Hand-sewn"],
+                ["Made By", "Handmade by Tibetan refugee artisans, Made in India"],
+                ["Suitable For", "Journaling, sketching, travel notes, prayers and mantras, and gifting"]
+            ],
+            careInstructions: [
+                "Keep dry and away from moisture.",
+                "Works well with pencil, ballpoint and gel pens; test fountain pens and markers first, as handmade paper can feather.",
+                "Wipe the cover gently with a soft dry cloth; do not wash.",
+                "Slight variations in colour and texture are natural in handmade products."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    journalBuddhaQuote: {
+        id: "EM-JOURNAL-015",
+        name: "Buddha Quote Journal",
+        price: 199,
+        stock: 9,
+        category: "Handmade Journals",
+        collection: "lifestyle",
+        wholesale: true,
+        images: [
+            "journal-buddha-quote-1.jpg",
+            "journal-buddha-quote-2.jpg"
+        ],
+        description:
+            "A large hardcover journal in green crinkled handmade paper with a gold Buddha print and a teaching of the Buddha set in a window on the front, closed with a black elastic band. A thoughtful journal for daily writing, study notes and reflection. The pages are 100% cotton handmade paper, tree-free and handmade by Tibetan refugee artisans in India; small flecks and fibres are natural marks of handmade paper, so every journal is unique.",
+        details: {
+            productDetails: [
+                ["Size", "B5 · 16 × 25.5 cm (approx. 6.3 × 10 in)"],
+                ["Paper", "100% cotton handmade paper (tree-free)"],
+                ["Cover", "Green crinkled handmade paper with a framed gold Buddha print and quote under a clear window"],
+                ["Closure", "Black elastic band"],
+                ["Binding", "Hand-sewn"],
+                ["Made By", "Handmade by Tibetan refugee artisans, Made in India"],
+                ["Suitable For", "Journaling, sketching, travel notes, prayers and mantras, and gifting"]
+            ],
+            careInstructions: [
+                "Keep dry and away from moisture.",
+                "Works well with pencil, ballpoint and gel pens; test fountain pens and markers first, as handmade paper can feather.",
+                "Wipe the cover gently with a soft dry cloth; do not wash.",
+                "Slight variations in colour and texture are natural in handmade products."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
 };
