@@ -6558,4 +6558,717 @@ images: [
             ]
         }
     },
+
+    doorCurtainNavy: {
+        id: "EM-DECOR-001",
+        name: "Tibetan Door Curtain – Navy & White",
+        price: 799,
+        stock: 10,
+        category: "Tibetan Door Curtains",
+        collection: "home-decor",
+        wholesale: true,
+        images: [
+            "curtain-navy-1.jpg",
+            "curtain-navy-2.jpg",
+            "curtain-navy-3.jpg"
+        ],
+        description: "A traditional Tibetan door curtain (go-yol) with a see-through navy blue lace panel that lets soft light and air pass through while keeping your privacy. It is framed with a white border and a large white appliqué Endless Knot (Pelbeu), the auspicious symbol of harmony and lasting good fortune, with navy diamond accents and a pleated five-colour valance (blue, yellow, red, green) at the top. Suitable for indoor doorways and outer entrance doors, as well as balconies, altar rooms and meditation spaces.",
+        details: {
+            productDetails: [
+                [
+                    "Size",
+                    "70\" × 39\" (approx. 178 × 99 cm)"
+                ],
+                [
+                    "Panel",
+                    "Sheer, see-through navy blue lace with floral pattern"
+                ],
+                [
+                    "Design",
+                    "Large white appliqué Endless Knot with white border and navy diamond accents"
+                ],
+                [
+                    "Valance",
+                    "Pleated five-colour valance (blue, yellow, red, green)"
+                ],
+                [
+                    "Hanging",
+                    "Fabric loops at the top, for a curtain rod or hooks"
+                ],
+                [
+                    "Suitable For",
+                    "Indoor doorways, outer entrance doors, balconies, altar rooms and meditation spaces"
+                ]
+            ],
+            careInstructions: [
+                "Gentle cold hand wash.",
+                "Do not bleach or wring.",
+                "Dry in the shade to protect the colours.",
+                "Iron on low heat from the back, not directly on the appliqué."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    doorCurtainGreen: {
+        id: "EM-DECOR-002",
+        name: "Tibetan Door Curtain – Green & White",
+        price: 799,
+        stock: 10,
+        category: "Tibetan Door Curtains",
+        collection: "home-decor",
+        wholesale: true,
+        images: [
+            "curtain-green-1.jpg",
+            "curtain-green-2.jpg",
+            "curtain-green-3.jpg"
+        ],
+        description: "A traditional Tibetan door curtain (go-yol) with a see-through bright green lace panel that lets soft light and air pass through while keeping your privacy. It is framed with a white border and a large white appliqué Endless Knot (Pelbeu), the auspicious symbol of harmony and lasting good fortune, with dark green diamond accents and a pleated five-colour valance (blue, yellow, red, green) at the top. Suitable for indoor doorways and outer entrance doors, as well as balconies, altar rooms and meditation spaces.",
+        details: {
+            productDetails: [
+                [
+                    "Size",
+                    "66\" × 38\" (approx. 168 × 96.5 cm)"
+                ],
+                [
+                    "Panel",
+                    "Sheer, see-through bright green lace with floral pattern"
+                ],
+                [
+                    "Design",
+                    "Large white appliqué Endless Knot with white border and dark green diamond accents"
+                ],
+                [
+                    "Valance",
+                    "Pleated five-colour valance (blue, yellow, red, green)"
+                ],
+                [
+                    "Hanging",
+                    "Fabric loops at the top, for a curtain rod or hooks"
+                ],
+                [
+                    "Suitable For",
+                    "Indoor doorways, outer entrance doors, balconies, altar rooms and meditation spaces"
+                ]
+            ],
+            careInstructions: [
+                "Gentle cold hand wash.",
+                "Do not bleach or wring.",
+                "Dry in the shade to protect the colours.",
+                "Iron on low heat from the back, not directly on the appliqué."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    doorCurtainRoyalBlue: {
+        id: "EM-DECOR-003",
+        name: "Tibetan Door Curtain – Royal Blue & White",
+        price: 799,
+        stock: 10,
+        category: "Tibetan Door Curtains",
+        collection: "home-decor",
+        wholesale: true,
+        images: [
+            "curtain-royal-blue-1.jpg",
+            "curtain-royal-blue-2.jpg",
+            "curtain-royal-blue-3.jpg"
+        ],
+        description: "A traditional Tibetan door curtain (go-yol) with a see-through royal blue lace panel that lets soft light and air pass through while keeping your privacy. It is framed with a white border and a large white appliqué Endless Knot (Pelbeu), the auspicious symbol of harmony and lasting good fortune, with royal blue diamond accents and a pleated five-colour valance (blue, yellow, red, green) at the top. Suitable for indoor doorways and outer entrance doors, as well as balconies, altar rooms and meditation spaces.",
+        details: {
+            productDetails: [
+                [
+                    "Size",
+                    "71\" × 38\" (approx. 180 × 96.5 cm)"
+                ],
+                [
+                    "Panel",
+                    "Sheer, see-through royal blue lace with floral pattern"
+                ],
+                [
+                    "Design",
+                    "Large white appliqué Endless Knot with white border and royal blue diamond accents"
+                ],
+                [
+                    "Valance",
+                    "Pleated five-colour valance (blue, yellow, red, green)"
+                ],
+                [
+                    "Hanging",
+                    "Fabric loops at the top, for a curtain rod or hooks"
+                ],
+                [
+                    "Suitable For",
+                    "Indoor doorways, outer entrance doors, balconies, altar rooms and meditation spaces"
+                ]
+            ],
+            careInstructions: [
+                "Gentle cold hand wash.",
+                "Do not bleach or wring.",
+                "Dry in the shade to protect the colours.",
+                "Iron on low heat from the back, not directly on the appliqué."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    doorCurtainMaroonSaffron: {
+        id: "EM-DECOR-004",
+        name: "Tibetan Door Curtain – Maroon & Saffron",
+        price: 799,
+        stock: 10,
+        category: "Tibetan Door Curtains",
+        collection: "home-decor",
+        wholesale: true,
+        images: [
+            "curtain-maroon-saffron-1.jpg",
+            "curtain-maroon-saffron-2.jpg",
+            "curtain-maroon-saffron-3.jpg"
+        ],
+        description: "A traditional Tibetan door curtain (go-yol) with a see-through deep maroon lace panel that lets soft light and air pass through while keeping your privacy. It is framed with a saffron yellow border and a large saffron yellow appliqué Endless Knot (Pelbeu), the auspicious symbol of harmony and lasting good fortune, with maroon diamond accents and a pleated five-colour valance (blue, yellow, red, green) at the top. Suitable for indoor doorways and outer entrance doors, as well as balconies, altar rooms and meditation spaces.",
+        details: {
+            productDetails: [
+                [
+                    "Size",
+                    "71\" × 37\" (approx. 180 × 94 cm)"
+                ],
+                [
+                    "Panel",
+                    "Sheer, see-through deep maroon lace with floral pattern"
+                ],
+                [
+                    "Design",
+                    "Large saffron yellow appliqué Endless Knot with saffron yellow border and maroon diamond accents"
+                ],
+                [
+                    "Valance",
+                    "Pleated five-colour valance (blue, yellow, red, green)"
+                ],
+                [
+                    "Hanging",
+                    "Fabric loops at the top, for a curtain rod or hooks"
+                ],
+                [
+                    "Suitable For",
+                    "Indoor doorways, outer entrance doors, balconies, altar rooms and meditation spaces"
+                ]
+            ],
+            careInstructions: [
+                "Gentle cold hand wash.",
+                "Do not bleach or wring.",
+                "Dry in the shade to protect the colours.",
+                "Iron on low heat from the back, not directly on the appliqué."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    doorCurtainWhiteBlue: {
+        id: "EM-DECOR-005",
+        name: "Tibetan Door Curtain – White & Royal Blue",
+        price: 799,
+        stock: 10,
+        category: "Tibetan Door Curtains",
+        collection: "home-decor",
+        wholesale: true,
+        images: [
+            "curtain-white-blue-1.jpg",
+            "curtain-white-blue-2.jpg",
+            "curtain-white-blue-3.jpg"
+        ],
+        description: "A traditional Tibetan door curtain (go-yol) with a see-through white lace panel that lets soft light and air pass through while keeping your privacy. It is framed with a royal blue border and a large royal blue appliqué Endless Knot (Pelbeu), the auspicious symbol of harmony and lasting good fortune, with white diamond accents and a pleated five-colour valance (blue, yellow, red, green) at the top. Suitable for indoor doorways and outer entrance doors, as well as balconies, altar rooms and meditation spaces.",
+        details: {
+            productDetails: [
+                [
+                    "Size",
+                    "71\" × 39\" (approx. 180 × 99 cm)"
+                ],
+                [
+                    "Panel",
+                    "Sheer, see-through white lace with floral pattern"
+                ],
+                [
+                    "Design",
+                    "Large royal blue appliqué Endless Knot with royal blue border and white diamond accents"
+                ],
+                [
+                    "Valance",
+                    "Pleated five-colour valance (blue, yellow, red, green)"
+                ],
+                [
+                    "Hanging",
+                    "Fabric loops at the top, for a curtain rod or hooks"
+                ],
+                [
+                    "Suitable For",
+                    "Indoor doorways, outer entrance doors, balconies, altar rooms and meditation spaces"
+                ]
+            ],
+            careInstructions: [
+                "Gentle cold hand wash.",
+                "Do not bleach or wring.",
+                "Dry in the shade to protect the colours.",
+                "Iron on low heat from the back, not directly on the appliqué."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    doorCurtainTurquoise: {
+        id: "EM-DECOR-006",
+        name: "Tibetan Door Curtain – Turquoise & White",
+        price: 799,
+        stock: 10,
+        category: "Tibetan Door Curtains",
+        collection: "home-decor",
+        wholesale: true,
+        images: [
+            "curtain-turquoise-1.jpg",
+            "curtain-turquoise-2.jpg",
+            "curtain-turquoise-3.jpg"
+        ],
+        description: "A traditional Tibetan door curtain (go-yol) with a see-through turquoise lace panel that lets soft light and air pass through while keeping your privacy. It is framed with a white border and a large white appliqué Endless Knot (Pelbeu), the auspicious symbol of harmony and lasting good fortune, with red diamond accents and a pleated five-colour valance (blue, yellow, red, green) at the top. Suitable for indoor doorways and outer entrance doors, as well as balconies, altar rooms and meditation spaces.",
+        details: {
+            productDetails: [
+                [
+                    "Size",
+                    "70\" × 39\" (approx. 178 × 99 cm)"
+                ],
+                [
+                    "Panel",
+                    "Sheer, see-through turquoise lace with floral pattern"
+                ],
+                [
+                    "Design",
+                    "Large white appliqué Endless Knot with white border and red diamond accents"
+                ],
+                [
+                    "Valance",
+                    "Pleated five-colour valance (blue, yellow, red, green)"
+                ],
+                [
+                    "Hanging",
+                    "Fabric loops at the top, for a curtain rod or hooks"
+                ],
+                [
+                    "Suitable For",
+                    "Indoor doorways, outer entrance doors, balconies, altar rooms and meditation spaces"
+                ]
+            ],
+            careInstructions: [
+                "Gentle cold hand wash.",
+                "Do not bleach or wring.",
+                "Dry in the shade to protect the colours.",
+                "Iron on low heat from the back, not directly on the appliqué."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    doorCurtainOrange: {
+        id: "EM-DECOR-007",
+        name: "Tibetan Door Curtain – Orange & White",
+        price: 799,
+        stock: 10,
+        category: "Tibetan Door Curtains",
+        collection: "home-decor",
+        wholesale: true,
+        images: [
+            "curtain-orange-1.jpg",
+            "curtain-orange-2.jpg",
+            "curtain-orange-3.jpg"
+        ],
+        description: "A traditional Tibetan door curtain (go-yol) with a see-through bright orange lace panel that lets soft light and air pass through while keeping your privacy. It is framed with a white border and a large white appliqué Endless Knot (Pelbeu), the auspicious symbol of harmony and lasting good fortune, with saffron yellow diamond accents and a pleated five-colour valance (blue, yellow, red, green) at the top. Suitable for indoor doorways and outer entrance doors, as well as balconies, altar rooms and meditation spaces.",
+        details: {
+            productDetails: [
+                [
+                    "Size",
+                    "70\" × 39\" (approx. 178 × 99 cm)"
+                ],
+                [
+                    "Panel",
+                    "Sheer, see-through bright orange lace with floral pattern"
+                ],
+                [
+                    "Design",
+                    "Large white appliqué Endless Knot with white border and saffron yellow diamond accents"
+                ],
+                [
+                    "Valance",
+                    "Pleated five-colour valance (blue, yellow, red, green)"
+                ],
+                [
+                    "Hanging",
+                    "Fabric loops at the top, for a curtain rod or hooks"
+                ],
+                [
+                    "Suitable For",
+                    "Indoor doorways, outer entrance doors, balconies, altar rooms and meditation spaces"
+                ]
+            ],
+            careInstructions: [
+                "Gentle cold hand wash.",
+                "Do not bleach or wring.",
+                "Dry in the shade to protect the colours.",
+                "Iron on low heat from the back, not directly on the appliqué."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    doorCurtainMustard: {
+        id: "EM-DECOR-008",
+        name: "Tibetan Door Curtain – Mustard & Maroon",
+        price: 899,
+        stock: 10,
+        category: "Tibetan Door Curtains",
+        collection: "home-decor",
+        wholesale: true,
+        images: [
+            "curtain-mustard-1.jpg",
+            "curtain-mustard-2.jpg",
+            "curtain-mustard-3.jpg"
+        ],
+        description: "A traditional Tibetan door curtain (go-yol) in rich monastery colours. The solid, non-see-through mustard gold fabric gives full privacy, divided by a bold maroon border and cross-band in the classic go-yol layout. A large maroon appliqué Endless Knot (Pelbeu), the auspicious symbol of harmony and lasting good fortune, sits in the upper panel, finished with a pleated five-colour valance (blue, yellow, red, green). Suitable for indoor doorways and outer entrance doors, as well as bedrooms, shrine rooms and meditation spaces.",
+        details: {
+            productDetails: [
+                [
+                    "Size",
+                    "72\" × 39\" (approx. 183 × 99 cm)"
+                ],
+                [
+                    "Panel",
+                    "Solid, opaque mustard gold fabric (not see-through), full privacy"
+                ],
+                [
+                    "Design",
+                    "Large maroon appliqué Endless Knot with maroon border, cross-band and centre strip, mustard diamond accents"
+                ],
+                [
+                    "Valance",
+                    "Pleated five-colour valance (blue, yellow, red, green)"
+                ],
+                [
+                    "Hanging",
+                    "Fabric loops at the top, for a curtain rod or hooks"
+                ],
+                [
+                    "Suitable For",
+                    "Indoor doorways, outer entrance doors, bedrooms, shrine rooms and meditation spaces"
+                ]
+            ],
+            careInstructions: [
+                "Gentle cold hand wash.",
+                "Do not bleach or wring.",
+                "Dry in the shade to protect the colours.",
+                "Iron on low heat from the back, not directly on the appliqué."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    meditationMattress: {
+        id: "EM-TRAD-002",
+        name: "Tibetan Meditation Mattress (Den) with Carry Bag",
+        price: 349,
+        stock: 10,
+        category: "Meditation & Prayer",
+        collection: "traditional",
+        wholesale: true,
+        images: [
+            "meditation-mattress-1.jpg",
+            "meditation-mattress-2.jpg",
+            "meditation-mattress-3.jpg",
+            "meditation-mattress-4.jpg"
+        ],
+        description: "A compact padded meditation seat in the traditional Tibetan style. The quilted mustard top has pink printed Endless Knot and cloud-scroll corner designs, the edges are wrapped in classic Tibetan striped fabric with a cross motif, and the base is smooth navy satin. It folds in half, so you can use it flat or folded for a higher, firmer seat. Comes with a navy drawstring carry bag printed with \"Love Peace Compassion\", ready to take to teachings, retreats or the monastery. Includes 1 mattress + 1 carry bag.",
+        details: {
+            productDetails: [
+                [
+                    "Set Includes",
+                    "1 meditation mattress + 1 drawstring carry bag"
+                ],
+                [
+                    "Size",
+                    "11.5\" × 10\" × 1\" thick (approx. 29 × 25.5 × 2.5 cm)"
+                ],
+                [
+                    "Foldable",
+                    "Yes, folds in half for a raised seat or easy carrying"
+                ],
+                [
+                    "Material",
+                    "Printed cotton top, Tibetan striped cotton edging, navy satin base, soft padded filling"
+                ],
+                [
+                    "Carry Bag",
+                    "Navy satin drawstring bag with Endless Knot corner prints and \"Love Peace Compassion\" text"
+                ],
+                [
+                    "Suitable For",
+                    "Meditation, prayer, puja, floor seating and yoga"
+                ]
+            ],
+            careInstructions: [
+                "Spot clean only with a damp cloth.",
+                "Do not machine wash.",
+                "Air it in the sun now and then to keep it fresh.",
+                "Store folded in its carry bag when not in use."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    bagLamaYellow: {
+        id: "EM-BAG-001",
+        name: "Tibetan Lama Bag (Monk Bag) – Yellow, Precious Parasol",
+        price: 599,
+        stock: 10,
+        category: "Tibetan Bags",
+        collection: "lifestyle",
+        wholesale: true,
+        images: [
+            "bag-lama-yellow-1.jpg",
+            "bag-lama-yellow-2.jpg",
+            "bag-lama-yellow-3.jpg"
+        ],
+        description: "A traditional Tibetan lama bag, the kind of shoulder bag monks carry, in bright yellow with an embroidered Precious Parasol (Dug), one of the Eight Auspicious Symbols. The parasol stands for protection from harm and obstacles. It has a zipped main compartment hidden under a fabric flap, two zip pockets (one on the front behind a side placket, one inside) and a wide folded shoulder strap. Practical for daily use, travel, dharma teachings or gifting.",
+        details: {
+            productDetails: [
+                [
+                    "Size",
+                    "13.4\" H × 14\" L (approx. 34 × 35.5 cm)"
+                ],
+                [
+                    "Colour",
+                    "Yellow"
+                ],
+                [
+                    "Design",
+                    "Embroidered Precious Parasol (Dug, one of the Eight Auspicious Symbols) in red, blue, purple and lilac"
+                ],
+                [
+                    "Compartments",
+                    "Zipped main compartment under a fabric flap"
+                ],
+                [
+                    "Pockets",
+                    "2 zip pockets: one on the front behind a side placket, one inside"
+                ],
+                [
+                    "Strap",
+                    "Wide folded shoulder strap in the classic lama-bag style"
+                ]
+            ],
+            careInstructions: [
+                "Gentle cold hand wash.",
+                "Do not bleach or wring.",
+                "Dry in the shade.",
+                "Do not iron directly on the embroidery."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    bagLamaMaroon: {
+        id: "EM-BAG-002",
+        name: "Tibetan Lama Bag (Monk Bag) – Maroon, Double Vajra",
+        price: 599,
+        stock: 10,
+        category: "Tibetan Bags",
+        collection: "lifestyle",
+        wholesale: true,
+        images: [
+            "bag-lama-maroon-1.jpg"
+        ],
+        description: "A traditional Tibetan lama bag, the kind of shoulder bag monks carry, in classic monastic maroon with an embroidered Double Vajra (Vishvavajra) in blue and lavender with gold outlines. The Double Vajra stands for stability, strength and unshakable protection. It has a zipped main compartment hidden under a fabric flap, two zip pockets (one on the front behind a side placket, one inside) and a wide folded shoulder strap. Practical for daily use, travel, dharma teachings or gifting.",
+        details: {
+            productDetails: [
+                [
+                    "Size",
+                    "13.4\" H × 14\" L (approx. 34 × 35.5 cm)"
+                ],
+                [
+                    "Colour",
+                    "Maroon"
+                ],
+                [
+                    "Design",
+                    "Embroidered Double Vajra (Vishvavajra) in blue, lavender and gold"
+                ],
+                [
+                    "Compartments",
+                    "Zipped main compartment under a fabric flap"
+                ],
+                [
+                    "Pockets",
+                    "2 zip pockets: one on the front behind a side placket, one inside"
+                ],
+                [
+                    "Strap",
+                    "Wide folded shoulder strap in the classic lama-bag style"
+                ]
+            ],
+            careInstructions: [
+                "Gentle cold hand wash.",
+                "Do not bleach or wring.",
+                "Dry in the shade.",
+                "Do not iron directly on the embroidery."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    bagToteVajraBlack: {
+        id: "EM-BAG-003",
+        name: "Tibetan Double Vajra Tote Bag – Black",
+        price: 599,
+        stock: 10,
+        category: "Tibetan Bags",
+        collection: "lifestyle",
+        wholesale: true,
+        images: [
+            "bag-tote-black-1.jpg",
+            "bag-tote-black-2.jpg"
+        ],
+        description: "A sturdy black tote with a pink embroidered Double Vajra, the crossed-dorje symbol of stability, strength and protection in Tibetan Buddhism. Simple enough for everyday life and meaningful enough for monastery visits, it suits monks and lay people alike: for college, work, shopping or teachings. Spacious open main compartment with an inner velcro pocket.",
+        details: {
+            productDetails: [
+                [
+                    "Size",
+                    "14\" H × 14\" W (approx. 35.5 × 35.5 cm)"
+                ],
+                [
+                    "Colour",
+                    "Black with pink embroidery"
+                ],
+                [
+                    "Design",
+                    "Embroidered Double Vajra (Vishvavajra) on the front"
+                ],
+                [
+                    "Compartments",
+                    "Spacious open main compartment"
+                ],
+                [
+                    "Pockets",
+                    "Inner pocket with velcro closure"
+                ],
+                [
+                    "Handles",
+                    "Two sturdy shoulder handles with reinforced box-stitching"
+                ]
+            ],
+            careInstructions: [
+                "Gentle cold hand wash.",
+                "Do not bleach or wring.",
+                "Dry in the shade.",
+                "Do not iron directly on the embroidery."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    },
+
+    bagToteYak: {
+        id: "EM-BAG-004",
+        name: "Tibet Yak Embroidered Tote Bag – Green",
+        price: 599,
+        stock: 10,
+        category: "Tibetan Bags",
+        collection: "lifestyle",
+        wholesale: true,
+        images: [
+            "bag-tote-yak-1.jpg",
+            "bag-tote-yak-2.jpg",
+            "bag-tote-yak-3.jpg"
+        ],
+        description: "A sturdy forest-green canvas tote with a cheerful embroidered row of five fluffy Tibetan yaks, framed by \"TIBET\" above and \"Yak Yak Yak Yak Yak\" below in yellow thread. The yak is the heart of life on the Tibetan plateau, and this bag carries that spirit with a smile. Zip-top closure and three pockets (two on the back, one inside). Perfect for college, work, shopping, travel or as a souvenir gift.",
+        details: {
+            productDetails: [
+                [
+                    "Size",
+                    "16\" H × 14\" W (approx. 40.6 × 35.5 cm)"
+                ],
+                [
+                    "Colour",
+                    "Forest green with yellow and grey embroidery"
+                ],
+                [
+                    "Design",
+                    "Five embroidered yaks with \"TIBET\" and \"Yak\" lettering"
+                ],
+                [
+                    "Closure",
+                    "Zip top"
+                ],
+                [
+                    "Pockets",
+                    "3 pockets: two open pockets on the back and one slip pocket inside"
+                ],
+                [
+                    "Handles",
+                    "Two sturdy handles with reinforced box-stitching"
+                ]
+            ],
+            careInstructions: [
+                "Gentle cold hand wash.",
+                "Do not bleach or wring.",
+                "Dry in the shade.",
+                "Do not iron directly on the embroidery."
+            ],
+            shipping: [
+                "🚚 Free Shipping across India",
+                "📦 Processing time: 2–3 business days",
+                "🚚 Estimated delivery: 5–10 business days"
+            ]
+        }
+    }
 };
