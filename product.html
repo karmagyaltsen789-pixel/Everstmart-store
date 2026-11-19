@@ -393,6 +393,66 @@ if (product) {
         "https://www.everstmart.in/product.html?id=" + encodeURIComponent(productId)
     );
 
+    /* Product details for Google (price, stock, photos) — shown in search and Google Shopping */
+    (function addProductStructuredData() {
+        const base = "https://www.everstmart.in/";
+        const pageUrl = base + "product.html?id=" + encodeURIComponent(productId);
+        const imgs = (product.images && product.images.length ? product.images : [product.image])
+            .filter(function (i) { return i && i.indexOf("coming-soon") === -1; })
+            .map(function (i) { return base + encodeURI(i); });
+        const inStock = typeof product.stock !== "number" || product.stock > 0;
+        const packs = (product.packOptions || []).filter(function (o) { return typeof o.price === "number"; });
+        const prices = packs.length ? packs.map(function (o) { return o.price; }) : [product.price];
+        const low = Math.min.apply(null, prices), high = Math.max.apply(null, prices);
+        const shared = {
+            "priceCurrency": "INR",
+            "availability": inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+            "itemCondition": "https://schema.org/NewCondition",
+            "url": pageUrl,
+            "seller": { "@type": "Organization", "name": "Everstmart" },
+            "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": { "@type": "MonetaryAmount", "value": 0, "currency": "INR" },
+                "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "IN" },
+                "deliveryTime": {
+                    "@type": "ShippingDeliveryTime",
+                    "handlingTime": { "@type": "QuantitativeValue", "minValue": 2, "maxValue": 3, "unitCode": "DAY" },
+                    "transitTime": { "@type": "QuantitativeValue", "minValue": 5, "maxValue": 10, "unitCode": "DAY" }
+                }
+            },
+            "hasMerchantReturnPolicy": {
+                "@type": "MerchantReturnPolicy",
+                "applicableCountry": "IN",
+                "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                "merchantReturnDays": 2,
+                "returnMethod": "https://schema.org/ReturnByMail"
+            }
+        };
+        const offers = Object.assign(
+            low === high
+                ? { "@type": "Offer", "price": low }
+                : { "@type": "AggregateOffer", "lowPrice": low, "highPrice": high, "offerCount": prices.length },
+            shared
+        );
+        const isMTK = String(product.id || "").indexOf("EM-MTK") === 0;
+        const data = {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": product.name,
+            "sku": product.id || productId,
+            "description": (product.description || "").replace(/\s+/g, " ").trim().slice(0, 5000),
+            "category": product.category || undefined,
+            "brand": { "@type": "Brand", "name": isMTK ? "Men-Tsee-Khang" : "Everstmart" },
+            "offers": offers
+        };
+        if (imgs.length) data.image = imgs;
+        const s = document.createElement("script");
+        s.type = "application/ld+json";
+        s.id = "product-structured-data";
+        s.textContent = JSON.stringify(data);
+        document.head.appendChild(s);
+    })();
+
     let metaDescription = document.querySelector('meta[name="description"]');
 
     if (!metaDescription) {
