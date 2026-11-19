@@ -680,16 +680,16 @@ images: [
     varsityJacket: {
         id: "EM-APPAREL-001",
         name: "Tibetan Embroidered Varsity Jacket – Maroon",
-        price: 4999,
+        price: 5999,
         stock: 3,
         category: "Clothing",
         collection: "lifestyle",
         featured: true,
         optionTitle: "Choose Size",
         packOptions: [
-            { label: "Size M", quantity: 1, price: 4999, available: false },
-            { label: "Size L", quantity: 1, price: 4999 },
-            { label: "Size XL", quantity: 1, price: 4999, available: false }
+            { label: "Size M", quantity: 1, price: 5999, available: false },
+            { label: "Size L", quantity: 1, price: 5999 },
+            { label: "Size XL", quantity: 1, price: 5999, available: false }
         ],
         wholesale: false,
         images: [
@@ -726,15 +726,15 @@ images: [
     varsityJacketMaroonSleeve: {
         id: "EM-APPAREL-002",
         name: "Tibetan Script Varsity Jacket – Black & Maroon",
-        price: 4999,
+        price: 5999,
         stock: 3,
         category: "Clothing",
         collection: "lifestyle",
         optionTitle: "Choose Size",
         packOptions: [
-            { label: "Size M", quantity: 1, price: 4999, available: false },
-            { label: "Size L", quantity: 1, price: 4999 },
-            { label: "Size XL", quantity: 1, price: 4999, available: false }
+            { label: "Size M", quantity: 1, price: 5999, available: false },
+            { label: "Size L", quantity: 1, price: 5999 },
+            { label: "Size XL", quantity: 1, price: 5999, available: false }
         ],
         wholesale: false,
         images: [
@@ -772,15 +772,15 @@ images: [
     varsityJacketLetters: {
         id: "EM-APPAREL-003",
         name: "Tibetan Letters Varsity Jacket – Black",
-        price: 4999,
+        price: 5999,
         stock: 3,
         category: "Clothing",
         collection: "lifestyle",
         optionTitle: "Choose Size",
         packOptions: [
-            { label: "Size M", quantity: 1, price: 4999, available: false },
-            { label: "Size L", quantity: 1, price: 4999 },
-            { label: "Size XL", quantity: 1, price: 4999, available: false }
+            { label: "Size M", quantity: 1, price: 5999, available: false },
+            { label: "Size L", quantity: 1, price: 5999 },
+            { label: "Size XL", quantity: 1, price: 5999, available: false }
         ],
         wholesale: false,
         images: [
@@ -818,15 +818,15 @@ images: [
     varsityJacketWindHorse: {
         id: "EM-APPAREL-004",
         name: "Wind Horse Varsity Jacket – Black",
-        price: 4999,
+        price: 5999,
         stock: 3,
         category: "Clothing",
         collection: "lifestyle",
         optionTitle: "Choose Size",
         packOptions: [
-            { label: "Size M", quantity: 1, price: 4999, available: false },
-            { label: "Size L", quantity: 1, price: 4999 },
-            { label: "Size XL", quantity: 1, price: 4999, available: false }
+            { label: "Size M", quantity: 1, price: 5999, available: false },
+            { label: "Size L", quantity: 1, price: 5999 },
+            { label: "Size XL", quantity: 1, price: 5999, available: false }
         ],
         wholesale: false,
         images: [
